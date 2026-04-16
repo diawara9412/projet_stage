@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NetFlow V1 import schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "src_ip",
+      "dst_ip",
+      "src_port",
+      "dst_port",
+      "protocol",
+      "packets",
+      "bytes",
+      "start_ts",
+      "end_ts"
+    ],
+    "properties": {
+      "src_ip": { "type": "string" },
+      "dst_ip": { "type": "string" },
+      "src_port": { "type": "integer" },
+      "dst_port": { "type": "integer" },
+      "protocol": { "type": "string" },
+      "packets": { "type": "integer" },
+      "bytes": { "type": "integer" },
+      "start_ts": { "type": "string" },
+      "end_ts": { "type": "string" },
+      "tags": { "type": "array", "items": { "type": "string" } },
+      "app_hint": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Deploy generated security chain on kind
+
+## Prerequisites
+- kind
+- kubectl
+- Gateway API CRDs installed in the cluster
+
+## Quick start
+```bash
+kind create cluster --name sfc-demo
+kubectl create namespace {{ namespace }}
+kubectl apply -f manifests.yaml
+```
+
+## Notes
+- Resources are generated from `scenario.yaml` and `plan.json`.
+- Edit container images in `scenario.yaml` `function_catalog` if required.
+- HTTPRoute/TCPRoute are placeholders for chaining demo traffic through: {{ chain_order | join(' -> ') }}

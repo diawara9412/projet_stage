@@ -1,0 +1,2 @@
+src_ip,dst_ip,src_port,dst_port,protocol,packets,bytes,start_ts,end_ts,tags,app_hint
+8.8.8.8,10.0.0.10,40123,443,tcp,12,2048,2026-01-01T00:00:00Z,2026-01-01T00:00:05Z,external_ingress|sensitive,https
