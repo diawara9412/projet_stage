@@ -5,6 +5,18 @@ from datetime import datetime, timezone
 
 from app.core.config import settings
 
+UPLOAD_MUTABLE_FIELDS = {"status", "parsed_artifact", "scenario_artifact", "updated_at"}
+RUN_MUTABLE_FIELDS = {
+    "models",
+    "repeats",
+    "status",
+    "run_dir",
+    "result_artifact",
+    "metrics_json",
+    "metrics_csv",
+    "updated_at",
+}
+
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -74,6 +86,9 @@ def insert_upload(record: dict) -> None:
 def update_upload(upload_id: str, **kwargs) -> None:
     if not kwargs:
         return
+    invalid = set(kwargs) - (UPLOAD_MUTABLE_FIELDS - {"updated_at"})
+    if invalid:
+        raise ValueError(f"Unsupported upload fields for update: {', '.join(sorted(invalid))}")
     kwargs["updated_at"] = now_iso()
     assignments = ", ".join([f"{k}=:{k}" for k in kwargs])
     kwargs["id"] = upload_id
@@ -104,6 +119,9 @@ def insert_run(record: dict) -> None:
 def update_run(run_id: str, **kwargs) -> None:
     if not kwargs:
         return
+    invalid = set(kwargs) - (RUN_MUTABLE_FIELDS - {"updated_at"})
+    if invalid:
+        raise ValueError(f"Unsupported run fields for update: {', '.join(sorted(invalid))}")
     kwargs["updated_at"] = now_iso()
     assignments = ", ".join([f"{k}=:{k}" for k in kwargs])
     kwargs["id"] = run_id

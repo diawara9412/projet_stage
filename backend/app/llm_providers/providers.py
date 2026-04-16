@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import logging
 import time
 from dataclasses import dataclass
 
 import httpx
 
 from app.core.config import settings
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -97,7 +100,8 @@ class OllamaProvider(BaseProvider):
                 response.raise_for_status()
                 raw = response.json().get("response", "")
                 plan = json.loads(raw)
-        except Exception:
+        except (httpx.HTTPError, json.JSONDecodeError) as exc:
+            logger.warning("Ollama generation failed, falling back to default plan: %s", exc)
             raw = "fallback-default-plan"
             plan = default
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import zipfile
 from pathlib import Path
 
@@ -12,6 +13,8 @@ from app.core.db import update_run
 from app.llm_providers.providers import ProviderResult, get_provider_registry
 from app.services.evaluators import chain_coherence, policy_compliance, save_metrics, schema_validity
 from app.services.renderer import ManifestRenderer
+
+logger = logging.getLogger(__name__)
 
 
 async def execute_run(run_id: str, run_dir: Path, scenario: dict, selected_models: list[str], repeats: int = 1) -> dict:
@@ -92,4 +95,5 @@ async def execute_and_store(run_id: str, run_dir: Path, scenario: dict, selected
     try:
         await execute_run(run_id, run_dir, scenario, selected_models, repeats)
     except Exception as exc:  # noqa: BLE001
+        logger.exception("Run execution failed for run_id=%s", run_id)
         update_run(run_id, status="failed", result_artifact=json.dumps({"error": str(exc)}))
