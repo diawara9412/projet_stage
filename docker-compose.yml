@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    container_name: llm-security-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env.example
+  frontend:
+    build: ./frontend
+    container_name: llm-security-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env.example
+    depends_on:
+      - backend
