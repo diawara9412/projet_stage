@@ -7,7 +7,7 @@ export default function useDatasets() {
 
   useEffect(() => {
     api.get('/datasets').then(({ data }) => setDatasets(data)).catch(() => setDatasets({}));
-  }, []);
+  }, [api]);
 
   return datasets;
 }

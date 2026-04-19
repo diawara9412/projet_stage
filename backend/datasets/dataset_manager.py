@@ -12,7 +12,7 @@ class DatasetManager:
         return {
             name: {
                 "path": str(path),
-                "available": path.exists() and any(path.glob("*")),
+                "available": path.exists() and any(path.iterdir()),
             }
             for name, path in DATASET_PATHS.items()
         }

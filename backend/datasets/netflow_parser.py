@@ -13,5 +13,7 @@ class NetflowParser:
         flows = []
         for line in lines[1:]:
             values = [v.strip() for v in line.split(",")]
-            flows.append(dict(zip(headers, values, strict=False)))
+            if len(values) != len(headers):
+                raise ValueError("Invalid NetFlow CSV row: headers/values length mismatch")
+            flows.append(dict(zip(headers, values, strict=True)))
         return flows
