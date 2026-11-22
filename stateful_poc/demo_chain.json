@@ -1,0 +1,11 @@
+{
+  "chain_id": "demo-stateful",
+  "source_app_name": "demo",
+  "global_risk_level": "low",
+  "firewall_rules": [
+    {"id": "FW-H1", "action": "ALLOW", "dst_ip": "10.0.0.2", "protocol": "any", "priority": 100},
+    {"id": "FW-ARP", "action": "ALLOW", "dst_ip": "any", "protocol": "ARP", "priority": 50}
+  ],
+  "ids_signatures": [],
+  "ips_actions": []
+}

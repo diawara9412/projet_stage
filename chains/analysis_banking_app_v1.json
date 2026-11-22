@@ -1,0 +1,102 @@
+{
+  "automate_id": "banking_app_v1",
+  "app_name": "SecureBank Mobile",
+  "analyzed_at": "2026-05-30T00:31:34.699933+00:00",
+  "global_suspicion_score": 1.09,
+  "risk_level": "low",
+  "nb_states": 6,
+  "nb_transitions": 9,
+  "nb_suspicious": 1,
+  "suspicious_transitions": [
+    {
+      "transition_id": "t09_SUSPECT",
+      "from_state": "history",
+      "to_state": "history",
+      "label": "SUSPECT — Exfiltration de l'historique des transactions",
+      "dst_ip": "193.34.145.78",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "suspicion_score": 10,
+      "flags": [
+        "data_exfiltration",
+        "bulletproof_hosting",
+        "dga_domain"
+      ],
+      "risk_category": "data_exfiltration",
+      "explanation": "120KB envoyés en clair (HTTP) vers un domaine roumain enregistré il y a 5 jours. ASN M247 est régulièrement abusé pour l'exfiltration. Taille de payload correspond exactement à l'historique de transactions précédemment chargé. Nom de domaine pseudo-légitime (bankstats-cdn.net) conçu pour passer inaperçu."
+    }
+  ],
+  "legitimate_services": [
+    {
+      "name": "SecureBank API (Cloudflare)",
+      "service_type": "API",
+      "ips": [
+        "104.18.14.101"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t01",
+        "t03",
+        "t06",
+        "t07",
+        "t08"
+      ]
+    },
+    {
+      "name": "Twilio Authy (2FA)",
+      "service_type": "API",
+      "ips": [
+        "54.208.105.16"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t02"
+      ]
+    },
+    {
+      "name": "Plaid",
+      "service_type": "API",
+      "ips": [
+        "54.160.182.95"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t04"
+      ]
+    },
+    {
+      "name": "Stripe",
+      "service_type": "payment",
+      "ips": [
+        "54.187.174.169"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t05"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    "FIREWALL BLOCK priorité=800 — 193.34.145.78:80/HTTP (exfiltration de données, transition t09_SUSPECT)",
+    "IDS SIGNATURE data_exfiltration — sortant vers 193.34.145.78 seuil=50000B (transition t09_SUSPECT)",
+    "FIREWALL ALLOW priorité=100 — SecureBank API (Cloudflare) IPs=[104.18.14.101] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Twilio Authy (2FA) IPs=[54.208.105.16] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Plaid IPs=[54.160.182.95] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Stripe IPs=[54.187.174.169] ports=[443] (payment)",
+    "FIREWALL BLOCK — 193.34.145.78:80/HTTP — Exfiltration de données suspectée avec flags 'data_exfiltration', 'bulletproof_hosting' et 'dga_domain'",
+    "IDS SIGNATURE — data_exfiltration — sortant vers 193.34.145.78 avec seuil de 50000B — Détecter les transferts de données suspects",
+    "FIREWALL ALLOW — 104.18.14.101:443 — SecureBank API (Cloudflare) — Autoriser les communications avec l'API de SecureBank",
+    "FIREWALL ALLOW — 54.208.105.16:443 — Twilio Authy (2FA) — Autoriser les communications avec l'API de Twilio Authy",
+    "FIREWALL ALLOW — 54.160.182.95:443 — Plaid — Autoriser les communications avec l'API de Plaid",
+    "FIREWALL ALLOW — 54.187.174.169:443 — Stripe — Autoriser les communications avec le service de paiement Stripe"
+  ],
+  "llm_summary": "L'application SecureBank Mobile présente un niveau de risque global faible avec un score de 1,09/10. Cependant, une transition suspecte a été détectée, indiquant une possible exfiltration de données vers un hôte potentiellement malveillant. Les services légitimes identifiés incluent les API de SecureBank, Twilio Authy et Plaid, ainsi que le service de paiement Stripe. Les recommandations de sécurité visent à bloquer l'accès à l'hôte suspect et à autoriser les communications avec les services légitimes."
+}

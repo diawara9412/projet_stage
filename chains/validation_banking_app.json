@@ -1,0 +1,17 @@
+{
+  "chain_id": "chain_banking_app_v1",
+  "validated_at": "2026-05-31T00:09:19.790780+00:00",
+  "is_valid": true,
+  "quality_score": 100,
+  "issues": [],
+  "stats": {
+    "nb_rules_before": 8,
+    "nb_rules_after": 8,
+    "duplicates_removed": 0,
+    "nb_ids_signatures": 2,
+    "nb_ips_actions": 2,
+    "nb_errors": 0,
+    "nb_warnings": 0
+  },
+  "validation_summary": "La chaîne de sécurité 'chain_banking_app_v1' pour l'application 'SecureBank Mobile' a obtenu un score de qualité de 100/100, indiquant une configuration sans erreur ni avertissement. Les règles de pare-feu ont été validées avec succès, avec 8 règles avant et après validation, sans doublon. Étant donné son score élevé et l'absence de problèmes critiques, cette chaîne est considérée comme prête au déploiement et offre une protection fiable pour l'application bancaire mobile."
+}

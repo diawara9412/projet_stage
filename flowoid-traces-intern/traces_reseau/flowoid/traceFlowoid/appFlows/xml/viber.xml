@@ -1,0 +1,2615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:installLocation="0" android:process="com.viber.voip" android:versionCode="93" android:versionName="5.4.0.2519" package="com.viber.voip" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448" xmlns:android="http://schemas.android.com/apk/res/android">
+	
+
+	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19">
+</uses-sdk>
+	
+
+	<uses-feature android:name="android.hardware.telephony" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.location.network" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.location" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.location.gps" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.bluetooth" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.wifi" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.screen.portrait" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.camera" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.camera.front" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.screen.landscape">
+</uses-feature>
+	
+
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.INTERNET">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_CONTACTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_CONTACTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_PHONE_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CALL_PHONE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.RECEIVE_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SEND_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.VIBRATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WAKE_LOCK">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BLUETOOTH">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.RECORD_AUDIO">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.GET_TASKS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SET_WALLPAPER">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.GET_ACCOUNTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SYNC_STATS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_CALL_LOG">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_CALL_LOG">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CAMERA">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BROADCAST_STICKY">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.vending.BILLING">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.USE_CREDENTIALS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SOCIAL_STREAM">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_SOCIAL_STREAM">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+</uses-permission>
+	
+
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true">
+</supports-screens>
+	
+
+	<permission android:name="com.viber.voip.permission.C2D_MESSAGE" android:protectionLevel="0x00000002">
+</permission>
+	
+
+	<uses-permission android:name="com.viber.voip.permission.C2D_MESSAGE">
+</uses-permission>
+	
+
+	<android:uses-permission android:maxSdkVersion="18" android:name="android.permission.READ_EXTERNAL_STORAGE">
+</android:uses-permission>
+	
+
+	<application android:allowBackup="true" android:hasCode="true" android:icon="@7F020378" android:label="@7F0F015C" android:largeHeap="true" android:name="com.viber.voip.ViberApplication" android:theme="@7F10007B">
+		
+
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCRehoX5_iiA9jz0J84Is3lE7XKRXdtzFk">
+</meta-data>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F015C" android:name="com.viber.voip.registration.RegistrationActivity" android:theme="@7F100087">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.REGISTER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.REGISTER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.NEW_USER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTIVATION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ENTER_DETAILS_SCREEN">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.registration.ActivateSecondaryActivity" android:noHistory="true" android:theme="@7F100087">
+</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:name="com.viber.voip.registration.SelectCountryActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000003">
+</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F015C" android:launchMode="2" android:name="com.viber.voip.PreConversationActivity" android:theme="@7F100089">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.PRE_CONVERSATION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x000005A0" android:label="@7F0F015C" android:name="com.viber.voip.WelcomeActivity" android:noHistory="true" android:theme="@7F100089">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MAIN">
+</action>
+				
+
+				<category android:name="android.intent.category.LAUNCHER">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.DEFAULT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL_LOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.DIALER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.DIALER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CONTACTS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_CLOSE_HOME">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.MESSAGES">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.PUBLIC_GROUP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.DIAL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity-alias android:label="@7F0F015C" android:name="com.viber.voip.WelcomeActivityPublic" android:targetActivity="com.viber.voip.WelcomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.CALL_BUTTON">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:exported="false" android:label="@7F0F015C" android:launchMode="2" android:name="com.viber.voip.HomeActivity" android:theme="@7F100085" android:uiOptions="0x00000001" android:windowSoftInputMode="0x00000013">
+</activity>
+		
+
+		<activity-alias android:enabled="false" android:name="com.viber.voip.WelcomeShareActivity" android:targetActivity="com.viber.voip.WelcomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.SEND">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+				<data android:mimeType="video/*">
+</data>
+				
+
+				<data android:mimeType="text/plain">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.SEND_MULTIPLE">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:enabled="true" android:name="com.viber.voip.HomeConversationActivity" android:targetActivity="com.viber.voip.HomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CONVERSATION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:enabled="true" android:exported="false" android:name="com.viber.voip.HomeContactDetailsActivity" android:targetActivity="com.viber.voip.HomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.VIEW_CONTACT">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.VIEW_CALL_LOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:enabled="true" android:exported="false" android:name="com.viber.voip.HomeYourActivity" android:targetActivity="com.viber.voip.HomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.YOU">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:enabled="true" android:exported="false" android:name="com.viber.voip.HomeSettingsActivity" android:targetActivity="com.viber.voip.HomeActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SETTINGS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F0611" android:name="com.viber.voip.contacts.ui.ContactsListActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_CONTACT_LIST_DEFAULT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:exported="false" android:icon="@7F0200FC" android:label="@7F0F0610" android:name="com.viber.voip.contacts.ui.ContactsCompose1to1ListActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_CONTACT_LIST_SELECTABLE2_1TO1">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F0611" android:name="com.viber.voip.contacts.ui.ContactsComposeListActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_CONTACT_LIST_SELECTABLE2">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.PUBLIC_GROUP_ADD_PARTICIPANTS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.BLOCK_NUMBERS_SELECT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F060D" android:name="com.viber.voip.contacts.ui.AdminSelectorActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:icon="@7F0200B3" android:label="@7F0F05BF" android:name="com.viber.voip.messages.conversation.publicgroup.CreatePublicGroupActivity" android:theme="@7F10007B" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CREATE_PUBLIC_GROUP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:icon="@7F0200B3" android:name="com.viber.voip.messages.conversation.publicgroup.EditPublicGroupActivity" android:theme="@7F10007B" android:windowSoftInputMode="0x00000022">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.EDIT_PUBLIC_GROUP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x40000FFF" android:exported="false" android:name="com.viber.voip.user.PublicGroupParticipantDetailsActivity" android:theme="@7F100072" android:windowSoftInputMode="0x00000001">
+</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F0611" android:name="com.viber.voip.contacts.ui.InviteContactsListActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.INVITE_TO_VIBER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F0611" android:name="com.viber.voip.contacts.ui.PublicGroupInviteContactsListActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.INVITE_TO_PUBLIC_GROUP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x000005A0" android:exported="false" android:icon="@7F0200FB" android:label="@7F0F036E" android:name="com.viber.voip.messages.ui.forward.ForwardActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_FORWARD">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.ViewMediaActivity" android:theme="@7F100086">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.simple.ViewMediaSimpleActivity" android:theme="@7F100086">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.SendMediaActivity" android:theme="@7F100086" android:windowSoftInputMode="0x00000012">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SEND_MEDIA">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F0372" android:name="com.viber.voip.gallery.selection.SelectionGallery" android:process=":gallery" android:theme="@7F10008B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SELECTION_GALLERY">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F0372" android:name="com.viber.voip.gallery.selection.AddMoreGallery" android:process=":gallery" android:theme="@7F10008B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ADD_MORE_GALLERY">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:label="@7F0F04BD" android:name="com.viber.voip.gallery.preview.PhotoPreviewActivity" android:process=":gallery" android:theme="@7F10008B" android:windowSoftInputMode="0x00000012">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.PREVIEW_PHOTO_LIST">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:launchMode="1" android:name="com.viber.voip.gallery.GalleryCoach" android:process=":gallery" android:theme="@7F10008E">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.backgrounds.ui.BackgroundGalleryActivity" android:theme="@7F10007B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.BACKGROUND_GALLERY">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.backgrounds.ui.SelectBackgroundForVibeActivity" android:theme="@7F10007B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SELECT_VIBE_BACKGROUND">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F0434" android:name="com.viber.voip.user.YouActivity" android:theme="@7F10007B" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.YOU">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.user.YouDialogActivity" android:theme="@7F10008C" android:windowSoftInputMode="0x00000020">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.YOU_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.messages.ui.ParticipantsCallChooser" android:screenOrientation="-1">
+</activity>
+		
+
+		<activity android:configChanges="0x40000FFF" android:exported="false" android:name="com.viber.voip.user.PhotoSelectionActivity" android:theme="@7F100072" android:windowSoftInputMode="0x00000001">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="2" android:name="com.viber.voip.contacts.ui.ContactDetailsActivity" android:theme="@7F10007B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.VIEW_CONTACT">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.VIEW_CALL_LOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:launchMode="2" android:name="com.viber.voip.contacts.ui.ContactDetailsDialogActivity" android:theme="@7F10008C">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.VIEW_CONTACT_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="false" android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:launchMode="2" android:name="com.viber.voip.phone.PhoneFragmentActivity" android:stateNotNeeded="true" android:theme="@7F10007D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL_INCOMING">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.REDIAL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="vnd.android.cursor.item/vnd.com.viber.voip.call">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity-alias android:clearTaskOnLaunch="false" android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.phone.PhoneActivityFromBackground" android:stateNotNeeded="true" android:targetActivity="com.viber.voip.phone.PhoneFragmentActivity" android:theme="@7F10007D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL_FROM_BACKGROUND">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<service android:name="com.viber.service.ViberPhoneService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CALL">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</service>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.phone.TabletVideoCallActivity" android:theme="@7F10007F">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.stickers.dialog.DownloadCustomPackageDialog" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.OPEN_DOWNLOAD_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:launchMode="2" android:name="com.viber.voip.SystemDialogRemoteActivity" android:noHistory="true" android:process=":remoteDialogs" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_REMOTE_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_REMOTE_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_REMOTE_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="smsto">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:launchMode="2" android:name="com.viber.voip.SystemDialogActivity" android:noHistory="true" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="tel">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SYSTEM_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="smsto">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity-alias android:name="com.viber.voip.SystemDialogActivityPublic" android:targetActivity="com.viber.voip.SystemDialogActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.SENDTO">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="smsto">
+</data>
+				
+
+				<data android:scheme="sms">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter android:icon="@7F0203A6">
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="vnd.android.cursor.item/vnd.com.viber.voip.viber_number_call">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter android:icon="@7F0203A7">
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="vnd.android.cursor.item/vnd.com.viber.voip.viber_number_message">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter android:icon="@7F0203A8">
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="vnd.android.cursor.item/vnd.com.viber.voip.viber_out_call_viber">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter android:icon="@7F0203A8">
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="vnd.android.cursor.item/vnd.com.viber.voip.viber_out_call_none_viber">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:launchMode="2" android:name="com.viber.voip.viberout.ui.TermsDialogActivity" android:noHistory="true" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.TERMS_AND_CONDITIONS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:name="com.viber.voip.messages.extras.fb.FacebookLikeDialogActivity" android:process=":browser" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.FACEBOOK_LIKE_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:label="@7F0F015C" android:launchMode="0" android:name="com.viber.voip.messages.extras.fb.FacebookDialogActivity" android:noHistory="true" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.user.UserProfilePreviewActivity" android:screenOrientation="1" android:theme="@7F10008D">
+</activity>
+		
+
+		<provider android:authorities="com.viber.provider.vibercontacts" android:exported="false" android:initOrder="255" android:name="com.viber.provider.contacts.ViberContactsProvider">
+</provider>
+		
+
+		<provider android:authorities="com.viber.provider.vibermessages" android:exported="false" android:initOrder="254" android:name="com.viber.provider.messages.ViberMessagesProvider">
+</provider>
+		
+
+		<provider android:authorities="com.viber.provider.prefs" android:exported="false" android:name="com.viber.voip.settings.PreferencesContentProvider">
+</provider>
+		
+
+		<receiver android:label="SDCardMountReceiver" android:name="com.viber.voip.util.SDCardBroadcastReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MEDIA_MOUNTED">
+</action>
+				
+
+				<action android:name="android.intent.action.MEDIA_UNMOUNTED">
+</action>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:label="PackageReplacedReceiver" android:name="com.viber.voip.util.PackageReplacedReceiver">
+			
+
+			<intent-filter android:priority="1000">
+				
+
+				<action android:name="android.intent.action.PACKAGE_REPLACED">
+</action>
+				
+
+				<data android:scheme="package">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:label="ViberUploadReceiver" android:name="com.viber.voip.util.upload.ViberUploadReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.util.upload.CANCEL_UPLOAD">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.util.upload.START_UPLOAD">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<activity android:configChanges="0x00000580" android:label="@7F0F015C" android:launchMode="2" android:name="com.viber.voip.messages.ui.ConversationActivity" android:noHistory="false" android:theme="@7F100080" android:windowSoftInputMode="0x00000012">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CONVERSATION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F03BE" android:name="com.viber.voip.messages.ui.ConversationGalleryActivity" android:theme="@7F100080">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.messages.ui.GALLERY_ACTION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.LocationMessageActivity">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.LocationMessageActivitySeparateProcess" android:process=":browser">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.LocationMessageActivityV2" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:launchMode="3" android:name="com.viber.voip.messages.ui.popup.PopupMessageActivity" android:noHistory="true" android:theme="@7F10008D" android:windowSoftInputMode="0x00000023">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.MESSAGE_POPUP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F055A" android:launchMode="2" android:name="com.viber.voip.settings.ui.SettingsHeadersActivity" android:theme="@7F10007B">
+			
+
+			<meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".user.YouActivity">
+</meta-data>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SETTINGS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:name="com.viber.voip.SoundSettingsActivity">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.SplashActivity" android:noHistory="true" android:theme="@7F100087">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SPLASH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.AboutActivity" android:theme="@7F100087">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ABOUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:launchMode="1" android:name="com.viber.voip.market.StickerMarketActivity" android:process=":browser" android:screenOrientation="1" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="1" android:name="com.viber.voip.market.GamesMarketActivity" android:process=":browser" android:screenOrientation="1" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="1" android:name="com.viber.voip.market.ExplorePublicGroupsActivity" android:process=":browser" android:screenOrientation="1" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="1" android:name="com.viber.voip.market.VOPurchaseDialogActivity" android:process=":browser" android:screenOrientation="1" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:name="com.viber.voip.market.MarketSettingsActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.STICKER_MARKET_SETTINGS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:name="com.viber.voip.ui.GenericWebViewActivity" android:process=":browser">
+</activity>
+		
+
+		<service android:exported="false" android:name="com.viber.voip.messages.extras.image.ImageScaleService" android:process=":scale">
+</service>
+		
+
+		<activity android:exported="false" android:name="com.viber.error.report.ErrorReportDialog" android:theme="@7F100081">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:excludeFromRecents="true" android:exported="false" android:launchMode="2" android:name="com.viber.voip.registration.DeActivationActivity" android:noHistory="true" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.GoogleApiMapPreViewActivity">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.GoogleApiMapPreViewActivitySeparateProcess" android:process=":browser">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.GoogleApiMapPreviewActivityV2">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.messages.ui.media.WebMapPreViewActivity" android:process=":browser">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.viberout.ui.ViberOutWebViewActivity" android:process=":browser">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.viberout.ui.TermsAndConditionsActivity" android:process=":browser">
+</activity>
+		
+
+		<activity android:launchMode="2" android:name="com.viber.voip.widget.ViberWebViewActivity" android:process=":browser" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:host="viber.com" android:pathPrefix="/howto" android:scheme="http">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F023F" android:name="com.android.camera.CropImage">
+			
+
+			<intent-filter>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+				<action android:name="com.viber.voip.action.CROP">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="true" android:name="com.viber.voip.gsa.GoogleVoiceSearchActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.google.android.voicesearch.SEND_MESSAGE_TO_CONTACTS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="text/plain">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<service android:exported="false" android:name="com.viber.voip.gsa.GoogleVoiceSearchService">
+</service>
+		
+
+		<service android:enabled="true" android:exported="false" android:label="voipService" android:name="com.viber.service.VoipConnectorService" android:process="com.viber.voip">
+</service>
+		
+
+		<receiver android:label=".launcher" android:name="com.viber.service.ServiceAutoLauncher">
+			
+
+			<intent-filter android:label=".sdv">
+				
+
+				<action android:name="android.intent.action.BOOT_COMPLETED">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="false" android:name="com.viber.voip.ViberApplication$KillReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.VIBER_APP_EXIT">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:label=".keepAliveReceiver" android:name="com.viber.service.KeepAliveReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.VIBER_SERVICE_STARTED">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.VIBER_SERVICE_EXIT">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.VIBER_SERVICE_STOP">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.KEEP_ALIVE_RECEIVE">
+</action>
+				
+
+				<action android:name="com.viber.voip.action.VERSION_CHECK">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MEDIA_REMOVED">
+</action>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MEDIA_SHARED">
+</action>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MEDIA_EJECT">
+</action>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="false" android:name="com.viber.voip.process.MainProcessTasksReceiver" android:process="com.viber.voip">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.MainProcessTasks">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<activity android:exported="true" android:launchMode="3" android:name="com.viber.voip.api.ViberUrlHandlerActivity" android:noHistory="true" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="viber.com" android:pathPrefix="/client" android:scheme="http">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="viber">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:name="com.viber.voip.api.InternalActionActivity" android:noHistory="true" android:theme="@7F10008D">
+</activity>
+		
+
+		<receiver android:exported="false" android:name="com.viber.service.DelayedRestartReceiver" android:process=":remote">
+</receiver>
+		
+
+		<receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.google.android.c2dm.intent.RECEIVE">
+</action>
+				
+
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION">
+</action>
+				
+
+				<category android:name="com.viber.voip">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<service android:name="com.viber.voip.GCMIntentService">
+</service>
+		
+
+		<service android:enabled="false" android:exported="false" android:name="com.viber.service.contacts.sync.ContactsSyncAccountService">
+</service>
+		
+
+		<service android:enabled="false" android:exported="true" android:name="com.viber.service.contacts.authentication.AccountAuthenticatorService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.accounts.AccountAuthenticator">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@7F050001">
+</meta-data>
+			
+
+		</service>
+		
+
+		<service android:exported="true" android:name="com.viber.service.contacts.contactbook.AccountContactbookService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.content.SyncAdapter">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.content.SyncAdapter" android:resource="@7F050010">
+</meta-data>
+			
+
+			<meta-data android:name="android.provider.CONTACTS_STRUCTURE" android:resource="@7F050004">
+</meta-data>
+			
+
+		</service>
+		
+
+		<service android:exported="false" android:name="com.viber.voip.api.billing.InAppBillingService">
+</service>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.DontKillMeActivity" android:screenOrientation="1" android:theme="@7F100087" android:windowSoftInputMode="0x00000002">
+</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="3" android:name="org.acra.CrashReportDialog" android:theme="@7F100081">
+</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.messages.extras.twitter.TwitterAuthDialogActivity" android:noHistory="true" android:process=":browser" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.TWITTER_AUTH_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.messages.extras.twitter.TwitterDialogActivity" android:noHistory="true" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.TWITTER_ERROR_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.TWITTER_CHANGE_ACCOUNT_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.TWITTER_GET_TWEET_DIALOG">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.ACTION_TWITTER_AUTH_PREPARING">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.viberout.ui.ViberOutActivity">
+</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:name="com.facebook.LoginActivity" android:process=":browser" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:configChanges="0x00000580" android:exported="false" android:name="com.viber.voip.viberout.ui.ViberOutDialogs" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="2" android:name="com.viber.voip.billing.PurchaseSupportActivity" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:exported="false" android:label="@7F0F0326" android:name="com.viber.voip.messages.ui.media.DoodleActivity" android:theme="@7F100083">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SEND_DOODLE">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.SEND_DOODLE">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x000005A0" android:exported="false" android:label="@7F0F017D" android:name="com.viber.voip.block.BlockListActivity">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.BLOCK_LIST">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.viberout.promotion.ui.VOPromotionScreen" android:noHistory="true" android:screenOrientation="1" android:theme="@7F10008D">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.vo_promotion_free_call">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.vo_promotion_no_free_call">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.vo_promotion_contacts">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.vo_promotion_contact_info">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.vo_promotion_end_of_trial">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:launchMode="3" android:name="com.viber.voip.viberout.promotion.ui.VOGrowPromotionScreen" android:noHistory="true" android:screenOrientation="1" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="3" android:name="com.viber.voip.rakuten.RakutenRegistrationActivity" android:theme="@7F10008D">
+</activity>
+		
+
+		<activity android:exported="false" android:launchMode="3" android:name="com.viber.voip.rakuten.RakutenAccountWebViewActivity" android:process=":browser" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:exported="false" android:icon="@7F0200F9" android:label="@7F0F0147" android:name="com.viber.voip.AddFriendActivity" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:exported="false" android:icon="@7F0200F9" android:label="@7F0F0147" android:name="com.viber.voip.AddFriendPreview" android:theme="@7F10007B">
+</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:label="@7F0F06C1" android:launchMode="2" android:name="com.viber.voip.ViberConnectActivity" android:theme="@7F10007B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.viber.voip.action.CONNECT_VIBER">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:exported="false" android:icon="@7F0200F9" android:label="@7F0F0146" android:name="com.viber.voip.qrcode.ScannerActivity" android:screenOrientation="1" android:theme="@7F100084">
+</activity>
+		
+
+		<activity android:exported="false" android:icon="@7F0200F9" android:label="@7F0F045C" android:name="com.viber.voip.MyQRCodeActivity" android:theme="@7F10007B">
+</activity>
+		
+
+		<uses-library android:name="com.google.android.maps" android:required="false">
+</uses-library>
+		
+
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@7F0F0340">
+</meta-data>
+		
+
+		<activity android:exported="false" android:label="@7F0F01F6" android:launchMode="1" android:name="com.viber.voip.contacts.ui.ContactsComposeCoachActivity" android:screenOrientation="1" android:theme="@7F10008D">
+</activity>
+		
+
+		<receiver android:label="AppRemovedReceiver" android:name="com.viber.jni.apps.AppsSyncController$AppRemovedReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.PACKAGE_REMOVED">
+</action>
+				
+
+				<data android:scheme="package">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<meta-data android:name="com.crashlytics.ApiKey" android:value="aeb7932376ad531330720329d27922aa7f125fa0">
+</meta-data>
+		
+
+		<receiver android:exported="true" android:name="com.viber.service.AdxBroadcastReceiverProxy">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.android.vending.INSTALL_REFERRER">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<meta-data android:name="APP_NAME" android:value="com.viber.voip">
+</meta-data>
+		
+
+		<meta-data android:name="ADX_CLIENT_ID" android:value="vbr560222jdr">
+</meta-data>
+		
+
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F0D0019">
+</meta-data>
+		
+
+		<meta-data android:name="USEHTTPS" android:value="ON">
+</meta-data>
+		
+
+		<meta-data android:name="USEQASERVER" android:value="OFF">
+</meta-data>
+		
+
+		<activity android:label="@7F0F0727" android:name="com.zoobe.sdk.ui.activities.ViberHomeActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0727" android:name="com.zoobe.sdk.ui.activities.ViberSplashActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.zoobe.intent.action.ZOOBE_LAUNCH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:name="com.zoobe.sdk.ui.activities.ViberLikeActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0741" android:name="com.zoobe.sdk.ui.activities.InformationActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F07F7" android:name="com.zoobe.sdk.ui.activities.ShopActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F07EF" android:name="com.zoobe.sdk.ui.activities.BundleDetailActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F07F9" android:name="com.zoobe.sdk.ui.activities.ShopSettingsActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0767" android:name="com.zoobe.sdk.ui.activities.CreatorActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0767" android:name="com.zoobe.sdk.ui.activities.ViberCreatorActivity2" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0728" android:name="com.zoobe.sdk.ui.activities.CropActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0728" android:name="com.zoobe.sdk.ui.activities.CameraActivity" android:process=":zoobesdk" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F076C" android:name="com.zoobe.sdk.ui.activities.PreviewActivity" android:process=":zoobesdk" android:screenOrientation="1" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F076C" android:name="com.zoobe.sdk.ui.activities.PreviewActivityFullscreen" android:process=":zoobesdk" android:screenOrientation="0" android:theme="@7F1000FA">
+</activity>
+		
+
+		<activity android:label="@7F0F0728" android:name="com.zoobe.sdk.ui.activities.WebViewActivity" android:process=":zoobesdk" android:theme="@7F1000FA">
+</activity>
+		
+
+		<service android:label="Network Service" android:name="com.zoobe.sdk.service.NetworkService" android:process=":zoobesdk">
+</service>
+		
+
+		<service android:label="Animation Download Service" android:name="com.zoobe.sdk.sprites.AnimationDownloadService" android:process=":zoobesdk">
+</service>
+		
+
+		<service android:isolatedProcess="false" android:name="com.viber.voip.videoconvert.VideoConverterService" android:process=":videoconvert">
+</service>
+		
+
+		<meta-data android:name="com.google.android.wearable.beta.app" android:resource="@7F050000">
+</meta-data>
+		
+
+	</application>
+	
+
+</manifest>

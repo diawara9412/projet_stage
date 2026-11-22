@@ -1,0 +1,2866 @@
+{
+  "automate_id": "viber_whitelist",
+  "app_name": "viber (whitelist)",
+  "app_version": "whitelist-v1",
+  "platform": "android",
+  "description": "Profil liste blanche comportementale de viber (80 destinations, 98 triplets, DNS infra inclus)",
+  "created_at": "2026-06-20T18:20:44.968592+00:00",
+  "states": [
+    {
+      "id": "INITIAL",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "wl-107.20.183.135-443-tcp",
+      "name": "wl-107.20.183.135-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-107.20.224.36-443-tcp",
+      "name": "wl-107.20.224.36-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-174.129.19.57-443-tcp",
+      "name": "wl-174.129.19.57-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-178.250.2.115-443-tcp",
+      "name": "wl-178.250.2.115-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-184.73.180.62-4244-tcp",
+      "name": "wl-184.73.180.62-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-184.73.191.81-4244-tcp",
+      "name": "wl-184.73.191.81-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-184.73.196.243-443-tcp",
+      "name": "wl-184.73.196.243-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-184.73.196.243-4244-tcp",
+      "name": "wl-184.73.196.243-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-185.45.5.48-443-tcp",
+      "name": "wl-185.45.5.48-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-192.168.1.100-36366-udp",
+      "name": "wl-192.168.1.100-36366-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-193.51.193.146-443-tcp",
+      "name": "wl-193.51.193.146-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-197.29.14.112-33101-udp",
+      "name": "wl-197.29.14.112-33101-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-197.31.196.83-42055-udp",
+      "name": "wl-197.31.196.83-42055-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.113-80-tcp",
+      "name": "wl-2.16.117.113-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.129-80-tcp",
+      "name": "wl-2.16.117.129-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.153-80-tcp",
+      "name": "wl-2.16.117.153-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.160-80-tcp",
+      "name": "wl-2.16.117.160-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.162-80-tcp",
+      "name": "wl-2.16.117.162-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-2.16.117.163-80-tcp",
+      "name": "wl-2.16.117.163-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-216.58.211.106-443-tcp",
+      "name": "wl-216.58.211.106-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-23.201.153.116-80-tcp",
+      "name": "wl-23.201.153.116-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-23.205.101.123-80-tcp",
+      "name": "wl-23.205.101.123-80-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-23.21.156.121-443-tcp",
+      "name": "wl-23.21.156.121-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-23.23.254.42-443-tcp",
+      "name": "wl-23.23.254.42-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-31.13.64.1-443-tcp",
+      "name": "wl-31.13.64.1-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-50.19.105.43-443-tcp",
+      "name": "wl-50.19.105.43-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.112-443-tcp",
+      "name": "wl-54.171.62.112-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.118-7987-udp",
+      "name": "wl-54.171.62.118-7987-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.148-7985-udp",
+      "name": "wl-54.171.62.148-7985-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.160-7989-udp",
+      "name": "wl-54.171.62.160-7989-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.179-7985-udp",
+      "name": "wl-54.171.62.179-7985-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.179-7987-udp",
+      "name": "wl-54.171.62.179-7987-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.179-7988-udp",
+      "name": "wl-54.171.62.179-7988-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.180-443-tcp",
+      "name": "wl-54.171.62.180-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.180-443-udp",
+      "name": "wl-54.171.62.180-443-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.180-7987-tcp",
+      "name": "wl-54.171.62.180-7987-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.180-7987-udp",
+      "name": "wl-54.171.62.180-7987-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.194-443-tcp",
+      "name": "wl-54.171.62.194-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.57-7985-udp",
+      "name": "wl-54.171.62.57-7985-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.57-7994-udp",
+      "name": "wl-54.171.62.57-7994-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.70-7985-udp",
+      "name": "wl-54.171.62.70-7985-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.171.62.76-7988-udp",
+      "name": "wl-54.171.62.76-7988-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.204.45.202-443-tcp",
+      "name": "wl-54.204.45.202-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.221.198.134-443-tcp",
+      "name": "wl-54.221.198.134-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.221.209.225-443-tcp",
+      "name": "wl-54.221.209.225-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.221.149-443-tcp",
+      "name": "wl-54.225.221.149-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.235.202-443-tcp",
+      "name": "wl-54.225.235.202-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.235-443-tcp",
+      "name": "wl-54.225.248.235-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.235-4244-tcp",
+      "name": "wl-54.225.248.235-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.81-4244-tcp",
+      "name": "wl-54.225.248.81-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.87-4244-tcp",
+      "name": "wl-54.225.248.87-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.97-443-tcp",
+      "name": "wl-54.225.248.97-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.248.97-4244-tcp",
+      "name": "wl-54.225.248.97-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.249.104-4244-tcp",
+      "name": "wl-54.225.249.104-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.249.192-443-tcp",
+      "name": "wl-54.225.249.192-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.249.192-4244-tcp",
+      "name": "wl-54.225.249.192-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.131-443-tcp",
+      "name": "wl-54.225.250.131-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.131-4244-tcp",
+      "name": "wl-54.225.250.131-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.170-4244-tcp",
+      "name": "wl-54.225.250.170-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.185-443-tcp",
+      "name": "wl-54.225.250.185-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.185-4244-tcp",
+      "name": "wl-54.225.250.185-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.217-443-tcp",
+      "name": "wl-54.225.250.217-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.217-4244-tcp",
+      "name": "wl-54.225.250.217-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.238-443-tcp",
+      "name": "wl-54.225.250.238-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.250.238-4244-tcp",
+      "name": "wl-54.225.250.238-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.251.147-443-tcp",
+      "name": "wl-54.225.251.147-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.251.147-4244-tcp",
+      "name": "wl-54.225.251.147-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.251.159-443-tcp",
+      "name": "wl-54.225.251.159-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.251.159-4244-tcp",
+      "name": "wl-54.225.251.159-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.225.251.244-4244-tcp",
+      "name": "wl-54.225.251.244-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.0.128-443-tcp",
+      "name": "wl-54.231.0.128-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.0.32-443-tcp",
+      "name": "wl-54.231.0.32-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.1.24-443-tcp",
+      "name": "wl-54.231.1.24-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.10.176-443-tcp",
+      "name": "wl-54.231.10.176-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.13.248-443-tcp",
+      "name": "wl-54.231.13.248-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.14.16-443-tcp",
+      "name": "wl-54.231.14.16-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.15.24-443-tcp",
+      "name": "wl-54.231.15.24-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.16.144-443-tcp",
+      "name": "wl-54.231.16.144-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.18.112-443-tcp",
+      "name": "wl-54.231.18.112-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.2.184-443-tcp",
+      "name": "wl-54.231.2.184-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.32.0-443-tcp",
+      "name": "wl-54.231.32.0-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.32.152-443-tcp",
+      "name": "wl-54.231.32.152-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.33.16-443-tcp",
+      "name": "wl-54.231.33.16-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.34.0-443-tcp",
+      "name": "wl-54.231.34.0-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.34.80-443-tcp",
+      "name": "wl-54.231.34.80-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.64.152-443-tcp",
+      "name": "wl-54.231.64.152-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.66.96-443-tcp",
+      "name": "wl-54.231.66.96-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.8.232-443-tcp",
+      "name": "wl-54.231.8.232-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.9.72-443-tcp",
+      "name": "wl-54.231.9.72-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.231.97.16-443-tcp",
+      "name": "wl-54.231.97.16-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.235.141.30-443-tcp",
+      "name": "wl-54.235.141.30-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.235.247.104-443-tcp",
+      "name": "wl-54.235.247.104-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.235.75.84-443-tcp",
+      "name": "wl-54.235.75.84-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.235.75.84-4244-tcp",
+      "name": "wl-54.235.75.84-4244-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-54.243.37.165-443-tcp",
+      "name": "wl-54.243.37.165-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-74.125.195.95-443-tcp",
+      "name": "wl-74.125.195.95-443-tcp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-1.1.1.1-53-udp",
+      "name": "wl-1.1.1.1-53-udp",
+      "type": "destination"
+    },
+    {
+      "id": "wl-1.1.1.1-53-tcp",
+      "name": "wl-1.1.1.1-53-tcp",
+      "type": "destination"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t001",
+      "from": "INITIAL",
+      "to": "wl-107.20.183.135-443-tcp",
+      "label": "legit → 107.20.183.135:443",
+      "network_call": {
+        "ip": "107.20.183.135",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-107.20.183.135-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t002",
+      "from": "INITIAL",
+      "to": "wl-107.20.224.36-443-tcp",
+      "label": "legit → 107.20.224.36:443",
+      "network_call": {
+        "ip": "107.20.224.36",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-107.20.224.36-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t003",
+      "from": "INITIAL",
+      "to": "wl-174.129.19.57-443-tcp",
+      "label": "legit → 174.129.19.57:443",
+      "network_call": {
+        "ip": "174.129.19.57",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-174.129.19.57-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t004",
+      "from": "INITIAL",
+      "to": "wl-178.250.2.115-443-tcp",
+      "label": "legit → 178.250.2.115:443",
+      "network_call": {
+        "ip": "178.250.2.115",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-178.250.2.115-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t005",
+      "from": "INITIAL",
+      "to": "wl-184.73.180.62-4244-tcp",
+      "label": "legit → 184.73.180.62:4244",
+      "network_call": {
+        "ip": "184.73.180.62",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-184.73.180.62-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t006",
+      "from": "INITIAL",
+      "to": "wl-184.73.191.81-4244-tcp",
+      "label": "legit → 184.73.191.81:4244",
+      "network_call": {
+        "ip": "184.73.191.81",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-184.73.191.81-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t007",
+      "from": "INITIAL",
+      "to": "wl-184.73.196.243-443-tcp",
+      "label": "legit → 184.73.196.243:443",
+      "network_call": {
+        "ip": "184.73.196.243",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-184.73.196.243-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t008",
+      "from": "INITIAL",
+      "to": "wl-184.73.196.243-4244-tcp",
+      "label": "legit → 184.73.196.243:4244",
+      "network_call": {
+        "ip": "184.73.196.243",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-184.73.196.243-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t009",
+      "from": "INITIAL",
+      "to": "wl-185.45.5.48-443-tcp",
+      "label": "legit → 185.45.5.48:443",
+      "network_call": {
+        "ip": "185.45.5.48",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-185.45.5.48-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t010",
+      "from": "INITIAL",
+      "to": "wl-192.168.1.100-36366-udp",
+      "label": "legit → 192.168.1.100:36366",
+      "network_call": {
+        "ip": "192.168.1.100",
+        "port": 36366,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-192.168.1.100-36366-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t011",
+      "from": "INITIAL",
+      "to": "wl-193.51.193.146-443-tcp",
+      "label": "legit → 193.51.193.146:443",
+      "network_call": {
+        "ip": "193.51.193.146",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-193.51.193.146-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t012",
+      "from": "INITIAL",
+      "to": "wl-197.29.14.112-33101-udp",
+      "label": "legit → 197.29.14.112:33101",
+      "network_call": {
+        "ip": "197.29.14.112",
+        "port": 33101,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-197.29.14.112-33101-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t013",
+      "from": "INITIAL",
+      "to": "wl-197.31.196.83-42055-udp",
+      "label": "legit → 197.31.196.83:42055",
+      "network_call": {
+        "ip": "197.31.196.83",
+        "port": 42055,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-197.31.196.83-42055-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t014",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.113-80-tcp",
+      "label": "legit → 2.16.117.113:80",
+      "network_call": {
+        "ip": "2.16.117.113",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.113-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t015",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.129-80-tcp",
+      "label": "legit → 2.16.117.129:80",
+      "network_call": {
+        "ip": "2.16.117.129",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.129-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t016",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.153-80-tcp",
+      "label": "legit → 2.16.117.153:80",
+      "network_call": {
+        "ip": "2.16.117.153",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.153-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t017",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.160-80-tcp",
+      "label": "legit → 2.16.117.160:80",
+      "network_call": {
+        "ip": "2.16.117.160",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.160-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t018",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.162-80-tcp",
+      "label": "legit → 2.16.117.162:80",
+      "network_call": {
+        "ip": "2.16.117.162",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.162-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t019",
+      "from": "INITIAL",
+      "to": "wl-2.16.117.163-80-tcp",
+      "label": "legit → 2.16.117.163:80",
+      "network_call": {
+        "ip": "2.16.117.163",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-2.16.117.163-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t020",
+      "from": "INITIAL",
+      "to": "wl-216.58.211.106-443-tcp",
+      "label": "legit → 216.58.211.106:443",
+      "network_call": {
+        "ip": "216.58.211.106",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-216.58.211.106-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t021",
+      "from": "INITIAL",
+      "to": "wl-23.201.153.116-80-tcp",
+      "label": "legit → 23.201.153.116:80",
+      "network_call": {
+        "ip": "23.201.153.116",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-23.201.153.116-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t022",
+      "from": "INITIAL",
+      "to": "wl-23.205.101.123-80-tcp",
+      "label": "legit → 23.205.101.123:80",
+      "network_call": {
+        "ip": "23.205.101.123",
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-23.205.101.123-80-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t023",
+      "from": "INITIAL",
+      "to": "wl-23.21.156.121-443-tcp",
+      "label": "legit → 23.21.156.121:443",
+      "network_call": {
+        "ip": "23.21.156.121",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-23.21.156.121-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t024",
+      "from": "INITIAL",
+      "to": "wl-23.23.254.42-443-tcp",
+      "label": "legit → 23.23.254.42:443",
+      "network_call": {
+        "ip": "23.23.254.42",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-23.23.254.42-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t025",
+      "from": "INITIAL",
+      "to": "wl-31.13.64.1-443-tcp",
+      "label": "legit → 31.13.64.1:443",
+      "network_call": {
+        "ip": "31.13.64.1",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-31.13.64.1-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t026",
+      "from": "INITIAL",
+      "to": "wl-50.19.105.43-443-tcp",
+      "label": "legit → 50.19.105.43:443",
+      "network_call": {
+        "ip": "50.19.105.43",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-50.19.105.43-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t027",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.112-443-tcp",
+      "label": "legit → 54.171.62.112:443",
+      "network_call": {
+        "ip": "54.171.62.112",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.171.62.112-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t028",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.118-7987-udp",
+      "label": "legit → 54.171.62.118:7987",
+      "network_call": {
+        "ip": "54.171.62.118",
+        "port": 7987,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.118-7987-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t029",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.148-7985-udp",
+      "label": "legit → 54.171.62.148:7985",
+      "network_call": {
+        "ip": "54.171.62.148",
+        "port": 7985,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.148-7985-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t030",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.160-7989-udp",
+      "label": "legit → 54.171.62.160:7989",
+      "network_call": {
+        "ip": "54.171.62.160",
+        "port": 7989,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.160-7989-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t031",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.179-7985-udp",
+      "label": "legit → 54.171.62.179:7985",
+      "network_call": {
+        "ip": "54.171.62.179",
+        "port": 7985,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.179-7985-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t032",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.179-7987-udp",
+      "label": "legit → 54.171.62.179:7987",
+      "network_call": {
+        "ip": "54.171.62.179",
+        "port": 7987,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.179-7987-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t033",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.179-7988-udp",
+      "label": "legit → 54.171.62.179:7988",
+      "network_call": {
+        "ip": "54.171.62.179",
+        "port": 7988,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.179-7988-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t034",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.180-443-tcp",
+      "label": "legit → 54.171.62.180:443",
+      "network_call": {
+        "ip": "54.171.62.180",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.171.62.180-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t035",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.180-443-udp",
+      "label": "legit → 54.171.62.180:443",
+      "network_call": {
+        "ip": "54.171.62.180",
+        "port": 443,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.180-443-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t036",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.180-7987-tcp",
+      "label": "legit → 54.171.62.180:7987",
+      "network_call": {
+        "ip": "54.171.62.180",
+        "port": 7987,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.171.62.180-7987-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t037",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.180-7987-udp",
+      "label": "legit → 54.171.62.180:7987",
+      "network_call": {
+        "ip": "54.171.62.180",
+        "port": 7987,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.180-7987-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t038",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.194-443-tcp",
+      "label": "legit → 54.171.62.194:443",
+      "network_call": {
+        "ip": "54.171.62.194",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.171.62.194-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t039",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.57-7985-udp",
+      "label": "legit → 54.171.62.57:7985",
+      "network_call": {
+        "ip": "54.171.62.57",
+        "port": 7985,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.57-7985-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t040",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.57-7994-udp",
+      "label": "legit → 54.171.62.57:7994",
+      "network_call": {
+        "ip": "54.171.62.57",
+        "port": 7994,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.57-7994-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t041",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.70-7985-udp",
+      "label": "legit → 54.171.62.70:7985",
+      "network_call": {
+        "ip": "54.171.62.70",
+        "port": 7985,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.70-7985-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t042",
+      "from": "INITIAL",
+      "to": "wl-54.171.62.76-7988-udp",
+      "label": "legit → 54.171.62.76:7988",
+      "network_call": {
+        "ip": "54.171.62.76",
+        "port": 7988,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-54.171.62.76-7988-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t043",
+      "from": "INITIAL",
+      "to": "wl-54.204.45.202-443-tcp",
+      "label": "legit → 54.204.45.202:443",
+      "network_call": {
+        "ip": "54.204.45.202",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.204.45.202-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t044",
+      "from": "INITIAL",
+      "to": "wl-54.221.198.134-443-tcp",
+      "label": "legit → 54.221.198.134:443",
+      "network_call": {
+        "ip": "54.221.198.134",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.221.198.134-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t045",
+      "from": "INITIAL",
+      "to": "wl-54.221.209.225-443-tcp",
+      "label": "legit → 54.221.209.225:443",
+      "network_call": {
+        "ip": "54.221.209.225",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.221.209.225-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t046",
+      "from": "INITIAL",
+      "to": "wl-54.225.221.149-443-tcp",
+      "label": "legit → 54.225.221.149:443",
+      "network_call": {
+        "ip": "54.225.221.149",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.221.149-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t047",
+      "from": "INITIAL",
+      "to": "wl-54.225.235.202-443-tcp",
+      "label": "legit → 54.225.235.202:443",
+      "network_call": {
+        "ip": "54.225.235.202",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.235.202-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t048",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.235-443-tcp",
+      "label": "legit → 54.225.248.235:443",
+      "network_call": {
+        "ip": "54.225.248.235",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.235-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t049",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.235-4244-tcp",
+      "label": "legit → 54.225.248.235:4244",
+      "network_call": {
+        "ip": "54.225.248.235",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.235-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t050",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.81-4244-tcp",
+      "label": "legit → 54.225.248.81:4244",
+      "network_call": {
+        "ip": "54.225.248.81",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.81-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t051",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.87-4244-tcp",
+      "label": "legit → 54.225.248.87:4244",
+      "network_call": {
+        "ip": "54.225.248.87",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.87-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t052",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.97-443-tcp",
+      "label": "legit → 54.225.248.97:443",
+      "network_call": {
+        "ip": "54.225.248.97",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.97-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t053",
+      "from": "INITIAL",
+      "to": "wl-54.225.248.97-4244-tcp",
+      "label": "legit → 54.225.248.97:4244",
+      "network_call": {
+        "ip": "54.225.248.97",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.248.97-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t054",
+      "from": "INITIAL",
+      "to": "wl-54.225.249.104-4244-tcp",
+      "label": "legit → 54.225.249.104:4244",
+      "network_call": {
+        "ip": "54.225.249.104",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.249.104-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t055",
+      "from": "INITIAL",
+      "to": "wl-54.225.249.192-443-tcp",
+      "label": "legit → 54.225.249.192:443",
+      "network_call": {
+        "ip": "54.225.249.192",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.249.192-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t056",
+      "from": "INITIAL",
+      "to": "wl-54.225.249.192-4244-tcp",
+      "label": "legit → 54.225.249.192:4244",
+      "network_call": {
+        "ip": "54.225.249.192",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.249.192-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t057",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.131-443-tcp",
+      "label": "legit → 54.225.250.131:443",
+      "network_call": {
+        "ip": "54.225.250.131",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.131-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t058",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.131-4244-tcp",
+      "label": "legit → 54.225.250.131:4244",
+      "network_call": {
+        "ip": "54.225.250.131",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.131-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t059",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.170-4244-tcp",
+      "label": "legit → 54.225.250.170:4244",
+      "network_call": {
+        "ip": "54.225.250.170",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.170-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t060",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.185-443-tcp",
+      "label": "legit → 54.225.250.185:443",
+      "network_call": {
+        "ip": "54.225.250.185",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.185-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t061",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.185-4244-tcp",
+      "label": "legit → 54.225.250.185:4244",
+      "network_call": {
+        "ip": "54.225.250.185",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.185-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t062",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.217-443-tcp",
+      "label": "legit → 54.225.250.217:443",
+      "network_call": {
+        "ip": "54.225.250.217",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.217-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t063",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.217-4244-tcp",
+      "label": "legit → 54.225.250.217:4244",
+      "network_call": {
+        "ip": "54.225.250.217",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.217-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t064",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.238-443-tcp",
+      "label": "legit → 54.225.250.238:443",
+      "network_call": {
+        "ip": "54.225.250.238",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.238-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t065",
+      "from": "INITIAL",
+      "to": "wl-54.225.250.238-4244-tcp",
+      "label": "legit → 54.225.250.238:4244",
+      "network_call": {
+        "ip": "54.225.250.238",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.250.238-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t066",
+      "from": "INITIAL",
+      "to": "wl-54.225.251.147-443-tcp",
+      "label": "legit → 54.225.251.147:443",
+      "network_call": {
+        "ip": "54.225.251.147",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.251.147-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t067",
+      "from": "INITIAL",
+      "to": "wl-54.225.251.147-4244-tcp",
+      "label": "legit → 54.225.251.147:4244",
+      "network_call": {
+        "ip": "54.225.251.147",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.251.147-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t068",
+      "from": "INITIAL",
+      "to": "wl-54.225.251.159-443-tcp",
+      "label": "legit → 54.225.251.159:443",
+      "network_call": {
+        "ip": "54.225.251.159",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.251.159-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t069",
+      "from": "INITIAL",
+      "to": "wl-54.225.251.159-4244-tcp",
+      "label": "legit → 54.225.251.159:4244",
+      "network_call": {
+        "ip": "54.225.251.159",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.251.159-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t070",
+      "from": "INITIAL",
+      "to": "wl-54.225.251.244-4244-tcp",
+      "label": "legit → 54.225.251.244:4244",
+      "network_call": {
+        "ip": "54.225.251.244",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.225.251.244-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t071",
+      "from": "INITIAL",
+      "to": "wl-54.231.0.128-443-tcp",
+      "label": "legit → 54.231.0.128:443",
+      "network_call": {
+        "ip": "54.231.0.128",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.0.128-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t072",
+      "from": "INITIAL",
+      "to": "wl-54.231.0.32-443-tcp",
+      "label": "legit → 54.231.0.32:443",
+      "network_call": {
+        "ip": "54.231.0.32",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.0.32-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t073",
+      "from": "INITIAL",
+      "to": "wl-54.231.1.24-443-tcp",
+      "label": "legit → 54.231.1.24:443",
+      "network_call": {
+        "ip": "54.231.1.24",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.1.24-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t074",
+      "from": "INITIAL",
+      "to": "wl-54.231.10.176-443-tcp",
+      "label": "legit → 54.231.10.176:443",
+      "network_call": {
+        "ip": "54.231.10.176",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.10.176-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t075",
+      "from": "INITIAL",
+      "to": "wl-54.231.13.248-443-tcp",
+      "label": "legit → 54.231.13.248:443",
+      "network_call": {
+        "ip": "54.231.13.248",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.13.248-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t076",
+      "from": "INITIAL",
+      "to": "wl-54.231.14.16-443-tcp",
+      "label": "legit → 54.231.14.16:443",
+      "network_call": {
+        "ip": "54.231.14.16",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.14.16-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t077",
+      "from": "INITIAL",
+      "to": "wl-54.231.15.24-443-tcp",
+      "label": "legit → 54.231.15.24:443",
+      "network_call": {
+        "ip": "54.231.15.24",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.15.24-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t078",
+      "from": "INITIAL",
+      "to": "wl-54.231.16.144-443-tcp",
+      "label": "legit → 54.231.16.144:443",
+      "network_call": {
+        "ip": "54.231.16.144",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.16.144-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t079",
+      "from": "INITIAL",
+      "to": "wl-54.231.18.112-443-tcp",
+      "label": "legit → 54.231.18.112:443",
+      "network_call": {
+        "ip": "54.231.18.112",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.18.112-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t080",
+      "from": "INITIAL",
+      "to": "wl-54.231.2.184-443-tcp",
+      "label": "legit → 54.231.2.184:443",
+      "network_call": {
+        "ip": "54.231.2.184",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.2.184-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t081",
+      "from": "INITIAL",
+      "to": "wl-54.231.32.0-443-tcp",
+      "label": "legit → 54.231.32.0:443",
+      "network_call": {
+        "ip": "54.231.32.0",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.32.0-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t082",
+      "from": "INITIAL",
+      "to": "wl-54.231.32.152-443-tcp",
+      "label": "legit → 54.231.32.152:443",
+      "network_call": {
+        "ip": "54.231.32.152",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.32.152-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t083",
+      "from": "INITIAL",
+      "to": "wl-54.231.33.16-443-tcp",
+      "label": "legit → 54.231.33.16:443",
+      "network_call": {
+        "ip": "54.231.33.16",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.33.16-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t084",
+      "from": "INITIAL",
+      "to": "wl-54.231.34.0-443-tcp",
+      "label": "legit → 54.231.34.0:443",
+      "network_call": {
+        "ip": "54.231.34.0",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.34.0-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t085",
+      "from": "INITIAL",
+      "to": "wl-54.231.34.80-443-tcp",
+      "label": "legit → 54.231.34.80:443",
+      "network_call": {
+        "ip": "54.231.34.80",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.34.80-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t086",
+      "from": "INITIAL",
+      "to": "wl-54.231.64.152-443-tcp",
+      "label": "legit → 54.231.64.152:443",
+      "network_call": {
+        "ip": "54.231.64.152",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.64.152-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t087",
+      "from": "INITIAL",
+      "to": "wl-54.231.66.96-443-tcp",
+      "label": "legit → 54.231.66.96:443",
+      "network_call": {
+        "ip": "54.231.66.96",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.66.96-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t088",
+      "from": "INITIAL",
+      "to": "wl-54.231.8.232-443-tcp",
+      "label": "legit → 54.231.8.232:443",
+      "network_call": {
+        "ip": "54.231.8.232",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.8.232-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t089",
+      "from": "INITIAL",
+      "to": "wl-54.231.9.72-443-tcp",
+      "label": "legit → 54.231.9.72:443",
+      "network_call": {
+        "ip": "54.231.9.72",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.9.72-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t090",
+      "from": "INITIAL",
+      "to": "wl-54.231.97.16-443-tcp",
+      "label": "legit → 54.231.97.16:443",
+      "network_call": {
+        "ip": "54.231.97.16",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.231.97.16-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t091",
+      "from": "INITIAL",
+      "to": "wl-54.235.141.30-443-tcp",
+      "label": "legit → 54.235.141.30:443",
+      "network_call": {
+        "ip": "54.235.141.30",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.235.141.30-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t092",
+      "from": "INITIAL",
+      "to": "wl-54.235.247.104-443-tcp",
+      "label": "legit → 54.235.247.104:443",
+      "network_call": {
+        "ip": "54.235.247.104",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.235.247.104-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t093",
+      "from": "INITIAL",
+      "to": "wl-54.235.75.84-443-tcp",
+      "label": "legit → 54.235.75.84:443",
+      "network_call": {
+        "ip": "54.235.75.84",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.235.75.84-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t094",
+      "from": "INITIAL",
+      "to": "wl-54.235.75.84-4244-tcp",
+      "label": "legit → 54.235.75.84:4244",
+      "network_call": {
+        "ip": "54.235.75.84",
+        "port": 4244,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.235.75.84-4244-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t095",
+      "from": "INITIAL",
+      "to": "wl-54.243.37.165-443-tcp",
+      "label": "legit → 54.243.37.165:443",
+      "network_call": {
+        "ip": "54.243.37.165",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-54.243.37.165-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t096",
+      "from": "INITIAL",
+      "to": "wl-74.125.195.95-443-tcp",
+      "label": "legit → 74.125.195.95:443",
+      "network_call": {
+        "ip": "74.125.195.95",
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-74.125.195.95-443-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t097",
+      "from": "INITIAL",
+      "to": "wl-1.1.1.1-53-udp",
+      "label": "legit → 1.1.1.1:53",
+      "network_call": {
+        "ip": "1.1.1.1",
+        "port": 53,
+        "protocol": "UDP"
+      },
+      "service": {
+        "name": "wl-1.1.1.1-53-udp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t098",
+      "from": "INITIAL",
+      "to": "wl-1.1.1.1-53-tcp",
+      "label": "legit → 1.1.1.1:53",
+      "network_call": {
+        "ip": "1.1.1.1",
+        "port": 53,
+        "protocol": "TCP"
+      },
+      "service": {
+        "name": "wl-1.1.1.1-53-tcp",
+        "type": "whitelist",
+        "reputation": "trusted"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "liste blanche comportementale — destination légitime"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "source": "whitelist (csv → destinations légitimes, sans catégorie/ASN)",
+    "model": "behavioral_whitelist",
+    "with_dns": true,
+    "n_destinations": 80,
+    "n_triplets": 98
+  }
+}

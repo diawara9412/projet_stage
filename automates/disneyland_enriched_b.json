@@ -1,0 +1,231 @@
+{
+  "automate_id": "disneyland",
+  "app_name": "disneyland",
+  "app_version": "architecture-b-v1",
+  "platform": "android",
+  "description": "Automate enrichi par l'ARCHITECTURE (Analyzer-B bind_tools) (disneyland)",
+  "created_at": "2026-06-17T20:16:02.122815+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "443",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "2",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "INITIAL",
+      "to": "Disney Worldwide Services, Inc.",
+      "label": "monitored → Disney Worldwide Services, Inc.",
+      "network_call": {
+        "ip": "139.104.188.5",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Disney Worldwide Services, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS8137",
+        "asn_org": "Disney Worldwide Services, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.996; bytes=12659; ports=1; flux=8; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 8,
+        "avg_size": 12.38,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t01"
+    },
+    {
+      "from": "INITIAL",
+      "to": "DISNEY-CBLK",
+      "label": "monitored → DISNEY-CBLK",
+      "network_call": {
+        "ip": "199.181.132.196",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "DISNEY-CBLK",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "DISNEY-CBLK"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.996; bytes=21250; ports=1; flux=13; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 13,
+        "avg_size": 12.77,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t02"
+    },
+    {
+      "from": "INITIAL",
+      "to": "DISNEY-CBLK",
+      "label": "monitored → DISNEY-CBLK",
+      "network_call": {
+        "ip": "199.181.133.222",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "DISNEY-CBLK",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "DISNEY-CBLK"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.996; bytes=20152; ports=1; flux=13; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 13,
+        "avg_size": 12.08,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t03"
+    },
+    {
+      "from": "INITIAL",
+      "to": "DISNEYONLINE-NETBLK-3",
+      "label": "monitored → DISNEYONLINE-NETBLK-3",
+      "network_call": {
+        "ip": "68.71.208.70",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "DISNEYONLINE-NETBLK-3",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "DISNEYONLINE-NETBLK-3"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.996; bytes=84872; ports=1; flux=34; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 34,
+        "avg_size": 17.32,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t04"
+    },
+    {
+      "from": "INITIAL",
+      "to": "DISNEYONLINE-NETBLK-3",
+      "label": "monitored → DISNEYONLINE-NETBLK-3",
+      "network_call": {
+        "ip": "68.71.213.170",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "DISNEYONLINE-NETBLK-3",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "DISNEYONLINE-NETBLK-3"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.996; bytes=52792; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 46.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t05"
+    }
+  ],
+  "metadata": {
+    "source": "architecture (analyzer-b bind_tools + classifier tools)",
+    "analyzer_b_source": "llm",
+    "dot_label_type": "PORT",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "rdap_enabled": true,
+    "bgp_enabled": false,
+    "category_counts": {
+      "monitored": 5
+    },
+    "coverage": {
+      "total": 5,
+      "classified": 5,
+      "ratio": 1.0,
+      "missed": []
+    },
+    "architecture_summary": "L'application Disneyland présente un comportement réseau avec des destinations classées comme \"monitored\" avec un score de 2, indiquant une activité de surveillance potentielle. Les destinations sont principalement associées à des adresses IP appartenant à Disney Worldwide Services, Inc. et à des organisations liées à Disney. Les protocoles utilisés sont principalement TCP sur le port 443, ce qui suggère une communication sécurisée via HTTPS. Le niveau de défense recommandé est FW+IDS(LOW), indiquant une protection de pare-feu et de détection d'intrusion de niveau bas. Il est important de noter que ces résultats doivent être interprétés avec prudence et que des investigations supplémentaires pourraient être nécessaires pour déterminer la nature exacte de ces activités de surveillance.",
+    "thresholds": {
+      "attack_limit": 0.8,
+      "port_scan_limit": 10,
+      "tau_dos": 1000000
+    }
+  }
+}

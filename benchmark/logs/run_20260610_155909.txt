@@ -1,0 +1,23 @@
+Détail des erreurs LLM AVANT correction — 20260610_155909
+======================================================================
+
+=== archi 2 | malware_app | run 1 | total_avant_corr=5 | attempts(max)=1 ===
+  [firewall][redundancies] DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).
+  [firewall][redundancies] DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP).
+  [ids][redundancies] DOUBLON : IDS-005 est identique à IDS-002 (suspicious_url sur 198.98.54.218).
+
+=== archi 2 | malware_app | run 2 | total_avant_corr=4 | attempts(max)=1 ===
+  [firewall][redundancies] DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).
+  [firewall][redundancies] DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP).
+
+=== archi 2 | malware_app | run 3 | total_avant_corr=5 | attempts(max)=1 ===
+  [firewall][redundancies] DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).
+  [firewall][redundancies] DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).
+  [firewall][redundancies] DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP).
+  [ids][redundancies] DOUBLON : IDS-005 est identique à IDS-002 (suspicious_url sur 198.98.54.218).
+

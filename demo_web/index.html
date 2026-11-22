@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Génération de chaîne de sécurité — temps réel</title>
+<style>
+:root{
+  --bg0:#0a1424; --bg1:#0f2136; --panel:#132840; --panel2:#0e1f33; --line:#22405e;
+  --cyan:#54c6ea; --cyan-d:#2f8fc0; --ink:#eaf2fb; --mute:#8ea6c0; --faint:#5f7794;
+  --llm:#54c6ea; --det:#8ea6c0;
+  --green:#59c98d; --amber:#e6b955; --red:#e8776a;
+  --mono:ui-monospace,"JetBrains Mono","DejaVu Sans Mono",Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);
+  background:radial-gradient(1200px 700px at 20% -10%,#16324e 0%,var(--bg0) 55%) fixed;}
+.wrap{max-width:1280px;margin:0 auto;padding:18px 22px 60px}
+
+/* top bar */
+.top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+h1{font-size:21px;margin:2px 0 0;letter-spacing:-.01em}
+.spacer{flex:1}
+.ctrl{display:flex;align-items:center;gap:10px}
+select,button{font-family:inherit;font-size:14px;border-radius:10px;border:1px solid var(--line);
+  background:var(--panel);color:var(--ink);padding:9px 12px}
+button.go{background:linear-gradient(180deg,var(--cyan),var(--cyan-d));border:none;color:#04202e;
+  font-weight:700;cursor:pointer;padding:10px 18px;box-shadow:0 6px 18px rgba(84,198,234,.25)}
+button.go:hover{filter:brightness(1.06)} button.go:disabled{opacity:.5;cursor:not-allowed;filter:none}
+.status{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--mute)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--faint)}
+.dot.run{background:var(--cyan);animation:blink 1s infinite}
+.dot.ok{background:var(--green)} .dot.err{background:var(--red)}
+@keyframes blink{50%{opacity:.35}}
+
+.grid{display:grid;grid-template-columns:1.65fr 1fr;gap:18px;align-items:start}
+@media(max-width:940px){.grid{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:16px;padding:16px 18px}
+.card h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+  margin:0 0 12px;font-family:var(--mono)}
+
+/* superviseur + bus + agents */
+.sup{display:flex;flex-direction:column;align-items:center;text-align:center;margin:2px auto 0;max-width:360px}
+.crown{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;
+  background:rgba(142,166,192,.14);border:1px solid var(--line);color:#cfe0f0}
+.sup .nm{font-weight:700;margin-top:8px}
+.sup .rl{font-size:11.5px;color:var(--mute);margin-top:2px;min-height:1.1em}
+.sup.act .crown{border-color:var(--det);box-shadow:0 0 0 3px rgba(142,166,192,.18)}
+.bus{height:2px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
+  margin:16px 0 0;border-radius:2px}
+.agents{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:0}
+.col{display:flex;flex-direction:column;align-items:center}
+.drop{width:2px;height:22px;background:var(--line);position:relative;overflow:hidden;border-radius:2px}
+.col.active .drop{background:var(--cyan)}
+.col.active .drop::after{content:"";position:absolute;left:-1px;top:-12px;width:4px;height:12px;border-radius:4px;
+  background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:flow .7s linear infinite}
+@keyframes flow{to{top:24px}}
+.agent{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:12px 10px;text-align:center;
+  transition:border-color .2s,box-shadow .2s,transform .2s;position:relative}
+.agent .ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;margin:0 auto 7px;
+  font-size:17px;background:rgba(142,166,192,.12);color:var(--det)}
+.agent.llm .ic{background:rgba(84,198,234,.14);color:var(--cyan)}
+.agent .an{font-size:12.5px;font-weight:700;line-height:1.15}
+.agent .tag{font-size:9.5px;font-family:var(--mono);color:var(--faint);margin-top:2px}
+.agent.llm .tag{color:var(--cyan)}
+.agent .out{font-size:10.5px;color:var(--mute);margin-top:6px;min-height:2.4em;line-height:1.3}
+.agent .st{position:absolute;top:8px;right:9px;font-size:12px;color:var(--faint)}
+.agent.active{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(84,198,234,.15),0 8px 26px rgba(84,198,234,.12);
+  transform:translateY(-2px);animation:pulse 1.5s ease-in-out infinite}
+.agent.done{border-color:color-mix(in srgb,var(--green) 45%,var(--line))}
+.agent.done .st{color:var(--green)}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(84,198,234,.10),0 8px 26px rgba(84,198,234,.18)}}
+
+/* chips */
+.sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:16px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--mono);font-size:12px;font-weight:600;padding:6px 10px;border-radius:9px;border:1px solid var(--line);
+  background:var(--panel2);display:flex;align-items:center;gap:7px;animation:pop .3s ease both}
+.chip .k{font-size:9px;color:var(--faint);text-transform:uppercase}
+.chip.allow{border-color:color-mix(in srgb,var(--green) 45%,var(--line))}
+.chip.insp{border-color:color-mix(in srgb,var(--amber) 50%,var(--line))}
+.act{font-family:var(--mono);font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;color:#04202e}
+.act.allow{background:var(--green)} .act.insp{background:var(--amber)}
+.deny{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--red);
+  border:1px solid color-mix(in srgb,var(--red) 35%,var(--line));background:rgba(232,119,106,.08);
+  border-radius:9px;padding:7px 10px;display:inline-block}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* rare / openflow */
+.rare{font-family:var(--mono);font-size:12px;color:var(--ink);background:rgba(232,119,106,.07);
+  border:1px solid color-mix(in srgb,var(--red) 25%,var(--line));border-radius:8px;padding:6px 10px;margin:5px 0;animation:pop .3s both}
+.of{font-family:var(--mono);font-size:12px;background:#081625;border:1px solid var(--line);border-radius:10px;
+  padding:12px 14px;white-space:pre;overflow-x:auto;color:#cfe0f0;line-height:1.6}
+.of b.a{color:var(--green)} .of b.i{color:var(--amber)} .of b.d{color:var(--red)}
+.mrow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.metric{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;text-align:center}
+.metric .v{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--cyan)}
+.metric .l{font-size:11px;color:var(--mute);margin-top:2px}
+
+/* right column */
+.slots{display:flex;flex-direction:column;gap:8px}
+.slot{display:flex;align-items:center;gap:9px;border:1px dashed var(--line);border-radius:10px;padding:9px 11px;
+  font-size:12.5px;color:var(--faint);transition:.25s}
+.slot .tk{opacity:0;color:var(--green);font-weight:700;transition:.25s}
+.slot.on{border-style:solid;border-color:color-mix(in srgb,var(--green) 40%,var(--line));
+  background:rgba(89,201,141,.07);color:var(--ink)}
+.slot.on .tk{opacity:1}
+.slot .kk{font-family:var(--mono);font-size:11px}
+.log{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow:auto;margin-top:2px}
+.line{font-size:12px;color:var(--mute);border-left:2px solid var(--line);padding:3px 0 3px 10px;animation:pop .25s both}
+.line b{color:var(--cyan)}
+.verdict{margin-top:12px;font-size:13px;display:none}
+.ring{--p:0;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--green) calc(var(--p)*1%),var(--panel2) 0)}
+.ring b{width:56px;height:56px;border-radius:50%;background:var(--panel);display:grid;place-items:center;
+  font-family:var(--mono);font-weight:700;color:var(--green)}
+.foot{margin-top:18px;color:var(--faint);font-size:11.5px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="brand">// LangGraph · agents LLM · temps réel</div>
+      <h1>Génération d'une chaîne de sécurité</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="ctrl">
+      <select id="app"><option value="viber">viber</option><option value="ratp">ratp</option>
+        <option value="lequipe">lequipe</option><option value="pokemongo">pokemongo</option></select>
+      <select id="model">
+        <option value="openai/gpt-oss-120b">gpt-oss-120b</option>
+        <option value="llama-3.3-70b-versatile">llama-3.3-70b</option>
+        <option value="openai/gpt-oss-20b">gpt-oss-20b</option>
+      </select>
+      <button class="go" id="go">▶ Générer</button>
+      <span class="status"><span class="dot" id="dot"></span><span id="stat">prêt</span></span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <!-- pipeline -->
+      <div class="card">
+        <h2>Plan intelligent — le superviseur coordonne les agents</h2>
+        <div class="sup" id="sup">
+          <div class="crown">♛</div>
+          <div class="nm">AgentSuperviseur</div>
+          <div class="rl" id="suprl">consulte l'état partagé · route vers l'agent manquant</div>
+        </div>
+        <div class="bus"></div>
+        <div class="agents" id="agents"></div>
+      </div>
+
+      <!-- chaine produite -->
+      <div class="card" style="margin-top:16px">
+        <h2>La chaîne produite</h2>
+        <div id="chainempty" style="color:var(--faint);font-size:13px">En attente de la génération…</div>
+        <div id="chain"></div>
+      </div>
+
+      <!-- openflow -->
+      <div class="card" id="ofcard" style="margin-top:16px;display:none">
+        <h2>Traduction en OpenFlow (ce que le contrôleur installe)</h2>
+        <div class="of" id="of"></div>
+        <div class="mrow" id="ofm"></div>
+      </div>
+    </div>
+
+    <!-- right -->
+    <div>
+      <div class="card">
+        <h2>État partagé (mémoire LangGraph)</h2>
+        <div class="slots" id="slots"></div>
+        <div class="verdict" id="verdict"></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h2>Journal du superviseur</h2>
+        <div class="log" id="log"><div class="line" style="border:none;color:var(--faint)">Clique « Générer » pour lancer les agents.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">Exécution réelle du graphe (Groq) · chaque étape est streamée en direct depuis le backend Python.</div>
+</div>
+
+<script>
+const AGENTS=[
+ {id:"analyzer",name:"AgentAnalyseur",tag:"déterministe",ic:"🔎",llm:false},
+ {id:"firewall",name:"AgentParefeu",tag:"LLM",ic:"🛡",llm:true},
+ {id:"ids",name:"AgentIDS",tag:"LLM",ic:"📡",llm:true},
+ {id:"verifier",name:"AgentVérificateur",tag:"déterministe",ic:"✓",llm:false},
+ {id:"deployer",name:"AgentDéployeur",tag:"déterministe",ic:"⇪",llm:false},
+];
+const SLOTS=[["analyzer","profil"],["firewall","décision pare-feu"],["ids","signatures IDS"],
+            ["verifier","vérification"],["deployer","déploiement"]];
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+
+// build agents
+const agc=$("#agents");
+AGENTS.forEach(a=>{
+  const col=el("div","col");col.dataset.agent=a.id;
+  col.innerHTML=`<div class="drop"></div>
+    <div class="agent ${a.llm?'llm':''}" id="ag-${a.id}">
+      <div class="st">○</div><div class="ic">${a.ic}</div>
+      <div class="an">${a.name}</div><div class="tag">${a.tag}</div>
+      <div class="out" id="out-${a.id}"></div>
+    </div>`;
+  agc.appendChild(col);
+});
+const slc=$("#slots");
+SLOTS.forEach(([id,lbl])=>slc.appendChild(el("div","slot","<span class='tk'>✓</span><span class='kk'>"+lbl+"</span>")));
+
+function reset(){
+  AGENTS.forEach(a=>{const ag=$("#ag-"+a.id);ag.classList.remove("active","done");
+    $("#ag-"+a.id+" .st").textContent="○";$("#out-"+a.id).textContent="";
+    $(".col[data-agent='"+a.id+"']").classList.remove("active");});
+  document.querySelectorAll(".slot").forEach(s=>s.classList.remove("on"));
+  $("#chain").innerHTML="";$("#chainempty").style.display="";$("#ofcard").style.display="none";
+  $("#of").innerHTML="";$("#ofm").innerHTML="";$("#verdict").style.display="none";
+  $("#log").innerHTML="";$("#sup").classList.remove("act");$("#suprl").textContent="consulte l'état partagé · route vers l'agent manquant";
+}
+function logLine(html){const L=$("#log");L.appendChild(el("div","line",html));L.scrollTop=L.scrollHeight;}
+function setActive(id){
+  document.querySelectorAll(".col").forEach(c=>c.classList.remove("active"));
+  AGENTS.forEach(a=>$("#ag-"+a.id).classList.remove("active"));
+  if(!id||id==="end")return;
+  const col=$(".col[data-agent='"+id+"']");if(col)col.classList.add("active");
+  const ag=$("#ag-"+id);if(ag&&!ag.classList.contains("done"))ag.classList.add("active");
+  $("#sup").classList.add("act");
+}
+function markDone(id){const ag=$("#ag-"+id);ag.classList.remove("active");ag.classList.add("done");
+  $("#ag-"+id+" .st").textContent="✓";
+  const slot=[...document.querySelectorAll(".slot")][SLOTS.findIndex(s=>s[0]===id)];if(slot)slot.classList.add("on");}
+
+function renderChain(dec){
+  $("#chainempty").style.display="none";
+  const c=$("#chain");c.innerHTML="";
+  let allow=0,insp=0;
+  dec.forEach(d=>{
+    const ins=d.action!=="ALLOW";ins?insp++:allow++;
+    c.appendChild(el("span","chip "+(ins?"insp":"allow"),
+      `<span>${d.service}</span><span class="act ${ins?'insp':'allow'}">${ins?'INSPECT':'ALLOW'}</span>`));
+  });
+  c.appendChild(el("div","","<div class='deny'>⛔ défaut : DENY — tout le reste est rejeté</div>"));
+  return {allow,insp};
+}
+function countUp(node,to){let v=0;const step=Math.max(1,Math.round(to/22));
+  const t=setInterval(()=>{v+=step;if(v>=to){v=to;clearInterval(t);}node.textContent=v;},28);}
+
+let ws=null;
+function run(){
+  reset();
+  const appn=$("#app").value, model=$("#model").value;
+  $("#go").disabled=true;$("#dot").className="dot run";$("#stat").textContent="génération en cours…";
+  const proto=location.protocol==="https:"?"wss":"ws";
+  ws=new WebSocket(`${proto}://${location.host}/ws/run?app=${appn}&model=${encodeURIComponent(model)}`);
+  ws.onmessage=e=>handle(JSON.parse(e.data));
+  ws.onerror=()=>{ $("#dot").className="dot err";$("#stat").textContent="erreur de connexion"; $("#go").disabled=false; };
+  ws.onclose=()=>{ $("#go").disabled=false; };
+}
+function handle(m){
+  if(m.type==="start"){logLine(`Démarrage · <b>${m.app}</b> · modèle <b>${m.model.split('/').pop()}</b>`);return;}
+  if(m.type==="supervisor"){
+    if(m.reason){const r=m.reason.replace(/\[tour \d+\]\s*/,"");logLine("Superviseur → <b>"+(m.route||'')+"</b> · "+r);
+      $("#suprl").textContent=r.slice(0,80);}
+    setActive(m.route);
+    if(m.route==="end"){$("#sup").classList.remove("act");}
+    return;
+  }
+  if(m.type==="done"){
+    markDone(m.agent);
+    if(m.agent==="analyzer"){
+      $("#out-analyzer").innerHTML=`${m.n_states} états · ${m.n_rare} rares`;
+      logLine(`Analyseur : profil extrait — ${m.n_states} états, ${m.n_rare} transitions rares`);
+      // automate + rares under chain area
+      const c=$("#chain");$("#chainempty").style.display="none";
+      c.appendChild(el("div","sub","Automate — états"+(m.states.some(s=>s.watched)?" (ambre = surveillé)":"")));
+      const row=el("div","chips");
+      m.states.forEach(s=>row.appendChild(el("span","chip "+(s.watched?"insp":""),
+        `<span>${s.label}</span><span class="k">${s.kind}</span>`)));
+      c.appendChild(row);
+      if(m.rares.length){c.appendChild(el("div","sub","Transitions rares (&lt; 1 %)"));
+        m.rares.forEach(r=>c.appendChild(el("div","rare",r)));}
+      c.appendChild(el("div","sub","Décision du pare-feu (LLM)"));
+      c.appendChild(el("div","chips",""));c.lastChild.id="fwchips";
+    }
+    else if(m.agent==="firewall"){
+      const host=$("#fwchips")||$("#chain");
+      let allow=0,insp=0;
+      m.decisions.forEach(d=>{const ins=d.action!=="ALLOW";ins?insp++:allow++;
+        host.appendChild(el("span","chip "+(ins?"insp":"allow"),
+          `<span>${d.service}</span><span class="act ${ins?'insp':'allow'}">${ins?'INSPECT':'ALLOW'}</span>`));});
+      if($("#chain"))$("#chain").appendChild(el("div","","<div class='deny'>⛔ défaut : DENY</div>"));
+      const src=m.source==="deterministe"?"":(m.source==="fallback"?" · repli déterministe":" · via LLM");
+      $("#out-firewall").innerHTML=`${allow} ALLOW · ${insp} INSPECT`;
+      logLine(`Pare-feu : ${allow} ALLOW, ${insp} ALLOW_AND_INSPECT${src}`+(m.retries?` (après ${m.retries} correction)`:''));
+    }
+    else if(m.agent==="ids"){
+      $("#out-ids").innerHTML=`${m.signatures.length} signature(s)`;
+      logLine(`IDS : ${m.signatures.length} signature(s) — ${m.signatures.join(", ")||'aucune'}`);
+    }
+    else if(m.agent==="verifier"){
+      $("#out-verifier").innerHTML=(m.valid?"VALIDE":"INVALIDE")+` · ${m.score}/100`;
+      logLine(`Vérificateur : chaîne <b>${m.valid?'VALIDE':'INVALIDE'}</b> — score ${m.score}/100 (${m.n_err} err, ${m.n_warn} avert.)`);
+      const v=$("#verdict");v.style.display="block";
+      v.innerHTML=`<div style="display:flex;align-items:center;gap:14px">
+        <div class="ring" style="--p:${m.score}"><b>${m.score}</b></div>
+        <div>chaîne <b style="color:var(--green)">${m.valid?'VALIDE':'INVALIDE'}</b><br>
+        <span style="color:var(--mute);font-size:12px">${m.n_err} erreur(s) · ${m.n_warn} avertissement(s)</span></div></div>`;
+    }
+    else if(m.agent==="deployer"){
+      $("#out-deployer").innerHTML=`chaîne assemblée ✓`;
+      logLine(`Déployeur : chaîne assemblée → envoi au contrôleur SDN${m.fallback?' (repli)':''}`);
+    }
+    return;
+  }
+  if(m.type==="openflow"){
+    $("#ofcard").style.display="block";
+    const cls=a=>a==="ALLOW"?"a":(a==="ALLOW_AND_INSPECT"?"i":"d");
+    let txt="# règles installées sur s1 (extrait réel)\n";
+    m.sample.forEach(r=>{txt+=`${(r.id||'').padEnd(7)} dst_ip=${(r.dst_ip||'').padEnd(16)} ${r.proto} dst_port=${String(r.port).padEnd(5)} → `
+      +`<b class="${cls(r.action)}">${r.action}</b>\n`;});
+    txt+=`table-miss (priorité 0)                                  → <b class="d">DROP</b>`;
+    $("#of").innerHTML=txt;
+    const m1=el("div","metric","<div class='v' id='v-fw'>0</div><div class='l'>règles pare-feu (s1)</div>");
+    const m2=el("div","metric","<div class='v' id='v-sg'>0</div><div class='l'>signatures IDS (s2)</div>");
+    $("#ofm").appendChild(m1);$("#ofm").appendChild(m2);
+    countUp($("#v-fw"),m.n_fw);countUp($("#v-sg"),m.n_sig);
+    logLine(`Contrôleur : chaîne traduite en <b>${m.n_fw}</b> règles OpenFlow + <b>${m.n_sig}</b> signatures`);
+    return;
+  }
+  if(m.type==="end"){$("#dot").className="dot ok";$("#stat").textContent="terminé ✓";setActive(null);$("#suprl").textContent="tous les volets produits — chaîne déployée";return;}
+  if(m.type==="error"){$("#dot").className="dot err";$("#stat").textContent="erreur";logLine("<b style='color:var(--red)'>Erreur : "+m.message+"</b>");return;}
+}
+$("#go").onclick=run;
+</script>
+</body>
+</html>

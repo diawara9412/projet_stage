@@ -1,0 +1,501 @@
+{
+  "automate_id": "dropbox",
+  "app_name": "dropbox",
+  "app_version": "enrichment-v1",
+  "platform": "android",
+  "description": "Automate enrichi depuis traces flowoid (dropbox)",
+  "created_at": "2026-06-13T13:33:48.194313+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "443",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "2",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.161.147",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "api-11.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=9120; ports=1; flux=6; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t02",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.165.142",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "api-6a.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=10161; ports=1; flux=5; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t03",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.165.189",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "d-6a.sjc.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=7877; ports=1; flux=4; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t04",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.166.125",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "api-7b.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=15931; ports=1; flux=9; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t05",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.166.144",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "api-7a.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=9493; ports=1; flux=5; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t06",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.166.189",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "d-5a.sjc.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=8010; ports=1; flux=5; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t07",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.166.61",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=8188; ports=1; flux=3; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t08",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.167.145",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "d-1.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=10960; ports=1; flux=4; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t09",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.167.148",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "d-6b.v.dropbox.com"
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=6523; ports=1; flux=3; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t10",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.172.193",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=168788; ports=1; flux=63; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t11",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.172.205",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=326924; ports=1; flux=124; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t12",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.172.225",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=254276; ports=1; flux=60; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t13",
+      "from": "INITIAL",
+      "to": "Dropbox, Inc.",
+      "label": "monitored → Dropbox, Inc.",
+      "network_call": {
+        "ip": "108.160.172.237",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Dropbox, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19679",
+        "asn_org": "Dropbox, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.999; bytes=399871; ports=1; flux=156; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t14",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.23.138.191",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.999; bytes=74212268; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t15",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.192.76.122",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.999; bytes=7060; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    },
+    {
+      "id": "t16",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.227.252.65",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.999; bytes=34722; ports=1; flux=10; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.999
+      }
+    }
+  ],
+  "metadata": {
+    "source": "enrichment (dot+csv+maxmind+classifier)",
+    "dot_label_type": "PORT",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "category_counts": {
+      "monitored": 13,
+      "safe": 3
+    },
+    "thresholds": {
+      "tau_selfloop": 0.8,
+      "tau_ports": 10,
+      "tau_dos": 1000000
+    },
+    "thresholds_note": "PROVISOIRES — choix méthodologique, ajustables"
+  }
+}

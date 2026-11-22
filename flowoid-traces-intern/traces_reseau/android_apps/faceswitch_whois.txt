@@ -1,0 +1,1932 @@
+ns/88.221.112.186/AKAMAI-PA10.10.0.1 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       10.0.0.0 - 10.255.255.255
+CIDR:           10.0.0.0/8
+NetName:        PRIVATE-ADDRESS-ABLK-RFC1918-IANA-RESERVED
+NetHandle:      NET-10-0-0-0-1
+Parent:          ()
+NetType:        IANA Special Use
+OriginAS:       
+Organization:   Internet Assigned Numbers Authority (IANA)
+RegDate:        
+Updated:        2024-05-24
+Comment:        These addresses are in use by many millions of independently operated networks, which might be as small as a single computer connected to a home gateway, and are automatically configured in hundreds of millions of devices.  They are only intended for use within a private context  and traffic that needs to cross the Internet will need to use a different, unique address.
+Comment:        
+Comment:        These addresses can be used by anyone without any need to coordinate with IANA or an Internet registry.  The traffic from these addresses does not come from ICANN or IANA.  We are not the source of activity you may see on logs or in e-mail records.  Please refer to http://www.iana.org/abuse/answers
+Comment:        
+Comment:        These addresses were assigned by the IETF, the organization that develops Internet protocols, in the Best Current Practice document, RFC 1918 which can be found at:
+Comment:        http://datatracker.ietf.org/doc/rfc1918
+Ref:            https://rdap.arin.net/registry/ip/10.0.0.0
+
+
+
+OrgName:        Internet Assigned Numbers Authority
+OrgId:          IANA
+Address:        12025 Waterfront Drive
+Address:        Suite 300
+City:           Los Angeles
+StateProv:      CA
+PostalCode:     90292
+Country:        US
+RegDate:        
+Updated:        2024-05-24
+Ref:            https://rdap.arin.net/registry/entity/IANA
+
+
+OrgAbuseHandle: IANA-IP-ARIN
+OrgAbuseName:   ICANN
+OrgAbusePhone:  +1-310-301-5820 
+OrgAbuseEmail:  abuse@iana.org
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/IANA-IP-ARIN
+
+OrgTechHandle: IANA-IP-ARIN
+OrgTechName:   ICANN
+OrgTechPhone:  +1-310-301-5820 
+OrgTechEmail:  abuse@iana.org
+OrgTechRef:    https://rdap.arin.net/registry/entity/IANA-IP-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+172.217.16.66 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       172.217.0.0 - 172.217.255.255
+CIDR:           172.217.0.0/16
+NetName:        GOOGLE
+NetHandle:      NET-172-217-0-0-1
+Parent:         NET172 (NET-172-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-04-16
+Updated:        2012-04-16
+Ref:            https://rdap.arin.net/registry/ip/172.217.0.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+172.217.18.225 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       172.217.0.0 - 172.217.255.255
+CIDR:           172.217.0.0/16
+NetName:        GOOGLE
+NetHandle:      NET-172-217-0-0-1
+Parent:         NET172 (NET-172-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-04-16
+Updated:        2012-04-16
+Ref:            https://rdap.arin.net/registry/ip/172.217.0.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+172.217.19.130 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       172.217.0.0 - 172.217.255.255
+CIDR:           172.217.0.0/16
+NetName:        GOOGLE
+NetHandle:      NET-172-217-0-0-1
+Parent:         NET172 (NET-172-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-04-16
+Updated:        2012-04-16
+Ref:            https://rdap.arin.net/registry/ip/172.217.0.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+2.16.117.112 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.113 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (SHETLAND)
+
+
+2.16.117.123 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.139 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.146 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (SHETLAND)
+
+
+2.16.117.147 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.152 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (SHETLAND)
+
+
+2.16.117.153 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+2.16.117.154 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+2.16.117.160 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.169 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+2.16.117.170 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+2.16.117.171 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (SHETLAND)
+
+
+2.16.117.178 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (ABERDEEN)
+
+
+2.16.117.27 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (BUSA)
+
+
+2.16.117.32 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (BUSA)
+
+
+2.16.117.35 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (BUSA)
+
+
+2.16.117.64 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (SHETLAND)
+
+
+2.16.117.65 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '2.16.116.0 - 2.16.117.255'
+
+% Abuse contact for '2.16.116.0 - 2.16.117.255' is 'abuse@akamai.com'
+
+inetnum:        2.16.116.0 - 2.16.117.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2010-12-13T14:14:01Z
+last-modified:  2010-12-13T14:14:01Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '2.16.117.0/24AS34164'
+
+route:          2.16.117.0/24
+descr:          Akamai Technologies
+origin:         AS34164
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-05-27T07:45:04Z
+last-modified:  2020-05-27T07:45:04Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+216.58.208.194 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       216.58.192.0 - 216.58.223.255
+CIDR:           216.58.192.0/19
+NetName:        GOOGLE
+NetHandle:      NET-216-58-192-0-1
+Parent:         NET216 (NET-216-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-01-27
+Updated:        2012-01-27
+Ref:            https://rdap.arin.net/registry/ip/216.58.192.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+216.58.208.225 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       216.58.192.0 - 216.58.223.255
+CIDR:           216.58.192.0/19
+NetName:        GOOGLE
+NetHandle:      NET-216-58-192-0-1
+Parent:         NET216 (NET-216-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-01-27
+Updated:        2012-01-27
+Ref:            https://rdap.arin.net/registry/ip/216.58.192.0
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+216.58.208.227 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       216.58.192.0 - 216.58.223.255
+CIDR:           216.58.192.0/19
+NetName:        GOOGLE
+NetHandle:      NET-216-58-192-0-1
+Parent:         NET216 (NET-216-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-01-27
+Updated:        2012-01-27
+Ref:            https://rdap.arin.net/registry/ip/216.58.192.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+216.58.211.66 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       216.58.192.0 - 216.58.223.255
+CIDR:           216.58.192.0/19
+NetName:        GOOGLE
+NetHandle:      NET-216-58-192-0-1
+Parent:         NET216 (NET-216-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-01-27
+Updated:        2012-01-27
+Ref:            https://rdap.arin.net/registry/ip/216.58.192.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+216.58.211.98 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       216.58.192.0 - 216.58.223.255
+CIDR:           216.58.192.0/19
+NetName:        GOOGLE
+NetHandle:      NET-216-58-192-0-1
+Parent:         NET216 (NET-216-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       AS15169
+Organization:   Google LLC (GOGL)
+RegDate:        2012-01-27
+Updated:        2012-01-27
+Ref:            https://rdap.arin.net/registry/ip/216.58.192.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+74.125.71.95 :
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+
+NetRange:       74.125.0.0 - 74.125.255.255
+CIDR:           74.125.0.0/16
+NetName:        GOOGLE
+NetHandle:      NET-74-125-0-0-1
+Parent:         NET74 (NET-74-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       
+Organization:   Google LLC (GOGL)
+RegDate:        2007-03-13
+Updated:        2012-02-24
+Ref:            https://rdap.arin.net/registry/ip/74.125.0.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2025, American Registry for Internet Numbers, Ltd.
+#
+
+85.128.215.22 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '85.128.144.0 - 85.128.255.255'
+
+% Abuse contact for '85.128.144.0 - 85.128.255.255' is 'abuse@netart.com'
+
+inetnum:        85.128.144.0 - 85.128.255.255
+netname:        NAZWAPL-WEBHOSTING
+descr:          webhosting servers
+country:        PL
+admin-c:        NA15967-RIPE
+tech-c:         NA15967-RIPE
+status:         ASSIGNED PA
+mnt-by:         NETART-PL-MNT
+created:        2018-07-26T08:53:26Z
+last-modified:  2023-04-04T09:02:52Z
+source:         RIPE
+
+role:           NETART GROUP Administrator
+address:        nazwa.pl
+address:        ul. Pana Tadeusza 2, 30-727 Krakow
+address:        Poland
+phone:          +48 801 332233
+phone:          +48 12 2978810
+fax-no:         +48 12 2978808
+abuse-mailbox:  abuse@netart.com
+admin-c:        MS45596-RIPE
+tech-c:         MS45596-RIPE
+nic-hdl:        NA15967-RIPE
+mnt-by:         NETART-PL-MNT
+created:        2005-06-15T21:03:58Z
+last-modified:  2025-02-28T09:18:04Z
+source:         RIPE # Filtered
+
+% Information related to '85.128.192.0/18AS15967'
+
+route:          85.128.192.0/18
+origin:         AS15967
+mnt-by:         NETART-PL-MNT
+created:        2018-06-08T12:54:32Z
+last-modified:  2019-04-17T11:19:01Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (DEXTER)
+
+
+88.221.112.186 :
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See https://docs.db.ripe.net/terms-conditions.html
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '88.221.112.0 - 88.221.115.255'
+
+% Abuse contact for '88.221.112.0 - 88.221.115.255' is 'abuse@akamai.com'
+
+inetnum:        88.221.112.0 - 88.221.115.255
+netname:        AKAMAI-PA
+descr:          Akamai Technologies
+country:        EU
+admin-c:        NARA1-RIPE
+tech-c:         NARA1-RIPE
+status:         ASSIGNED PA
+mnt-by:         AKAM1-RIPE-MNT
+mnt-routes:     AKAM1-RIPE-MNT
+created:        2009-11-26T14:04:59Z
+last-modified:  2009-11-26T14:04:59Z
+source:         RIPE
+
+role:           Network Architecture Role Account
+address:        Akamai Technologies
+address:        145 Broadway
+address:        Cambridge, MA 02142
+phone:          +1-617-938-3130
+abuse-mailbox:  abuse@akamai.com
+admin-c:        NB782-RIPE
+admin-c:        CKAK-RIPE
+tech-c:         APB15-RIPE
+tech-c:         CKAK-RIPE
+tech-c:         NB782-RIPE
+tech-c:         RM4844-RIPE
+tech-c:         CDAK23-RIPE
+nic-hdl:        NARA1-RIPE
+mnt-by:         AKAM1-RIPE-MNT
+created:        2002-03-06T09:02:17Z
+last-modified:  2023-02-28T13:03:56Z
+source:         RIPE # Filtered
+
+% Information related to '88.221.0.0/16AS20940'
+
+route:          88.221.0.0/16
+descr:          Akamai Technologies
+origin:         AS20940
+mnt-by:         AKAM1-RIPE-MNT
+created:        2020-10-30T13:11:26Z
+last-modified:  2020-10-30T13:11:26Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.117 (BUSA)
+
+

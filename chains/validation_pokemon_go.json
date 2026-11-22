@@ -1,0 +1,17 @@
+{
+  "chain_id": "chain_pokemon_go_v1",
+  "validated_at": "2026-05-31T00:09:18.679439+00:00",
+  "is_valid": true,
+  "quality_score": 100,
+  "issues": [],
+  "stats": {
+    "nb_rules_before": 11,
+    "nb_rules_after": 11,
+    "duplicates_removed": 0,
+    "nb_ids_signatures": 5,
+    "nb_ips_actions": 5,
+    "nb_errors": 0,
+    "nb_warnings": 0
+  },
+  "validation_summary": "La chaîne de sécurité chain_pokemon_go_v1, associée à l'application Pokemon GO, a obtenu un score qualité de 100/100, indiquant une configuration optimale. Aucune erreur critique ni avertissement n'a été détecté, ce qui signifie que la chaîne est entièrement valide et prête au déploiement. Le risque global étant classé comme faible, cette chaîne peut être considérée comme sécurisée et fonctionnelle. Les règles de pare-feu ont été validées avec succès, avec 11 règles avant et après validation, sans doublons. Dans l'ensemble, la chaîne chain_pokemon_go_v1 est prête à être déployée sans aucune réserve."
+}

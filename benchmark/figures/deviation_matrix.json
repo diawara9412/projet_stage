@@ -1,0 +1,427 @@
+{
+  "apps": [
+    "disneyland",
+    "dropbox",
+    "faceswitch",
+    "lequipe",
+    "pokemongo",
+    "ratp",
+    "viber"
+  ],
+  "overlap": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.020618556701030927
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.020618556701030927
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.06896551724137931,
+      0.013245033112582781,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "metrics": {
+    "TN": 325,
+    "FP": 0,
+    "TP": 1942,
+    "FN": 8,
+    "accuracy": 0.9964835164835165,
+    "precision": 1.0,
+    "recall": 0.9958974358974358,
+    "specificity": 1.0,
+    "f1": 0.9979445015416238,
+    "fpr": 0.0,
+    "fnr": 0.0041025641025641026
+  },
+  "pairs": [
+    {
+      "chain": "disneyland",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "disneyland",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 0,
+      "blocked": 29,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "disneyland",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 0,
+      "blocked": 151,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "disneyland",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "disneyland",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "disneyland",
+      "replay": "viber",
+      "n": 97,
+      "passed": 0,
+      "blocked": 97,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 0,
+      "blocked": 29,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 0,
+      "blocked": 151,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "dropbox",
+      "replay": "viber",
+      "n": 97,
+      "passed": 0,
+      "blocked": 97,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 0,
+      "blocked": 151,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "faceswitch",
+      "replay": "viber",
+      "n": 97,
+      "passed": 2,
+      "blocked": 95,
+      "block_rate": 0.9794
+    },
+    {
+      "chain": "lequipe",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "lequipe",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "lequipe",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 0,
+      "blocked": 29,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "lequipe",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "lequipe",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "lequipe",
+      "replay": "viber",
+      "n": 97,
+      "passed": 2,
+      "blocked": 95,
+      "block_rate": 0.9794
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 0,
+      "blocked": 29,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 0,
+      "blocked": 151,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "pokemongo",
+      "replay": "viber",
+      "n": 97,
+      "passed": 0,
+      "blocked": 97,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 0,
+      "blocked": 29,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 0,
+      "blocked": 151,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "ratp",
+      "replay": "viber",
+      "n": 97,
+      "passed": 0,
+      "blocked": 97,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "viber",
+      "replay": "disneyland",
+      "n": 5,
+      "passed": 0,
+      "blocked": 5,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "viber",
+      "replay": "dropbox",
+      "n": 16,
+      "passed": 0,
+      "blocked": 16,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "viber",
+      "replay": "faceswitch",
+      "n": 29,
+      "passed": 2,
+      "blocked": 27,
+      "block_rate": 0.931
+    },
+    {
+      "chain": "viber",
+      "replay": "lequipe",
+      "n": 151,
+      "passed": 2,
+      "blocked": 149,
+      "block_rate": 0.9868
+    },
+    {
+      "chain": "viber",
+      "replay": "pokemongo",
+      "n": 24,
+      "passed": 0,
+      "blocked": 24,
+      "block_rate": 1.0
+    },
+    {
+      "chain": "viber",
+      "replay": "ratp",
+      "n": 3,
+      "passed": 0,
+      "blocked": 3,
+      "block_rate": 1.0
+    }
+  ]
+}

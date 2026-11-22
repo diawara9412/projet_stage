@@ -1,0 +1,89 @@
+{
+  "aborted_on_auth_error": false,
+  "rows": [
+    {
+      "automate": "malware_app",
+      "arch": 1,
+      "agg": {
+        "nb_fw": 6,
+        "nb_ids": 5,
+        "nb_ips": 5,
+        "dup_vc": 1,
+        "orph_vc": 0,
+        "score": 90,
+        "dup_ag": null,
+        "orph_ag": null,
+        "llm_calls": 3.0,
+        "latency": 15.683072477999985,
+        "tokens": 3252.0,
+        "stable": true,
+        "n_distinct": 1,
+        "runs": 1
+      }
+    },
+    {
+      "automate": "malware_app",
+      "arch": 2,
+      "agg": {
+        "nb_fw": 6,
+        "nb_ids": 5,
+        "nb_ips": 5,
+        "dup_vc": 4,
+        "orph_vc": 0,
+        "score": 60,
+        "dup_ag": 4,
+        "orph_ag": 0,
+        "llm_calls": 4.0,
+        "latency": 28.756631458000015,
+        "tokens": 6082.0,
+        "stable": true,
+        "n_distinct": 1,
+        "runs": 1
+      }
+    }
+  ],
+  "raw_runs": [
+    {
+      "arch": 1,
+      "automate": "malware_app",
+      "run": 1,
+      "nb_fw": 6,
+      "nb_ids": 5,
+      "nb_ips": 5,
+      "dup_vc": 1,
+      "orph_vc": 0,
+      "score": 90,
+      "dup_ag": null,
+      "orph_ag": null,
+      "llm_calls": 3,
+      "latency": 15.683072477999985,
+      "tokens": {
+        "available": true,
+        "input": 2456,
+        "output": 796,
+        "total": 3252
+      }
+    },
+    {
+      "arch": 2,
+      "automate": "malware_app",
+      "run": 1,
+      "nb_fw": 6,
+      "nb_ids": 5,
+      "nb_ips": 5,
+      "dup_vc": 4,
+      "orph_vc": 0,
+      "score": 60,
+      "dup_ag": 4,
+      "orph_ag": 0,
+      "llm_calls": 4,
+      "latency": 28.756631458000015,
+      "tokens": {
+        "available": true,
+        "input": 3842,
+        "output": 2240,
+        "total": 6082
+      }
+    }
+  ]
+}

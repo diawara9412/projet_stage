@@ -1,0 +1,369 @@
+{
+  "automate_path": "automates/malware_app.json",
+  "automate_analysis": {
+    "automate_id": "malware_app_v1",
+    "app_name": "FlashLight Pro (compromised)",
+    "analyzed_at": "2026-06-09T08:39:57.203643+00:00",
+    "global_suspicion_score": 7.01,
+    "risk_level": "high",
+    "nb_states": 6,
+    "nb_transitions": 7,
+    "nb_suspicious": 5,
+    "suspicious_transitions": [
+      {
+        "transition_id": "t02_SUSPECT",
+        "from_state": "install",
+        "to_state": "background_init",
+        "label": "SUSPECT — Enregistrement C2 au premier lancement",
+        "dst_ip": "198.98.54.218",
+        "dst_port": 8080,
+        "protocol": "HTTP",
+        "suspicion_score": 9,
+        "flags": [
+          "known_c2",
+          "bulletproof_hosting",
+          "dga_domain",
+          "suspicious_path"
+        ],
+        "risk_category": "c2_active",
+        "explanation": "IP 198.98.54.218 référencée dans abuse.ch (C2 Emotet actif en 2024). Path /register sur domaine DGA enregistré 7 jours avant l'analyse. Payload en clair contient IMEI, numéro de téléphone, liste des apps installées. ColoCrossing connu pour ignorer les takedowns."
+      },
+      {
+        "transition_id": "t03_SUSPECT",
+        "from_state": "background_init",
+        "to_state": "c2_active",
+        "label": "SUSPECT — Tunnel vers nœud Tor pour relay C2",
+        "dst_ip": "185.220.100.252",
+        "dst_port": 9001,
+        "protocol": "TCP",
+        "suspicion_score": 10,
+        "flags": [
+          "tor_exit_node",
+          "known_c2"
+        ],
+        "risk_category": "c2_active",
+        "explanation": "IP 185.220.100.252 est un nœud Tor répertorié dans ExoneraTor et TorDNSEL. Le malware utilise Tor pour rendre son C2 résilient aux takedowns (domaine .onion non visible dans le trafic). Port 9001 = port OR Tor standard."
+      },
+      {
+        "transition_id": "t04_SUSPECT",
+        "from_state": "c2_active",
+        "to_state": "c2_active",
+        "label": "SUSPECT — Beaconing régulier (heartbeat C2)",
+        "dst_ip": "185.220.100.252",
+        "dst_port": 9001,
+        "protocol": "TCP",
+        "suspicion_score": 10,
+        "flags": [
+          "beaconing",
+          "tor_exit_node",
+          "known_c2"
+        ],
+        "risk_category": "c2_active",
+        "explanation": "Beacon de 64 octets toutes les 10 secondes = 360 connexions/heure vers le même nœud Tor. Pattern parfaitement régulier, payload fixe = heartbeat C2 confirmé. Ce comportement est caractéristique des RATs modernes (Remote Access Trojan)."
+      },
+      {
+        "transition_id": "t05_SUSPECT",
+        "from_state": "c2_active",
+        "to_state": "exfiltration",
+        "label": "SUSPECT — Réception d'ordre d'exfiltration depuis C2",
+        "dst_ip": "198.98.54.218",
+        "dst_port": 8080,
+        "protocol": "HTTP",
+        "suspicion_score": 10,
+        "flags": [
+          "known_c2",
+          "suspicious_path",
+          "bulletproof_hosting"
+        ],
+        "risk_category": "c2_active",
+        "explanation": "URL avec paramètres explicites /cmd/exec?op=collect&target=contacts,sms,gps — ordre d'exfiltration en clair. IP C2 déjà identifiée en t02. Trafic non chiffré, commandes lisibles directement dans Wireshark."
+      },
+      {
+        "transition_id": "t06_SUSPECT",
+        "from_state": "exfiltration",
+        "to_state": "dormant",
+        "label": "SUSPECT — Exfiltration multi-cibles (contacts, SMS, GPS)",
+        "dst_ip": "198.98.54.218",
+        "dst_port": 8080,
+        "protocol": "HTTP",
+        "suspicion_score": 10,
+        "flags": [
+          "data_exfiltration",
+          "known_c2",
+          "suspicious_path",
+          "bulletproof_hosting"
+        ],
+        "risk_category": "c2_active",
+        "explanation": "250KB envoyés en clair vers C2. Path /upload/raw = exfiltration brute non encodée. Volume correspond à : carnet d'adresses complet (5000 contacts) + 500 SMS + historique GPS 30 jours. Répété 3 fois par session avec données incrémentales."
+      }
+    ],
+    "legitimate_services": [
+      {
+        "name": "FlashLight Pro CDN (Cloudflare)",
+        "service_type": "CDN",
+        "ips": [
+          "104.21.45.12"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t01"
+        ]
+      },
+      {
+        "name": "FlashLight Pro Analytics (Cloudflare)",
+        "service_type": "analytics",
+        "ips": [
+          "104.21.45.12"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t07"
+        ]
+      }
+    ],
+    "recommended_actions": [
+      "FIREWALL BLOCK priorité=900 — 198.98.54.218:8080/HTTP (C2/Tor détecté, transition t02_SUSPECT)",
+      "FIREWALL BLOCK priorité=900 — 185.220.100.252:9001/TCP (C2/Tor détecté, transition t03_SUSPECT)",
+      "IDS SIGNATURE beaconing — 185.220.100.252:9001/TCP seuil=['beaconing', 'tor_exit_node', 'known_c2'] (transition t04_SUSPECT)",
+      "FIREWALL ALLOW priorité=100 — FlashLight Pro CDN (Cloudflare) IPs=[104.21.45.12] ports=[443] (CDN)",
+      "FIREWALL ALLOW priorité=100 — FlashLight Pro Analytics (Cloudflare) IPs=[104.21.45.12] ports=[443] (analytics)",
+      "IPS ACTION quarantine — Activer le mode défensif renforcé (score global=7.0/10)",
+      "FIREWALL BLOCK — 198.98.54.218:8080/HTTP — Enregistrement C2 et exfiltration de données détectés",
+      "FIREWALL BLOCK — 185.220.100.252:9001/TCP — Communication avec un nœud de sortie Tor et beaconing détectés",
+      "IDS SIGNATURE — 185.220.100.252:9001/TCP — Détecter les activités de beaconing pour prévenir les attaques de commandement et de contrôle",
+      "FIREWALL ALLOW — 104.21.45.12:443 — Autoriser le trafic légitime vers le CDN et les services d'analyse de FlashLight Pro",
+      "IPS PROTECT — Appliquer des règles de protection pour bloquer les exfiltrations de données et les communications avec des serveurs de commandement et de contrôle"
+    ],
+    "llm_summary": "L'application FlashLight Pro a été compromise et présente un niveau de risque élevé en raison de transitions suspectes détectées, notamment des communications avec des serveurs de commandement et de contrôle (C2) et des nœuds de sortie Tor. Les analyses ont révélé des activités de beaconing et d'exfiltration de données, indiquant une menace potentielle pour la sécurité des données des utilisateurs. Les transitions suspectes ont été identifiées avec des scores élevés et des flags tels que 'known_c2', 'tor_exit_node' et 'data_exfiltration', soulignant la gravité de la situation."
+  },
+  "security_chain": {
+    "chain_id": "chain_malware_app_v1",
+    "source_automate_id": "malware_app_v1",
+    "source_app_name": "FlashLight Pro (compromised)",
+    "generated_at": "2026-06-09T08:39:58.846228+00:00",
+    "global_risk_level": "HIGH",
+    "firewall_rules": [
+      {
+        "id": "FW-001",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": "10.0.0.0/24",
+        "dst_port": null,
+        "protocol": "any",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic LAN IPv4 interne autorisé par défaut — priorité 50 écrasable par BLOCK (900) et ALLOW spécifiques (100)"
+      },
+      {
+        "id": "FW-002",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": null,
+        "dst_port": null,
+        "protocol": "ARP",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic ARP autorisé — nécessaire pour résolution MAC inter-hosts dans Mininet"
+      },
+      {
+        "id": "FW-003",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": "10.0.0.0/24",
+        "dst_port": null,
+        "protocol": "ICMP",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic ICMP interne autorisé — pour diagnostics ping et traceroute"
+      },
+      {
+        "id": "FW-004",
+        "action": "BLOCK",
+        "direction": "outbound",
+        "dst_ip": "198.98.54.218",
+        "dst_port": 8080,
+        "protocol": "HTTP",
+        "priority": 900,
+        "source_transition_id": null,
+        "comment": "Trafic suspect vers 198.98.54.218:8080/HTTP — transitions: t02_SUSPECT, t05_SUSPECT, t06_SUSPECT [déduplication multi-transitions]"
+      },
+      {
+        "id": "FW-005",
+        "action": "BLOCK",
+        "direction": "outbound",
+        "dst_ip": "185.220.100.252",
+        "dst_port": 9001,
+        "protocol": "TCP",
+        "priority": 900,
+        "source_transition_id": null,
+        "comment": "Trafic suspect vers 185.220.100.252:9001/TCP — transitions: t03_SUSPECT, t04_SUSPECT [déduplication multi-transitions]"
+      },
+      {
+        "id": "FW-006",
+        "action": "ALLOW",
+        "direction": "outbound",
+        "dst_ip": "104.21.45.12",
+        "dst_port": 443,
+        "protocol": "HTTPS",
+        "priority": 100,
+        "source_transition_id": "t01",
+        "comment": "Service légitime : FlashLight Pro CDN (Cloudflare) (CDN)"
+      }
+    ],
+    "ids_signatures": [
+      {
+        "id": "IDS-001",
+        "name": "DGA_DNS_198_98_54_218_8080",
+        "pattern_type": "dga_dns",
+        "match_criteria": {
+          "dst_ip": "198.98.54.218",
+          "dst_port": 8080,
+          "protocol": "HTTP",
+          "pattern": "algorithmic_domain_generation"
+        },
+        "severity": "HIGH",
+        "source_transition_id": "t02_SUSPECT",
+        "comment": "Détection dga_dns vers 198.98.54.218:8080 — t02_SUSPECT"
+      },
+      {
+        "id": "IDS-002",
+        "name": "SUSPICIOUS_URL_198_98_54_218_8080",
+        "pattern_type": "suspicious_url",
+        "match_criteria": {
+          "dst_ip": "198.98.54.218",
+          "dst_port": 8080,
+          "protocol": "HTTP",
+          "url_path_regex": "/(cmd|exec|shell|upload/raw|register)"
+        },
+        "severity": "MEDIUM",
+        "source_transition_id": "t02_SUSPECT",
+        "comment": "Détection suspicious_url vers 198.98.54.218:8080 — t02_SUSPECT"
+      },
+      {
+        "id": "IDS-003",
+        "name": "TOR_COMMUNICATION_185_220_100_252_9001",
+        "pattern_type": "tor_communication",
+        "match_criteria": {
+          "dst_ip": "185.220.100.252",
+          "dst_port": 9001,
+          "protocol": "TCP"
+        },
+        "severity": "CRITICAL",
+        "source_transition_id": "t03_SUSPECT",
+        "comment": "Détection tor_communication vers 185.220.100.252:9001 — t03_SUSPECT"
+      },
+      {
+        "id": "IDS-004",
+        "name": "BEACONING_185_220_100_252_9001",
+        "pattern_type": "beaconing",
+        "match_criteria": {
+          "dst_ip": "185.220.100.252",
+          "dst_port": 9001,
+          "protocol": "TCP",
+          "frequency_threshold_per_min": 6
+        },
+        "severity": "HIGH",
+        "source_transition_id": "t04_SUSPECT",
+        "comment": "Détection beaconing vers 185.220.100.252:9001 — t04_SUSPECT"
+      },
+      {
+        "id": "IDS-005",
+        "name": "DATA_EXFILTRATION_198_98_54_218_8080",
+        "pattern_type": "data_exfiltration",
+        "match_criteria": {
+          "dst_ip": "198.98.54.218",
+          "dst_port": 8080,
+          "protocol": "HTTP",
+          "byte_threshold_outbound": 50000
+        },
+        "severity": "CRITICAL",
+        "source_transition_id": "t06_SUSPECT",
+        "comment": "Détection data_exfiltration vers 198.98.54.218:8080 — t06_SUSPECT"
+      }
+    ],
+    "ips_actions": [
+      {
+        "id": "IPS-001",
+        "on_signature": "IDS-001",
+        "action": "ALERT_ONLY",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action ALERT_ONLY sur dga_dns → 198.98.54.218:8080"
+      },
+      {
+        "id": "IPS-002",
+        "on_signature": "IDS-002",
+        "action": "ALERT_ONLY",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action ALERT_ONLY sur suspicious_url → 198.98.54.218:8080"
+      },
+      {
+        "id": "IPS-003",
+        "on_signature": "IDS-003",
+        "action": "QUARANTINE",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action QUARANTINE sur tor_communication → 185.220.100.252:9001"
+      },
+      {
+        "id": "IPS-004",
+        "on_signature": "IDS-004",
+        "action": "RATE_LIMIT",
+        "duration_seconds": 300,
+        "rate_limit_pps": 5,
+        "comment": "Action RATE_LIMIT sur beaconing → 185.220.100.252:9001"
+      },
+      {
+        "id": "IPS-005",
+        "on_signature": "IDS-005",
+        "action": "DROP_SOURCE",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action DROP_SOURCE sur data_exfiltration → 198.98.54.218:8080"
+      }
+    ],
+    "deployment_target": {
+      "ryu_endpoint": "http://localhost:8080",
+      "target_switches": [
+        "s0",
+        "s1",
+        "s2"
+      ],
+      "openflow_version": "1.3"
+    },
+    "generation_summary": "La chaîne de sécurité générée pour l'application FlashLight Pro (compromisée) bloque les adresses IP 198.98.54.218:8080 et 185.220.100.252:9001, correspondant à des activités suspectes de type DGA, communication TOR et exfiltration de données, similaires à la tactique T1071 (C2 over HTTP) de MITRE ATT&CK. Les services légitimes tels que le trafic LAN interne, ARP, ICMP et les connexions vers les CDN et services d'analyse de FlashLight Pro sont autorisés. Les signatures IDS détectent des menaces de niveau élevé et critique, notamment des communications TOR et des exfiltrations de données, avec des actions IPS appropriées telles que des alertes, une mise en quarantaine, une limitation de débit et un rejet de source. Le niveau de protection est élevé, mais il est recommandé de surveiller étroitement les activités réseau pour détecter toute évolution des menaces."
+  },
+  "validation_report": {
+    "chain_id": "chain_malware_app_v1",
+    "validated_at": "2026-06-09T08:40:00.007999+00:00",
+    "is_valid": true,
+    "quality_score": 90,
+    "issues": [
+      {
+        "severity": "WARNING",
+        "category": "redundancy",
+        "message": "Règle FW redondante : FW-007 est un doublon exact de FW-006",
+        "affected_rule_ids": [
+          "FW-007",
+          "FW-006"
+        ],
+        "suggested_fix": "Supprimer FW-007 (doublon de FW-006)."
+      }
+    ],
+    "stats": {
+      "nb_rules_before": 7,
+      "nb_rules_after": 6,
+      "duplicates_removed": 1,
+      "nb_ids_signatures": 5,
+      "nb_ips_actions": 5,
+      "nb_errors": 0,
+      "nb_warnings": 1
+    },
+    "validation_summary": "La chaîne de sécurité chain_malware_app_v1, associée à l'application FlashLight Pro compromise, a obtenu un score qualité de 90/100, indiquant qu'elle est prête au déploiement. Aucune erreur critique n'a été détectée, mais un avertissement a été émis concernant la règle FW-007, qui est un doublon exact de la règle FW-006. La suppression de ce doublon a réduit le nombre de règles FW de 7 à 6. Globalement, la chaîne semble solide et fonctionnelle, malgré un niveau de risque élevé, et peut être déployée avec confiance."
+  }
+}

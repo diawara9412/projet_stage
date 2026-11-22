@@ -1,0 +1,6 @@
+Détail des erreurs LLM AVANT correction — 20260610_155522
+======================================================================
+
+=== archi 2 | pokemon_go | run 1 | total_avant_corr=0 | attempts(max)=1 ===
+  (aucune erreur LLM avant correction)
+

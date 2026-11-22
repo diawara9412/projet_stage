@@ -1,0 +1,386 @@
+{
+  "automate_id": "banking_app_v1",
+  "app_name": "SecureBank Mobile",
+  "app_version": "4.2.1",
+  "platform": "ios",
+  "description": "Automate comportemental réseau d'une application bancaire mobile générique capturé via mitmproxy. Session incluant authentification, consultation de solde, virement et historique. Un comportement d'exfiltration de données vers une IP externe a été détecté.",
+  "created_at": "2024-04-16T10:00:00Z",
+  "states": [
+    {
+      "id": "launch",
+      "label": "Démarrage",
+      "is_initial": true,
+      "is_final": false,
+      "description": "Lancement de l'app, vérification de la version et des configurations"
+    },
+    {
+      "id": "login",
+      "label": "Authentification",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Authentification par identifiant/mot de passe + second facteur (OTP)"
+    },
+    {
+      "id": "balance",
+      "label": "Consultation du solde",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Affichage du solde et des comptes actifs"
+    },
+    {
+      "id": "transfer",
+      "label": "Virement",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Saisie et validation d'un virement bancaire"
+    },
+    {
+      "id": "history",
+      "label": "Historique transactions",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Consultation des dernières opérations bancaires"
+    },
+    {
+      "id": "logout",
+      "label": "Déconnexion",
+      "is_initial": false,
+      "is_final": true,
+      "description": "Fin de session sécurisée, invalidation du token"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "launch",
+      "to": "login",
+      "label": "Vérification de version et configuration TLS",
+      "network_call": {
+        "url": "https://api.securebank.com/v2/config",
+        "ip": "104.18.14.101",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "GET",
+        "hostname": "api.securebank.com"
+      },
+      "service": {
+        "name": "SecureBank API (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 1.0,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 256,
+        "is_encrypted": true,
+        "is_authenticated": false,
+        "triggers": "Démarrage automatique de l'application"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Récupération de la configuration TLS pinning et de l'URL du backend"
+      }
+    },
+    {
+      "id": "t02",
+      "from": "login",
+      "to": "login",
+      "label": "Requête OTP via Twilio",
+      "network_call": {
+        "url": "https://api.authy.com/protected/json/app/details",
+        "ip": "54.208.105.16",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "GET",
+        "hostname": "api.authy.com"
+      },
+      "service": {
+        "name": "Twilio Authy (2FA)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com Inc. (hébergement Twilio)",
+        "country": "US",
+        "city": "Ashburn"
+      },
+      "behavior": {
+        "probability": 0.95,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 128,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Soumission identifiant/mot de passe"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Second facteur via Twilio Authy, comportement standard"
+      }
+    },
+    {
+      "id": "t03",
+      "from": "login",
+      "to": "balance",
+      "label": "Authentification et récupération du token de session",
+      "network_call": {
+        "url": "https://api.securebank.com/v2/auth/token",
+        "ip": "104.18.14.101",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "api.securebank.com"
+      },
+      "service": {
+        "name": "SecureBank API (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 0.95,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 1024,
+        "is_encrypted": true,
+        "is_authenticated": false,
+        "triggers": "Validation du code OTP"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Obtention du JWT de session après 2FA validé"
+      }
+    },
+    {
+      "id": "t04",
+      "from": "balance",
+      "to": "balance",
+      "label": "Consultation des comptes via Plaid",
+      "network_call": {
+        "url": "https://production.plaid.com/accounts/get",
+        "ip": "54.160.182.95",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "production.plaid.com"
+      },
+      "service": {
+        "name": "Plaid",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com Inc. (hébergement Plaid)",
+        "country": "US",
+        "city": "Ashburn"
+      },
+      "behavior": {
+        "probability": 0.9,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 2048,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Affichage de l'écran 'Mes comptes'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Agrégation bancaire via Plaid, service réglementé"
+      }
+    },
+    {
+      "id": "t05",
+      "from": "balance",
+      "to": "transfer",
+      "label": "Initiation d'un virement via Stripe",
+      "network_call": {
+        "url": "https://api.stripe.com/v1/transfers",
+        "ip": "54.187.174.169",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "api.stripe.com"
+      },
+      "service": {
+        "name": "Stripe",
+        "type": "payment",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com Inc. (hébergement Stripe)",
+        "country": "US",
+        "city": "Seattle"
+      },
+      "behavior": {
+        "probability": 0.3,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 512,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton 'Effectuer un virement'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Initiation de virement via Stripe Connect"
+      }
+    },
+    {
+      "id": "t06",
+      "from": "transfer",
+      "to": "balance",
+      "label": "Confirmation du virement",
+      "network_call": {
+        "url": "https://api.securebank.com/v2/transfers/confirm",
+        "ip": "104.18.14.101",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "api.securebank.com"
+      },
+      "service": {
+        "name": "SecureBank API (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 0.85,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 256,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Confirmation du second facteur pour le virement"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Confirmation de transaction avec second facteur"
+      }
+    },
+    {
+      "id": "t07",
+      "from": "balance",
+      "to": "history",
+      "label": "Chargement de l'historique",
+      "network_call": {
+        "url": "https://api.securebank.com/v2/transactions",
+        "ip": "104.18.14.101",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "GET",
+        "hostname": "api.securebank.com"
+      },
+      "service": {
+        "name": "SecureBank API (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 0.7,
+        "frequency_per_session": 3,
+        "payload_size_bytes": 16384,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton 'Voir les transactions'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Chargement de 90 jours d'historique, taille de réponse élevée mais normale"
+      }
+    },
+    {
+      "id": "t08",
+      "from": "history",
+      "to": "logout",
+      "label": "Déconnexion et invalidation du token",
+      "network_call": {
+        "url": "https://api.securebank.com/v2/auth/logout",
+        "ip": "104.18.14.101",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "api.securebank.com"
+      },
+      "service": {
+        "name": "SecureBank API (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 0.9,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 128,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton 'Déconnexion'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Invalidation du JWT côté serveur, comportement sécurisé correct"
+      }
+    },
+    {
+      "id": "t09_SUSPECT",
+      "from": "history",
+      "to": "history",
+      "label": "SUSPECT — Exfiltration de l'historique des transactions",
+      "network_call": {
+        "url": "http://telemetry.bankstats-cdn.net/v1/report",
+        "ip": "193.34.145.78",
+        "port": 80,
+        "protocol": "HTTP",
+        "method": "POST",
+        "hostname": "telemetry.bankstats-cdn.net"
+      },
+      "service": {
+        "name": "Inconnu",
+        "type": "unknown",
+        "reputation": "suspicious",
+        "asn": "AS9009",
+        "asn_org": "M247 Europe SRL (hébergement permissif, souvent abusé)",
+        "country": "RO",
+        "city": "Bucarest"
+      },
+      "behavior": {
+        "probability": 0.8,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 120000,
+        "is_encrypted": false,
+        "is_authenticated": false,
+        "triggers": "Déclenché automatiquement après chargement de l'historique complet"
+      },
+      "suspicion": {
+        "score": 10,
+        "flags": ["data_exfiltration", "bulletproof_hosting", "dga_domain"],
+        "notes": "120KB envoyés en clair (HTTP) vers un domaine roumain enregistré il y a 5 jours. ASN M247 est régulièrement abusé pour l'exfiltration. Taille de payload correspond exactement à l'historique de transactions précédemment chargé. Nom de domaine pseudo-légitime (bankstats-cdn.net) conçu pour passer inaperçu."
+      }
+    }
+  ],
+  "metadata": {
+    "capture_tool": "mitmproxy 10.1.5 + Charles Proxy",
+    "capture_duration_seconds": 1200,
+    "sessions_analyzed": 8,
+    "device_type": "smartphone",
+    "network_type": "4G",
+    "analyst": "RESIST-Lab / INRIA"
+  }
+}

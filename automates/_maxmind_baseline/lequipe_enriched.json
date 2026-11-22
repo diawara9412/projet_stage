@@ -1,0 +1,4049 @@
+{
+  "automate_id": "lequipe",
+  "app_name": "lequipe",
+  "app_version": "enrichment-v1",
+  "platform": "android",
+  "description": "Automate enrichi depuis traces flowoid (lequipe)",
+  "created_at": "2026-06-13T13:33:48.517330+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "80",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "443",
+      "type": "destination"
+    },
+    {
+      "id": "2",
+      "name": "8080/4",
+      "type": "destination"
+    },
+    {
+      "id": "3",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "4",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "104.155.21.146",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "146.21.155.104.bc.googleusercontent.com"
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS396982",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=832; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t02",
+      "from": "INITIAL",
+      "to": "Akamai Connected Cloud",
+      "label": "safe → Akamai Connected Cloud",
+      "network_call": {
+        "ip": "104.237.141.160",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai Connected Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS63949",
+        "asn_org": "Akamai Connected Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=5922; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t03",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "107.22.169.178",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=2301; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t04",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "107.22.224.157",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-107-22-224-157.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1739; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t05",
+      "from": "INITIAL",
+      "to": "Zayo Infrastructure France SA",
+      "label": "monitored → Zayo Infrastructure France SA",
+      "network_call": {
+        "ip": "158.255.97.112",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "158.255.97.112"
+      },
+      "service": {
+        "name": "Zayo Infrastructure France SA",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS8218",
+        "asn_org": "Zayo Infrastructure France SA"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1908; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t06",
+      "from": "INITIAL",
+      "to": "Worldline SA",
+      "label": "monitored → Worldline SA",
+      "network_call": {
+        "ip": "160.92.123.193",
+        "port": 8080,
+        "protocol": "TCP",
+        "hostname": "api.aso.fr"
+      },
+      "service": {
+        "name": "Worldline SA",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS8677",
+        "asn_org": "Worldline SA"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.0; bytes=492; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 1.0
+      }
+    },
+    {
+      "id": "t07",
+      "from": "INITIAL",
+      "to": "FIX FLYER, LLC",
+      "label": "monitored → FIX FLYER, LLC",
+      "network_call": {
+        "ip": "162.217.102.145",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "162.217.102.145"
+      },
+      "service": {
+        "name": "FIX FLYER, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS54021",
+        "asn_org": "FIX FLYER, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=3009; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t08",
+      "from": "INITIAL",
+      "to": "OVH SAS",
+      "label": "monitored → OVH SAS",
+      "network_call": {
+        "ip": "167.114.126.129",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "167.114.126.129"
+      },
+      "service": {
+        "name": "OVH SAS",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS16276",
+        "asn_org": "OVH SAS"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=862; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t09",
+      "from": "INITIAL",
+      "to": "173.192.220.64-static.reverse.softlayer.com",
+      "label": "monitored → 173.192.220.64",
+      "network_call": {
+        "ip": "173.192.220.64",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "173.192.220.64-static.reverse.softlayer.com"
+      },
+      "service": {
+        "name": "173.192.220.64-static.reverse.softlayer.com",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": null
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=unknown; self_loop=0.95; bytes=9496; ports=1; flux=6; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t10",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "173.194.45.39",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=6018; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t11",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "173.194.45.59",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=977; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t12",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "173.194.66.101",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=1846; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t13",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "173.194.66.113",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=3278; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t14",
+      "from": "INITIAL",
+      "to": "173.245.116.37",
+      "label": "monitored → 173.245.116.37",
+      "network_call": {
+        "ip": "173.245.116.37",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "173.245.116.37"
+      },
+      "service": {
+        "name": "173.245.116.37",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": null
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=unknown; self_loop=0.95; bytes=2377; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t15",
+      "from": "INITIAL",
+      "to": "Akamai Connected Cloud",
+      "label": "safe → Akamai Connected Cloud",
+      "network_call": {
+        "ip": "173.255.223.127",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "li279-127.members.linode.com"
+      },
+      "service": {
+        "name": "Akamai Connected Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS63949",
+        "asn_org": "Akamai Connected Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=7085; ports=1; flux=6; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t16",
+      "from": "INITIAL",
+      "to": "Quality Technology Services, LLC",
+      "label": "monitored → Quality Technology Services, LLC",
+      "network_call": {
+        "ip": "174.140.140.35",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Quality Technology Services, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS29748",
+        "asn_org": "Quality Technology Services, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=960; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t17",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "176.34.132.146",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1385; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t18",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "184.73.158.53",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=595; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t19",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "184.73.195.210",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-184-73-195-210.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1530; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t20",
+      "from": "INITIAL",
+      "to": "Xandr Inc.",
+      "label": "monitored → Xandr Inc.",
+      "network_call": {
+        "ip": "185.33.220.4",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "24.bm-nginx-loadbalancer.mgmt.ams1.adnexus.net"
+      },
+      "service": {
+        "name": "Xandr Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS29990",
+        "asn_org": "Xandr Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=8558; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t21",
+      "from": "INITIAL",
+      "to": "Twitter Inc.",
+      "label": "monitored → Twitter Inc.",
+      "network_call": {
+        "ip": "185.45.5.39",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Twitter Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS35995",
+        "asn_org": "Twitter Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.128; bytes=6609; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t22",
+      "from": "INITIAL",
+      "to": "Yahoo-UK Limited",
+      "label": "monitored → Yahoo-UK Limited",
+      "network_call": {
+        "ip": "188.125.82.57",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "pr.pbp.vip.ir2.yahoo.com"
+      },
+      "service": {
+        "name": "Yahoo-UK Limited",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS34010",
+        "asn_org": "Yahoo-UK Limited"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=563; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t23",
+      "from": "INITIAL",
+      "to": "B2 Net Solutions Inc.",
+      "label": "monitored → B2 Net Solutions Inc.",
+      "network_call": {
+        "ip": "192.186.133.90",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "accountmanagementgroup.info"
+      },
+      "service": {
+        "name": "B2 Net Solutions Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS55286",
+        "asn_org": "B2 Net Solutions Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=240; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t24",
+      "from": "INITIAL",
+      "to": "Crashlytics, Inc",
+      "label": "monitored → Crashlytics, Inc",
+      "network_call": {
+        "ip": "192.44.68.3",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "192.44.68.3"
+      },
+      "service": {
+        "name": "Crashlytics, Inc",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS63194",
+        "asn_org": "Crashlytics, Inc"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=19014; ports=1; flux=12; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t25",
+      "from": "INITIAL",
+      "to": "Crashlytics, Inc",
+      "label": "monitored → Crashlytics, Inc",
+      "network_call": {
+        "ip": "192.44.68.4",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "192.44.68.4"
+      },
+      "service": {
+        "name": "Crashlytics, Inc",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS63194",
+        "asn_org": "Crashlytics, Inc"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=5590; ports=1; flux=3; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t26",
+      "from": "INITIAL",
+      "to": "Crashlytics, Inc",
+      "label": "monitored → Crashlytics, Inc",
+      "network_call": {
+        "ip": "192.44.68.5",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "192.44.68.5"
+      },
+      "service": {
+        "name": "Crashlytics, Inc",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS63194",
+        "asn_org": "Crashlytics, Inc"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=25517; ports=1; flux=8; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t27",
+      "from": "INITIAL",
+      "to": "Crashlytics, Inc",
+      "label": "monitored → Crashlytics, Inc",
+      "network_call": {
+        "ip": "192.44.68.6",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "192.44.68.6"
+      },
+      "service": {
+        "name": "Crashlytics, Inc",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS63194",
+        "asn_org": "Crashlytics, Inc"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=17314; ports=1; flux=9; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t28",
+      "from": "INITIAL",
+      "to": "Scaleway SAS",
+      "label": "monitored → Scaleway SAS",
+      "network_call": {
+        "ip": "195.154.179.170",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "195-154-179-170.rev.poneytelecom.eu"
+      },
+      "service": {
+        "name": "Scaleway SAS",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12876",
+        "asn_org": "Scaleway SAS"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=75458; ports=1; flux=28; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t29",
+      "from": "INITIAL",
+      "to": "Twitter Inc.",
+      "label": "monitored → Twitter Inc.",
+      "network_call": {
+        "ip": "199.16.156.52",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "199.16.156.52"
+      },
+      "service": {
+        "name": "Twitter Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS13414",
+        "asn_org": "Twitter Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.128; bytes=5905; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t30",
+      "from": "INITIAL",
+      "to": "Twitter Inc.",
+      "label": "monitored → Twitter Inc.",
+      "network_call": {
+        "ip": "199.59.149.201",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Twitter Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS13414",
+        "asn_org": "Twitter Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.128; bytes=6089; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t31",
+      "from": "INITIAL",
+      "to": "Twitter Inc.",
+      "label": "monitored → Twitter Inc.",
+      "network_call": {
+        "ip": "199.96.57.6",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Twitter Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS13414",
+        "asn_org": "Twitter Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1083; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t32",
+      "from": "INITIAL",
+      "to": "Twitter Inc.",
+      "label": "monitored → Twitter Inc.",
+      "network_call": {
+        "ip": "199.96.57.7",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Twitter Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS13414",
+        "asn_org": "Twitter Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.128; bytes=13946; ports=1; flux=5; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t33",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.11",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-11.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=6475; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t34",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.122",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-122.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3612; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t35",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.128",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-128.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=14255; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t36",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.131",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3303; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t37",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.144",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-144.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=2316; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t38",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.153",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-153.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=216; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t39",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.168",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-168.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=2700; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t40",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.19",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a2-16-117-19.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=7589; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t41",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "205.185.216.42",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "map2.hwcdn.net"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=8014; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t42",
+      "from": "INITIAL",
+      "to": "Microsoft Corporation",
+      "label": "safe → Microsoft Corporation",
+      "network_call": {
+        "ip": "207.46.194.10",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Microsoft Corporation",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS8075",
+        "asn_org": "Microsoft Corporation"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=164; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t43",
+      "from": "INITIAL",
+      "to": "CenturyLink Communications, LLC",
+      "label": "monitored → CenturyLink Communications, LLC",
+      "network_call": {
+        "ip": "208.146.36.21",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "208.146.36.21"
+      },
+      "service": {
+        "name": "CenturyLink Communications, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS3561",
+        "asn_org": "CenturyLink Communications, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=2127; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t44",
+      "from": "INITIAL",
+      "to": "CenturyLink Communications, LLC",
+      "label": "monitored → CenturyLink Communications, LLC",
+      "network_call": {
+        "ip": "208.146.36.28",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "208.146.36.28"
+      },
+      "service": {
+        "name": "CenturyLink Communications, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS3561",
+        "asn_org": "CenturyLink Communications, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=336; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t45",
+      "from": "INITIAL",
+      "to": "Free SAS",
+      "label": "monitored → Free SAS",
+      "network_call": {
+        "ip": "212.27.40.246",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Free SAS",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12322",
+        "asn_org": "Free SAS"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1672; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t46",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.211.110",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=3040; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t47",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.1.239.83",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=216; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t48",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.200.84.121",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1081; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t49",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.200.84.18",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1926; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t50",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.201.198.131",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a23-201-198-131.deploy.static.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=4118; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t51",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.201.212.136",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a23-201-212-136.deploy.static.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=35836; ports=1; flux=7; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t52",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.21.115.89",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1478; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t53",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.21.142.29",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "ec2-23-21-142-29.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=11149; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t54",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.21.46.134",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=25310; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t55",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.22.202.196",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-23-22-202-196.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=300; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t56",
+      "from": "INITIAL",
+      "to": "B2 Net Solutions Inc.",
+      "label": "monitored → B2 Net Solutions Inc.",
+      "network_call": {
+        "ip": "23.229.51.34",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "www32.beesr.com"
+      },
+      "service": {
+        "name": "B2 Net Solutions Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS55286",
+        "asn_org": "B2 Net Solutions Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=915; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t57",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.23.168.21",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=11592; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t58",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "23.23.77.27",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "ec2-23-23-77-27.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=11420; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t59",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "23.3.227.118",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=17588; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t60",
+      "from": "INITIAL",
+      "to": "Facebook, Inc.",
+      "label": "safe → Facebook, Inc.",
+      "network_call": {
+        "ip": "31.13.91.12",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "edge-liverail-shv-01-ams3.facebook.com"
+      },
+      "service": {
+        "name": "Facebook, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS32934",
+        "asn_org": "Facebook, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=10567; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t61",
+      "from": "INITIAL",
+      "to": "CFN Services Inc.",
+      "label": "monitored → CFN Services Inc.",
+      "network_call": {
+        "ip": "31.186.225.23",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "31.186.225.23"
+      },
+      "service": {
+        "name": "CFN Services Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS393954",
+        "asn_org": "CFN Services Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=42083; ports=1; flux=11; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t62",
+      "from": "INITIAL",
+      "to": "CFN Services Inc.",
+      "label": "monitored → CFN Services Inc.",
+      "network_call": {
+        "ip": "31.186.225.24",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "31.186.225.24"
+      },
+      "service": {
+        "name": "CFN Services Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS393954",
+        "asn_org": "CFN Services Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=13857; ports=2; flux=4; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t63",
+      "from": "INITIAL",
+      "to": "CFN Services Inc.",
+      "label": "monitored → CFN Services Inc.",
+      "network_call": {
+        "ip": "31.186.225.27",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "31.186.225.27"
+      },
+      "service": {
+        "name": "CFN Services Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS393954",
+        "asn_org": "CFN Services Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=55783; ports=1; flux=15; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t64",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "46.137.127.34",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=980; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t65",
+      "from": "INITIAL",
+      "to": "proxy.videoplaza.tv",
+      "label": "monitored → 46.226.152.27",
+      "network_call": {
+        "ip": "46.226.152.27",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "proxy.videoplaza.tv"
+      },
+      "service": {
+        "name": "proxy.videoplaza.tv",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": null
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=unknown; self_loop=0.95; bytes=724; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t66",
+      "from": "INITIAL",
+      "to": "OVH SAS",
+      "label": "monitored → OVH SAS",
+      "network_call": {
+        "ip": "5.135.143.111",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ns2343250.ovh.net"
+      },
+      "service": {
+        "name": "OVH SAS",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS16276",
+        "asn_org": "OVH SAS"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=58881; ports=1; flux=24; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t67",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "50.16.134.144",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=14135; ports=1; flux=17; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t68",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "50.18.107.165",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=216; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t69",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "50.19.228.192",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "ec2-50-19-228-192.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=1594; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t70",
+      "from": "INITIAL",
+      "to": "DEFT.COM",
+      "label": "monitored → DEFT.COM",
+      "network_call": {
+        "ip": "50.31.185.39",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "unknown.servercentral.net"
+      },
+      "service": {
+        "name": "DEFT.COM",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS23352",
+        "asn_org": "DEFT.COM"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=4464; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t71",
+      "from": "INITIAL",
+      "to": "DEFT.COM",
+      "label": "monitored → DEFT.COM",
+      "network_call": {
+        "ip": "50.31.185.43",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "DEFT.COM",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS23352",
+        "asn_org": "DEFT.COM"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=4574; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t72",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "52.0.155.193",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-52-0-155-193.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3750; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t73",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.154.23.133",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-154-23-133.eu-west-1.compute.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=536; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t74",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.162.0.214",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-162-0-214.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=15730; ports=1; flux=18; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t75",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.225.128.109",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": "ec2-54-225-128-109.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=2405; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t76",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.225.13.86",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-225-13-86.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=5935; ports=1; flux=7; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t77",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.225.214.201",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-225-214-201.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1482; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t78",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.226.16.35",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-226-16-35.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=10594; ports=1; flux=13; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t79",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.0.220",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-website-us-east-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=988; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t80",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.0",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=421; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t81",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.176",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1224; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t82",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.192",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1405; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t83",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.200",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=955; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t84",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.48",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t85",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.56",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3652; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t86",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.128.64",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=522; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t87",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.129.40",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=4074; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t88",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.129.49",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=512; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t89",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.10",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1405; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t90",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.106",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t91",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.114",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1404; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t92",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.177",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3266; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t93",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.192",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1758; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t94",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.58",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t95",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.132.98",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t96",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.106",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t97",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.18",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=15274; ports=1; flux=7; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t98",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.208",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=754; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t99",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.26",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t100",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.34",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t101",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.40",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-eu-west-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=472; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t102",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.136.58",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=2428; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t103",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.122",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1505; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t104",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.129",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=754; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t105",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.2",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1505; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t106",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.225",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=7117; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t107",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.34",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1144; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t108",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.42",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=381; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t109",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.50",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-3-w.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=702; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t110",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.140.96",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=30374; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t111",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.16.100",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "s3-website-us-east-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=971; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t112",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.231.34.41",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=825; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t113",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.81.241.254",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-81-241-254.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=9522; ports=1; flux=11; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t114",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.82.57.142",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-82-57-142.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1520; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t115",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.85.206.18",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "ec2-54-85-206-18.compute-1.amazonaws.com"
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=838; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t116",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.86.105.222",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS14618",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=216; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t117",
+      "from": "INITIAL",
+      "to": "Orange",
+      "label": "monitored → Orange",
+      "network_call": {
+        "ip": "62.161.94.220",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "logw312.ati-host.net"
+      },
+      "service": {
+        "name": "Orange",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS3215",
+        "asn_org": "Orange"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=6536; ports=1; flux=13; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t118",
+      "from": "INITIAL",
+      "to": "Scaleway SAS",
+      "label": "monitored → Scaleway SAS",
+      "network_call": {
+        "ip": "62.210.149.48",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "62-210-149-48.rev.poneytelecom.eu"
+      },
+      "service": {
+        "name": "Scaleway SAS",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12876",
+        "asn_org": "Scaleway SAS"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=76040; ports=1; flux=30; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t119",
+      "from": "INITIAL",
+      "to": "Level 3 Parent, LLC",
+      "label": "monitored → Level 3 Parent, LLC",
+      "network_call": {
+        "ip": "62.67.193.21",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "62.67.193.21"
+      },
+      "service": {
+        "name": "Level 3 Parent, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS3356",
+        "asn_org": "Level 3 Parent, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=4581; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t120",
+      "from": "INITIAL",
+      "to": "Level 3 Parent, LLC",
+      "label": "monitored → Level 3 Parent, LLC",
+      "network_call": {
+        "ip": "62.67.193.43",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "62.67.193.43"
+      },
+      "service": {
+        "name": "Level 3 Parent, LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS3356",
+        "asn_org": "Level 3 Parent, LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=8862; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t121",
+      "from": "INITIAL",
+      "to": "Outbrain, Inc.",
+      "label": "monitored → Outbrain, Inc.",
+      "network_call": {
+        "ip": "64.202.112.12",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "64.202.112.12"
+      },
+      "service": {
+        "name": "Outbrain, Inc.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS22075",
+        "asn_org": "Outbrain, Inc."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=4555; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t122",
+      "from": "INITIAL",
+      "to": "Hurricane Electric LLC",
+      "label": "monitored → Hurricane Electric LLC",
+      "network_call": {
+        "ip": "64.71.187.126",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Hurricane Electric LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS6939",
+        "asn_org": "Hurricane Electric LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=822; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t123",
+      "from": "INITIAL",
+      "to": "Unitas Global",
+      "label": "monitored → Unitas Global",
+      "network_call": {
+        "ip": "64.74.232.43",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "64.74.232.43"
+      },
+      "service": {
+        "name": "Unitas Global",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS19024",
+        "asn_org": "Unitas Global"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=8931; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t124",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "74.125.133.91",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.128; bytes=3960; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.128
+      }
+    },
+    {
+      "id": "t125",
+      "from": "INITIAL",
+      "to": "Internap Holding LLC",
+      "label": "monitored → Internap Holding LLC",
+      "network_call": {
+        "ip": "74.201.193.86",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "74.201.193.86"
+      },
+      "service": {
+        "name": "Internap Holding LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS32475",
+        "asn_org": "Internap Holding LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=4508; ports=1; flux=3; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t126",
+      "from": "INITIAL",
+      "to": "Unitas Global",
+      "label": "monitored → Unitas Global",
+      "network_call": {
+        "ip": "74.201.198.71",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Unitas Global",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS13789",
+        "asn_org": "Unitas Global"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=204; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t127",
+      "from": "INITIAL",
+      "to": "TelemaxX Telekommunikation GmbH",
+      "label": "monitored → TelemaxX Telekommunikation GmbH",
+      "network_call": {
+        "ip": "81.26.166.11",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "x.ligatus.com"
+      },
+      "service": {
+        "name": "TelemaxX Telekommunikation GmbH",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12843",
+        "asn_org": "TelemaxX Telekommunikation GmbH"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=15827; ports=1; flux=10; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t128",
+      "from": "INITIAL",
+      "to": "TelemaxX Telekommunikation GmbH",
+      "label": "monitored → TelemaxX Telekommunikation GmbH",
+      "network_call": {
+        "ip": "81.26.166.70",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "d.ligatus.com"
+      },
+      "service": {
+        "name": "TelemaxX Telekommunikation GmbH",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12843",
+        "asn_org": "TelemaxX Telekommunikation GmbH"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=5046; ports=1; flux=4; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t129",
+      "from": "INITIAL",
+      "to": "Orange",
+      "label": "monitored → Orange",
+      "network_call": {
+        "ip": "81.52.140.11",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Orange",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS5511",
+        "asn_org": "Orange"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1748; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t130",
+      "from": "INITIAL",
+      "to": "Orange",
+      "label": "monitored → Orange",
+      "network_call": {
+        "ip": "81.52.140.9",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Orange",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS5511",
+        "asn_org": "Orange"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=3384; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t131",
+      "from": "INITIAL",
+      "to": "LeaseWeb Netherlands B.V.",
+      "label": "monitored → LeaseWeb Netherlands B.V.",
+      "network_call": {
+        "ip": "85.17.147.179",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "LeaseWeb Netherlands B.V.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS60781",
+        "asn_org": "LeaseWeb Netherlands B.V."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1400; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t132",
+      "from": "INITIAL",
+      "to": "cdn-87-248-221-253.par.llnw.net",
+      "label": "monitored → 87.248.221.253",
+      "network_call": {
+        "ip": "87.248.221.253",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "cdn-87-248-221-253.par.llnw.net"
+      },
+      "service": {
+        "name": "cdn-87-248-221-253.par.llnw.net",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": null
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=unknown; self_loop=0.95; bytes=35746; ports=1; flux=10; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t133",
+      "from": "INITIAL",
+      "to": "cdn-87-248-221-254.par.llnw.net",
+      "label": "monitored → 87.248.221.254",
+      "network_call": {
+        "ip": "87.248.221.254",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "cdn-87-248-221-254.par.llnw.net"
+      },
+      "service": {
+        "name": "cdn-87-248-221-254.par.llnw.net",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": null
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=unknown; self_loop=0.95; bytes=43934; ports=1; flux=12; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t134",
+      "from": "INITIAL",
+      "to": "Hetzner Online GmbH",
+      "label": "monitored → Hetzner Online GmbH",
+      "network_call": {
+        "ip": "88.198.114.198",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "static.88-198-114-198.clients.your-server.de"
+      },
+      "service": {
+        "name": "Hetzner Online GmbH",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS24940",
+        "asn_org": "Hetzner Online GmbH"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=1004; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t135",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "88.221.83.58",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a88-221-83-58.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=1531; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t136",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "88.221.83.73",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a88-221-83-73.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=6171; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t137",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "88.221.83.81",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a88-221-83-81.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=3004; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t138",
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "88.221.83.96",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "a88-221-83-96.deploy.akamaitechnologies.com"
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.95; bytes=2176; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t139",
+      "from": "INITIAL",
+      "to": "Aeza Group LLC",
+      "label": "monitored → Aeza Group LLC",
+      "network_call": {
+        "ip": "91.103.140.193",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "91.103.140.193"
+      },
+      "service": {
+        "name": "Aeza Group LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS210644",
+        "asn_org": "Aeza Group LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=40114; ports=1; flux=16; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t140",
+      "from": "INITIAL",
+      "to": "Aeza Group LLC",
+      "label": "monitored → Aeza Group LLC",
+      "network_call": {
+        "ip": "91.103.140.225",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "91.103.140.225"
+      },
+      "service": {
+        "name": "Aeza Group LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS210644",
+        "asn_org": "Aeza Group LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=12019; ports=1; flux=6; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t141",
+      "from": "INITIAL",
+      "to": "AiK LLC",
+      "label": "monitored → AiK LLC",
+      "network_call": {
+        "ip": "91.103.142.129",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "91.103.142.129"
+      },
+      "service": {
+        "name": "AiK LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS58347",
+        "asn_org": "AiK LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=34940; ports=1; flux=13; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t142",
+      "from": "INITIAL",
+      "to": "AiK LLC",
+      "label": "monitored → AiK LLC",
+      "network_call": {
+        "ip": "91.103.142.194",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": "91.103.142.194"
+      },
+      "service": {
+        "name": "AiK LLC",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS58347",
+        "asn_org": "AiK LLC"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=51720; ports=1; flux=21; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t143",
+      "from": "INITIAL",
+      "to": "Weborama SA",
+      "label": "monitored → Weborama SA",
+      "network_call": {
+        "ip": "91.216.195.3",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Weborama SA",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS12516",
+        "asn_org": "Weborama SA"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=859; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    },
+    {
+      "id": "t144",
+      "from": "INITIAL",
+      "to": "dogado GmbH",
+      "label": "monitored → dogado GmbH",
+      "network_call": {
+        "ip": "93.190.67.157",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "dogado GmbH",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS47215",
+        "asn_org": "dogado GmbH"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.95; bytes=592; ports=1; flux=1; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.95
+      }
+    }
+  ],
+  "metadata": {
+    "source": "enrichment (dot+csv+maxmind+classifier)",
+    "dot_label_type": "PORT",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "category_counts": {
+      "safe": 90,
+      "monitored": 54
+    },
+    "thresholds": {
+      "tau_selfloop": 0.8,
+      "tau_ports": 10,
+      "tau_dos": 1000000
+    },
+    "thresholds_note": "PROVISOIRES — choix méthodologique, ajustables"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "chain_id": "chain_broken_test",
+  "validated_at": "2026-05-31T00:09:21.174056+00:00",
+  "is_valid": false,
+  "quality_score": 20,
+  "issues": [
+    {
+      "severity": "ERROR",
+      "category": "conflict",
+      "message": "Conflit BLOCK/ALLOW sur la même IP destination : 192.168.1.100",
+      "affected_rule_ids": [
+        "FW-001",
+        "FW-002"
+      ],
+      "suggested_fix": "Supprimer la règle ALLOW pour 192.168.1.100 si elle est hostile, ou la règle BLOCK si elle est légitime."
+    },
+    {
+      "severity": "ERROR",
+      "category": "orphan_reference",
+      "message": "IpsAction IPS-002 référence une signature inexistante : 'IDS-999'",
+      "affected_rule_ids": [
+        "IPS-002"
+      ],
+      "suggested_fix": "Supprimer IPS-002 ou créer la signature IDS 'IDS-999'."
+    },
+    {
+      "severity": "WARNING",
+      "category": "redundancy",
+      "message": "Règle FW redondante : FW-004 est un doublon exact de FW-003",
+      "affected_rule_ids": [
+        "FW-004",
+        "FW-003"
+      ],
+      "suggested_fix": "Supprimer FW-004 (doublon de FW-003)."
+    },
+    {
+      "severity": "WARNING",
+      "category": "best_practice",
+      "message": "Risque global HIGH sans action QUARANTINE : la réponse automatique peut être insuffisante",
+      "affected_rule_ids": [],
+      "suggested_fix": "Ajouter une IpsAction QUARANTINE sur la signature IDS la plus critique."
+    }
+  ],
+  "stats": {
+    "nb_rules_before": 4,
+    "nb_rules_after": 3,
+    "duplicates_removed": 1,
+    "nb_ids_signatures": 1,
+    "nb_ips_actions": 2,
+    "nb_errors": 2,
+    "nb_warnings": 2
+  },
+  "validation_summary": "La chaîne de sécurité 'chain_broken_test' pour l'application 'Broken Test App' présente des problèmes critiques avec un score qualité de 20/100, ce qui la rend non valide. Des erreurs telles que des conflits de règles de pare-feu (FW-001, FW-002) et des références orphelines dans les règles IPS (IPS-002) ont été détectées. De plus, des avertissements concernant des règles redondantes (FW-004) et des pratiques de sécurité insuffisantes pour un risque global élevé ont été identifiés. Le déploiement de cette chaîne est fortement déconseillé avant correction de ces problèmes."
+}

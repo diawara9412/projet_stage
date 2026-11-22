@@ -1,0 +1,16 @@
+digraph G {
+0 [label="OVH"];
+1 [label="Amazon Technologies Inc."];
+2 [label="Amazon.com. Inc."];
+3 [label="INITIAL" shape=box];
+4 [label="TERMINAL" shape=diamond];
+0->0[label="P:0.9961240310077519"];
+0->1[label="P:0.0012919896640826874"];
+0->2[label="P:0.0012919896640826874"];
+0->4[label="P:0.0012919896640826874"];
+1->1[label="P:0.5"];
+1->0[label="P:0.5"];
+2->2[label="P:0.5"];
+2->0[label="P:0.5"];
+3->0[label="P:1.0"];
+}

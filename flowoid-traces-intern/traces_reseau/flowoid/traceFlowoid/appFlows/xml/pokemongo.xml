@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:installLocation="0" android:versionCode="2016080700" android:versionName="0.33.0" package="com.nianticlabs.pokemongo" platformBuildVersionCode="24" platformBuildVersionName="N" xmlns:android="http://schemas.android.com/apk/res/android">
+	
+
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true">
+</supports-screens>
+	
+
+	<uses-permission android:name="com.android.vending.BILLING">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.VIBRATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BLUETOOTH">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+</uses-permission>
+	
+
+	<application android:banner="@7F020000" android:debuggable="false" android:icon="@7F020001" android:isGame="false" android:label="@7F070037" android:theme="@7F0A000D">
+		
+
+		<activity android:configChanges="0x40000FFF" android:label="@7F070037" android:launchMode="2" android:name="com.unity3d.player.UnityPlayerNativeActivity" android:screenOrientation="1">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MAIN">
+</action>
+				
+
+				<category android:name="android.intent.category.LAUNCHER">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="unityplayer.UnityActivity" android:value="true">
+</meta-data>
+			
+
+			<meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true">
+</meta-data>
+			
+
+		</activity>
+		
+
+		<activity android:name="com.google.nianticproject.platform.AccountsActivity" android:screenOrientation="1" android:theme="@android:01030009">
+</activity>
+		
+
+		<service android:name="com.upsight.android.analytics.internal.DispatcherService">
+</service>
+		
+
+		<receiver android:name="com.upsight.android.analytics.internal.dispatcher.schema.NetworkChangeBroadcastReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="true" android:name="com.upsight.android.analytics.internal.referrer.InstallReferrerReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.android.vending.INSTALL_REFERRER">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<meta-data android:name="com.upsight.extension.analytics" android:value="com.upsight.android.UpsightAnalyticsExtension">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.core" android:value="com.upsight.android.internal.CoreComponentFactory">
+</meta-data>
+		
+
+		<meta-data android:name="com.google.android.gms.version" android:value="@7F090000">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.extension.googleadvertisingid" android:value="com.upsight.android.UpsightGoogleAdvertisingIdExtension">
+</meta-data>
+		
+
+		<service android:name="com.upsight.android.googlepushservices.internal.PushIntentService">
+</service>
+		
+
+		<service android:name="com.upsight.android.googlepushservices.internal.PushClickIntentService">
+</service>
+		
+
+		<meta-data android:name="com.upsight.extension.googlepushservices" android:value="com.upsight.android.UpsightGooglePushServicesExtension">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.extension.managedvariables" android:value="com.upsight.android.UpsightManagedVariablesExtension">
+</meta-data>
+		
+
+		<activity android:name="com.upsight.android.marketing.internal.billboard.BillboardManagementActivity" android:theme="@android:01030010">
+</activity>
+		
+
+		<meta-data android:name="com.upsight.extension.marketing" android:value="com.upsight.android.UpsightMarketingExtension">
+</meta-data>
+		
+
+		<activity android:configChanges="0x000005B0" android:hardwareAccelerated="true" android:name="com.upsight.mediation.ads.adapters.MRaidActivity" android:theme="@android:01030011" android:windowSoftInputMode="0x00000010">
+</activity>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.upsight.mediation.vast.activity.VASTActivity" android:screenOrientation="6" android:theme="@android:01030007">
+</activity>
+		
+
+		<activity android:name="com.nianticlabs.nia.account.AccountsActivity" android:screenOrientation="1" android:theme="@android:01030009">
+</activity>
+		
+
+		<activity android:exported="false" android:name="com.nianticlabs.nia.iap.PurchaseActivity" android:theme="@android:01030010">
+</activity>
+		
+
+		<service android:exported="false" android:name="com.nianticlabs.nia.useractivity.ActivityRecognitionService">
+</service>
+		
+
+		<service android:exported="false" android:name="com.nianticlabs.pokemongoplus.service.BackgroundService" android:process=":pgp">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.nianticlabs.pokemongoplus.service.ToServer">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</service>
+		
+
+		<service android:exported="false" android:name="com.nianticlabs.pokemongoplus.service.ClientService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.nianticlabs.pokemongoplus.service.ToClient">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</service>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:0103000F">
+</activity>
+		
+
+		<activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@7F0A0000">
+</activity>
+		
+
+		<meta-data android:name="com.upsight.session_callbacks" android:value="com.upsight.android.unity.UnitySessionCallbacks">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.notification_builder_factory" android:value="com.upsight.android.unity.UnityPushNotificationBuilderFactory">
+</meta-data>
+		
+
+		<receiver android:name="com.upsight.android.googlepushservices.internal.PushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.google.android.c2dm.intent.RECEIVE">
+</action>
+				
+
+				<category android:name="com.nianticlabs.pokemongo">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<provider android:authorities="com.nianticlabs.pokemongo.upsight" android:enabled="true" android:exported="false" android:name="com.upsight.android.internal.persistence.ContentProvider">
+</provider>
+		
+
+		<meta-data android:name="com.upsight.sdk_plugin" android:value="unity:4.2.2">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.app_token" android:value="a9cc12f87adc420baf964f187672ecb4">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.public_key" android:value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyYKX0nb1ezY2KLkAl0tuWn2AZ0PfS2NF2BSM0T2OLCJM/H8Siyz1+OTvDWo1w+psbz6ugjTOaBGtkTRI1uikGcu32mhW2I4c9XUUkx1AYlC3wwiqnWZMvMKthp1yaKzrTsqhZzwJ6DvgZHUf1IPIkoxXoGmfyYNRI3QcpW5Uwa1dsZr5YeG8fwC53hyukOutt6PRqwDXQCsyCd/PawjUJZT6oxDFYYZ8a/11OIstlS4jXnQQ+k/f5HV5b8+ITiKhqXuNVsByPZqSIwi5T8pwJan7Rk8OCVImSkgUmWLcmlPcoL1UaF+vMZXZYhk1hM765IUw++7Dw2qvKVi4yl+giwIDAQAB">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.gcm" android:value="com.nianticlabs.pokemongo.848232511240">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.player_level" android:value="0">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.player_xp" android:value="0">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.player_avatar" android:value="0">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.pokemon_count" android:value="0">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.item_count" android:value="0">
+</meta-data>
+		
+
+		<meta-data android:name="com.upsight.user_attribute.integer.pokecoin" android:value="0">
+</meta-data>
+		
+
+	</application>
+	
+
+	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="23">
+</uses-sdk>
+	
+
+	<uses-feature android:glEsVersion="0x00020000">
+</uses-feature>
+	
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.INTERNET">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.GET_ACCOUNTS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.USE_CREDENTIALS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WAKE_LOCK">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION">
+</uses-permission>
+	
+
+	<uses-feature android:name="android.hardware.touchscreen">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true">
+</uses-feature>
+	
+
+	<permission android:name="com.nianticlabs.pokemongo.permission.C2D_MESSAGE" android:protectionLevel="0x00000002">
+</permission>
+	
+
+	<uses-permission android:name="com.nianticlabs.pokemongo.permission.C2D_MESSAGE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CAMERA">
+</uses-permission>
+	
+
+	<uses-feature android:name="android.hardware.camera" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.hardware.camera.front" android:required="false">
+</uses-feature>
+	
+
+</manifest>

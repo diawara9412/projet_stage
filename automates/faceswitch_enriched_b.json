@@ -1,0 +1,1084 @@
+{
+  "automate_id": "faceswitch",
+  "app_name": "faceswitch",
+  "app_version": "architecture-b-v1",
+  "platform": "android",
+  "description": "Automate enrichi par l'ARCHITECTURE (Analyzer-B bind_tools) (faceswitch)",
+  "created_at": "2026-06-17T20:16:52.170080+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "AKAMAI-PA",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "NAZWAPL-WEBHOSTING",
+      "type": "destination"
+    },
+    {
+      "id": "2",
+      "name": "Google LLC",
+      "type": "destination"
+    },
+    {
+      "id": "3",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "4",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "172.217.16.66",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=6656; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 16.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t01"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "172.217.18.225",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=16547; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 94.67,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t02"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "172.217.19.130",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=2370; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 13.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t03"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.112",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=120; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 3.0,
+        "ip_limit_met": false,
+        "min_size_met": true,
+        "ids_limit_n": null
+      },
+      "id": "t04"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.113",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1299; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 10.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t05"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.123",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=2242; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 8.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t06"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.139",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1521; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 21.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t07"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.146",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=2280; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 17.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t08"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.147",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=683; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 5.0,
+        "ip_limit_met": false,
+        "min_size_met": true,
+        "ids_limit_n": null
+      },
+      "id": "t09"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.152",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1167; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 9.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t10"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.153",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1858; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 12.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t11"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.154",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=2959; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 12.67,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t12"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.160",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=4920; ports=1; flux=8; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 8,
+        "avg_size": 9.75,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t13"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.169",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=789; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 4.0,
+        "ip_limit_met": false,
+        "min_size_met": true,
+        "ids_limit_n": null
+      },
+      "id": "t14"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.170",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1773; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 12.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t15"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.171",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=901; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 11.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t16"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.178",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=675; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 2.0,
+        "ip_limit_met": false,
+        "min_size_met": true,
+        "ids_limit_n": null
+      },
+      "id": "t17"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.27",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1202; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 7.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t18"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.32",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=2389; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 5.25,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t19"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.35",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=1391; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 9.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t20"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.64",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=675; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 6.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t21"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "2.16.117.65",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS34164",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=685; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 5.0,
+        "ip_limit_met": false,
+        "min_size_met": true,
+        "ids_limit_n": null
+      },
+      "id": "t22"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.208.194",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=2110; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 10.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t23"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.208.225",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=9446; ports=1; flux=5; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 5,
+        "avg_size": 26.6,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t24"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.208.227",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=3897; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 24.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t25"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.211.66",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=27426; ports=1; flux=6; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 6,
+        "avg_size": 64.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t26"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.211.98",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=4388; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 11.25,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t27"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "74.125.71.95",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.8; bytes=1648; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.8
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 17.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t28"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Nazwa.pl Sp.z.o.o.",
+      "label": "monitored → Nazwa.pl Sp.z.o.o.",
+      "network_call": {
+        "ip": "85.128.215.22",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Nazwa.pl Sp.z.o.o.",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": "AS15967",
+        "asn_org": "Nazwa.pl Sp.z.o.o."
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.0; bytes=1640; ports=1; flux=2; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 1.0
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 12.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t29"
+    },
+    {
+      "from": "INITIAL",
+      "to": "Akamai International B.V.",
+      "label": "safe → Akamai International B.V.",
+      "network_call": {
+        "ip": "88.221.112.186",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Akamai International B.V.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS20940",
+        "asn_org": "Akamai International B.V."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.879; bytes=3644; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.879
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 15.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      },
+      "id": "t30"
+    }
+  ],
+  "metadata": {
+    "source": "architecture (analyzer-b bind_tools + classifier tools)",
+    "analyzer_b_source": "llm",
+    "dot_label_type": "ORG",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "rdap_enabled": true,
+    "bgp_enabled": false,
+    "category_counts": {
+      "safe": 29,
+      "monitored": 1
+    },
+    "coverage": {
+      "total": 30,
+      "classified": 30,
+      "ratio": 1.0,
+      "missed": []
+    },
+    "architecture_summary": "L'application faceswitch présente un comportement réseau globalement sécurisé, avec la majorité des destinations classées comme \"sûres\" et une réputation \"trusted\". Cependant, certaines destinations ont été classées comme \"monitored\" avec un score de 2, indiquant un niveau de risque plus élevé. Il est important de surveiller ces destinations pour détecter toute activité anormale. Le contexte MITRE ATT&CK pertinent pour cette application pourrait être T1071 C2 over HTTP, car certaines destinations ont été identifiées comme utilisant le protocole HTTP pour la communication. Il est recommandé de mettre en place des mesures de sécurité supplémentaires, telles que des règles de pare-feu et des systèmes de détection d'intrusion, pour protéger contre les menaces potentielles.",
+    "thresholds": {
+      "attack_limit": 0.8,
+      "port_scan_limit": 10,
+      "tau_dos": 1000000
+    }
+  }
+}

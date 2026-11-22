@@ -1,0 +1,277 @@
+{
+  "automate_path": "automates/banking_app.json",
+  "automate_analysis": {
+    "automate_id": "banking_app_v1",
+    "app_name": "SecureBank Mobile",
+    "analyzed_at": "2026-06-09T08:39:22.590943+00:00",
+    "global_suspicion_score": 1.09,
+    "risk_level": "low",
+    "nb_states": 6,
+    "nb_transitions": 9,
+    "nb_suspicious": 1,
+    "suspicious_transitions": [
+      {
+        "transition_id": "t09_SUSPECT",
+        "from_state": "history",
+        "to_state": "history",
+        "label": "SUSPECT — Exfiltration de l'historique des transactions",
+        "dst_ip": "193.34.145.78",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "suspicion_score": 10,
+        "flags": [
+          "data_exfiltration",
+          "bulletproof_hosting",
+          "dga_domain"
+        ],
+        "risk_category": "data_exfiltration",
+        "explanation": "120KB envoyés en clair (HTTP) vers un domaine roumain enregistré il y a 5 jours. ASN M247 est régulièrement abusé pour l'exfiltration. Taille de payload correspond exactement à l'historique de transactions précédemment chargé. Nom de domaine pseudo-légitime (bankstats-cdn.net) conçu pour passer inaperçu."
+      }
+    ],
+    "legitimate_services": [
+      {
+        "name": "SecureBank API (Cloudflare)",
+        "service_type": "API",
+        "ips": [
+          "104.18.14.101"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t01",
+          "t03",
+          "t06",
+          "t07",
+          "t08"
+        ]
+      },
+      {
+        "name": "Twilio Authy (2FA)",
+        "service_type": "API",
+        "ips": [
+          "54.208.105.16"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t02"
+        ]
+      },
+      {
+        "name": "Plaid",
+        "service_type": "API",
+        "ips": [
+          "54.160.182.95"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t04"
+        ]
+      },
+      {
+        "name": "Stripe",
+        "service_type": "payment",
+        "ips": [
+          "54.187.174.169"
+        ],
+        "ports": [
+          443
+        ],
+        "transition_ids": [
+          "t05"
+        ]
+      }
+    ],
+    "recommended_actions": [
+      "FIREWALL BLOCK priorité=800 — 193.34.145.78:80/HTTP (exfiltration de données, transition t09_SUSPECT)",
+      "IDS SIGNATURE data_exfiltration — sortant vers 193.34.145.78 seuil=50000B (transition t09_SUSPECT)",
+      "FIREWALL ALLOW priorité=100 — SecureBank API (Cloudflare) IPs=[104.18.14.101] ports=[443] (API)",
+      "FIREWALL ALLOW priorité=100 — Twilio Authy (2FA) IPs=[54.208.105.16] ports=[443] (API)",
+      "FIREWALL ALLOW priorité=100 — Plaid IPs=[54.160.182.95] ports=[443] (API)",
+      "FIREWALL ALLOW priorité=100 — Stripe IPs=[54.187.174.169] ports=[443] (payment)",
+      "FIREWALL BLOCK — 193.34.145.78:80/HTTP — Exfiltration de données suspectée avec flags de 'data_exfiltration', 'bulletproof_hosting' et 'dga_domain'",
+      "IDS SIGNATURE — data_exfiltration — sortant vers 193.34.145.78 avec un seuil de 50000B — Détecter les activités de fuite de données",
+      "FIREWALL ALLOW — 104.18.14.101:443 — SecureBank API (Cloudflare) — Autoriser les communications sécurisées avec l'API de SecureBank",
+      "FIREWALL ALLOW — 54.208.105.16:443 — Twilio Authy (2FA) — Autoriser les communications sécurisées avec Twilio Authy pour l'authentification à deux facteurs",
+      "FIREWALL ALLOW — 54.160.182.95:443 — Plaid — Autoriser les communications sécurisées avec Plaid pour les services financiers",
+      "FIREWALL ALLOW — 54.187.174.169:443 — Stripe — Autoriser les communications sécurisées avec Stripe pour les paiements"
+    ],
+    "llm_summary": "L'application SecureBank Mobile présente un niveau de risque global faible avec un score de 1,09/10. Cependant, une transition suspecte a été détectée, indiquant une possible exfiltration de données vers un hôte potentiellement malveillant (193.34.145.78:80/HTTP) avec des flags de 'data_exfiltration', 'bulletproof_hosting' et 'dga_domain'. Les services légitimes identifiés incluent SecureBank API, Twilio Authy, Plaid et Stripe, qui sont autorisés à communiquer avec l'application."
+  },
+  "security_chain": {
+    "chain_id": "chain_banking_app_v1",
+    "source_automate_id": "banking_app_v1",
+    "source_app_name": "SecureBank Mobile",
+    "generated_at": "2026-06-09T08:39:24.529158+00:00",
+    "global_risk_level": "LOW",
+    "firewall_rules": [
+      {
+        "id": "FW-001",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": "10.0.0.0/24",
+        "dst_port": null,
+        "protocol": "any",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic LAN IPv4 interne autorisé par défaut — priorité 50 écrasable par BLOCK (900) et ALLOW spécifiques (100)"
+      },
+      {
+        "id": "FW-002",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": null,
+        "dst_port": null,
+        "protocol": "ARP",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic ARP autorisé — nécessaire pour résolution MAC inter-hosts dans Mininet"
+      },
+      {
+        "id": "FW-003",
+        "action": "ALLOW",
+        "direction": "both",
+        "dst_ip": "10.0.0.0/24",
+        "dst_port": null,
+        "protocol": "ICMP",
+        "priority": 50,
+        "source_transition_id": null,
+        "comment": "Trafic ICMP interne autorisé — pour diagnostics ping et traceroute"
+      },
+      {
+        "id": "FW-004",
+        "action": "BLOCK",
+        "direction": "outbound",
+        "dst_ip": "193.34.145.78",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "priority": 900,
+        "source_transition_id": "t09_SUSPECT",
+        "comment": "Trafic suspect vers 193.34.145.78:80/HTTP — transition: t09_SUSPECT"
+      },
+      {
+        "id": "FW-005",
+        "action": "ALLOW",
+        "direction": "outbound",
+        "dst_ip": "104.18.14.101",
+        "dst_port": 443,
+        "protocol": "HTTPS",
+        "priority": 100,
+        "source_transition_id": "t01",
+        "comment": "Service légitime : SecureBank API (Cloudflare) (API)"
+      },
+      {
+        "id": "FW-006",
+        "action": "ALLOW",
+        "direction": "outbound",
+        "dst_ip": "54.208.105.16",
+        "dst_port": 443,
+        "protocol": "HTTPS",
+        "priority": 100,
+        "source_transition_id": "t02",
+        "comment": "Service légitime : Twilio Authy (2FA) (API)"
+      },
+      {
+        "id": "FW-007",
+        "action": "ALLOW",
+        "direction": "outbound",
+        "dst_ip": "54.160.182.95",
+        "dst_port": 443,
+        "protocol": "HTTPS",
+        "priority": 100,
+        "source_transition_id": "t04",
+        "comment": "Service légitime : Plaid (API)"
+      },
+      {
+        "id": "FW-008",
+        "action": "ALLOW",
+        "direction": "outbound",
+        "dst_ip": "54.187.174.169",
+        "dst_port": 443,
+        "protocol": "HTTPS",
+        "priority": 100,
+        "source_transition_id": "t05",
+        "comment": "Service légitime : Stripe (payment)"
+      }
+    ],
+    "ids_signatures": [
+      {
+        "id": "IDS-001",
+        "name": "DATA_EXFILTRATION_193_34_145_78_80",
+        "pattern_type": "data_exfiltration",
+        "match_criteria": {
+          "dst_ip": "193.34.145.78",
+          "dst_port": 80,
+          "protocol": "HTTP",
+          "byte_threshold_outbound": 50000
+        },
+        "severity": "CRITICAL",
+        "source_transition_id": "t09_SUSPECT",
+        "comment": "Détection data_exfiltration vers 193.34.145.78:80 — t09_SUSPECT"
+      },
+      {
+        "id": "IDS-002",
+        "name": "DGA_DNS_193_34_145_78_80",
+        "pattern_type": "dga_dns",
+        "match_criteria": {
+          "dst_ip": "193.34.145.78",
+          "dst_port": 80,
+          "protocol": "HTTP",
+          "pattern": "algorithmic_domain_generation"
+        },
+        "severity": "HIGH",
+        "source_transition_id": "t09_SUSPECT",
+        "comment": "Détection dga_dns vers 193.34.145.78:80 — t09_SUSPECT"
+      }
+    ],
+    "ips_actions": [
+      {
+        "id": "IPS-001",
+        "on_signature": "IDS-001",
+        "action": "DROP_SOURCE",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action DROP_SOURCE sur data_exfiltration → 193.34.145.78:80"
+      },
+      {
+        "id": "IPS-002",
+        "on_signature": "IDS-002",
+        "action": "ALERT_ONLY",
+        "duration_seconds": null,
+        "rate_limit_pps": null,
+        "comment": "Action ALERT_ONLY sur dga_dns → 193.34.145.78:80"
+      }
+    ],
+    "deployment_target": {
+      "ryu_endpoint": "http://localhost:8080",
+      "target_switches": [
+        "s0",
+        "s1",
+        "s2"
+      ],
+      "openflow_version": "1.3"
+    },
+    "generation_summary": "La chaîne de sécurité générée pour l'application SecureBank Mobile bloque l'adresse IP 193.34.145.78 sur le port 80/HTTP, suspectée de data exfiltration et de DNS générative (DGA), ce qui correspond à des tactiques de type T1071 (C2 over HTTP) et T1041 (Exfiltration). Les services légitimes tels que les API de SecureBank, Twilio Authy, Plaid et Stripe sont autorisés. Le trafic interne LAN, ARP et ICMP est également permis pour assurer la communication et les diagnostics. Le niveau de protection est considéré comme suffisant pour un risque global évalué à LOW."
+  },
+  "validation_report": {
+    "chain_id": "chain_banking_app_v1",
+    "validated_at": "2026-06-09T08:39:25.399139+00:00",
+    "is_valid": true,
+    "quality_score": 100,
+    "issues": [],
+    "stats": {
+      "nb_rules_before": 8,
+      "nb_rules_after": 8,
+      "duplicates_removed": 0,
+      "nb_ids_signatures": 2,
+      "nb_ips_actions": 2,
+      "nb_errors": 0,
+      "nb_warnings": 0
+    },
+    "validation_summary": "La chaîne de sécurité 'chain_banking_app_v1' pour l'application 'SecureBank Mobile' a obtenu un score de qualité parfait de 100/100, indiquant une configuration sans erreur ni avertissement. Aucune règle n'a posé problème, et les 8 règles de pare-feu ont été validées avec succès sans doublon. Cette chaîne est donc prête au déploiement et offre une protection fiable pour l'application bancaire mobile, correspondant à son niveau de risque global classé comme faible."
+  }
+}

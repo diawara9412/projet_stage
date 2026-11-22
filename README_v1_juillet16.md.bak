@@ -1,0 +1,415 @@
+# Génération automatique de chaînes de sécurité par agents LLM (SDN)
+
+> **Stage de Master — INRIA RESIST** · Encadrant : Rémi Badonnel (LORIA)
+> Sujet : *« Utilisation et comparaison de modèles LLM pour la génération automatique de chaînes de sécurité »*
+
+Documentation technique **complète et pédagogique** de la version de référence (`projet_chaine`). Elle est
+écrite pour qu'une personne **découvrant le projet** puisse le comprendre en la lisant, et sert de matière
+directe au rapport. *(L'ancienne version « Topology Zoo » a été abandonnée — `README_ANCIEN_topologyzoo.md`.)*
+
+---
+
+## 1. Contexte et problématique
+
+Avec l'essor des architectures cloud-native, la sécurité réseau exige des mécanismes dynamiques et
+adaptatifs. Une **chaîne de sécurité** est la composition ordonnée de plusieurs fonctions — pare-feu, IDS,
+IPS — déployées en fonction des menaces observées. Sa configuration manuelle est complexe, lente et sujette
+à erreurs : il faut traduire un comportement réseau en règles concrètes, cohérentes entre elles.
+
+Les modèles de langage (LLM) ouvrent une voie : générer automatiquement ces politiques à partir de **traces
+réseau**. Notre travail conçoit un **pipeline complet** allant de la trace à la chaîne déployée sur un réseau
+logiciel (SDN), puis **compare plusieurs modèles LLM**. Deux questions guident l'étude : les modèles
+savent-ils interpréter des traces et produire des règles correctes ? Et quel modèle offre le meilleur
+compromis qualité/coût ?
+
+## 2. Vue d'ensemble : trois plans, deux modes
+
+Le système s'organise en **trois plans** superposés :
+
+```
+  Plan intelligent (agents LLM, LangGraph)        génère la chaîne / décide
+        │  déploie (REST)                    ↑ escalade des cas ambigus (Redis)
+  Plan de contrôle (contrôleur SDN os-ken)        applique / route
+        │  OpenFlow 1.3 (port 6653)          ↑ packet-in
+  Plan de données (Mininet + Open vSwitch)        le trafic réel
+     h0 (téléphone) → s1 (pare-feu) → s2 (IDS) → NAT → Internet
+```
+
+Il fonctionne selon **deux modes** :
+- **Proactif** : les agents génèrent la chaîne à partir du profil de l'application et la déploient **avant**
+  tout trafic.
+- **Réactif** : à l'exécution, le contrôleur décide seul pour les cas connus, et **escalade aux agents** les
+  cas ambigus ; **les mêmes agents** décident alors et redéploient une règle.
+
+Un principe directeur : **le modèle pour le jugement, le déterminisme pour le contrôle et l'exécution.**
+
+---
+
+## 3. Le plan intelligent : les agents
+
+### 3.1 De la trace au profil (l'entrée)
+
+On part de **traces réseau réelles** (dataset *flowoid*). Pour chaque application, on extrait les
+destinations effectivement contactées — adresse, port, protocole — et on construit un **automate
+comportemental** (`automates/<app>_whitelist.json`) : un graphe de transitions où chacune représente une
+destination, annotée de sa réputation et d'un score de suspicion. C'est l'entrée abstraite du pipeline,
+indépendante du format brut des paquets.
+
+### 3.2 L'orchestration (pattern superviseur)
+
+Les agents sont assemblés en un **graphe d'états** (LangGraph). Chaque agent est un nœud ; tous partagent un
+**état typé** qui transporte l'entrée puis les productions successives de la chaîne. Un nœud **superviseur**,
+sans modèle de langage, joue la boucle de contrôle : il lit l'état, détermine le **premier volet non encore
+produit** (pas d'analyse ? → l'analyseur ; pas de règles ? → le pare-feu ; etc.), et route vers l'agent
+correspondant, qui lui rend la main. On obtient la boucle caractéristique du *pattern superviseur* :
+`START → superviseur → analyseur → superviseur → pare-feu → … → déployeur → END`. Ajouter une fonction
+revient à insérer une règle de routage et un nœud — l'architecture est **extensible**.
+
+### 3.3 Les trois familles d'outils (le cœur théorique)
+
+Tous les agents n'ont pas le même **type** d'outils, parce qu'ils n'ont pas le même **travail**. On distingue
+**trois familles**, tournées respectivement vers l'extérieur, l'intérieur et le réseau.
+
+**a) L'Analyseur → des outils d'ENQUÊTE (tournés vers l'extérieur).**
+Ses outils servent à **établir des faits** sur les destinations : qui les héberge, sont-elles connues comme
+malveillantes. Il ne devine pas, il enquête. Concrètement, il interroge quatre sources : une **liste de
+réputation** (des adresses malveillantes connues), le service **VirusTotal** (combien de moteurs antivirus
+classent une adresse ou un domaine comme malveillant), la **résolution ASN / whois** (l'organisation
+propriétaire de l'adresse) et une **réputation par organisation** (de confiance, douteuse, neutre). Une
+destination signalée par **n'importe lequel** de ces outils devient **suspecte** et sera bloquée. *Pourquoi
+ces outils ?* Parce que reconnaître une menace demande une **connaissance du monde extérieur** qu'aucun
+raisonnement seul ne fournit : whois dit *qui possède* l'adresse, VirusTotal dit *si elle est malveillante*.
+
+**b) Le Pare-feu, l'IDS et l'IPS → des outils de VÉRIFICATION et de CORRECTION (tournés vers l'intérieur).**
+Ces trois agents ne mènent pas d'enquête : leur travail est de **produire des règles** à partir du diagnostic
+de l'analyseur. Leurs outils servent à **contrôler et réparer ce que le modèle écrit**. *Pourquoi en a-t-on
+besoin ?* Parce qu'un modèle de langage, laissé seul, peut **halluciner** (inventer une adresse absente du
+diagnostic), **se contredire** (bloquer et autoriser la même cible), **oublier** un champ obligatoire ou
+produire des **doublons**. Les outils de vérification passent la sortie au crible ; une **boucle de
+correction** répare automatiquement ce qui peut l'être, ou redemande au modèle de corriger ce qui relève d'un
+jugement ; enfin un **repli déterministe** garantit une chaîne même si le modèle est injoignable. Ces outils
+sont le **garde-fou** qui rend la sortie du modèle **fiable et déployable**, et qui assure la **cohérence
+inter-règles** — exigence explicite du sujet : les règles du pare-feu, de l'IDS et de l'IPS ne doivent jamais
+se contredire.
+
+**c) Le Déployeur → un outil d'EXÉCUTION (tourné vers le réseau).**
+Son outil est un **client de déploiement** qui traduit la chaîne abstraite en règles concrètes sur les
+commutateurs et confirme leur installation. *Pourquoi ?* Parce qu'il faut faire le pont entre le raisonnement
+(la chaîne « sur papier ») et le réseau réel — c'est le seul agent qui **agit** physiquement.
+
+| Agent | Famille d'outils | Rôle |
+|---|---|---|
+| **Analyseur** | enquête (réputation, VirusTotal, whois/ASN) | savoir qui est légitime / malveillant |
+| **Pare-feu / IDS / IPS** | vérification + correction | rendre la sortie du modèle correcte et cohérente |
+| **Déployeur** | exécution (déploiement REST) | traduire la chaîne en règles réelles |
+
+### 3.4 Comment sait-on que le modèle s'est trompé ?
+
+C'est une question fondamentale, et la réponse ne repose **pas** sur l'idée vague que « les LLM font des
+erreurs ». On le sait de façon **prouvable**, parce que **l'entrée est la vérité de référence** : la sortie du
+modèle (les règles) doit être **justifiée par le diagnostic**. Une erreur est alors une **violation détectable**
+d'une propriété vérifiable :
+
+- **Hallucination** — le modèle n'a le droit d'utiliser **que les adresses présentes dans le diagnostic**. Une
+  adresse **absente de l'entrée** est **inventée** : détectée en comparant les adresses de sortie à celles de
+  l'entrée.
+- **Contradiction** — une politique valide ne peut pas **bloquer et autoriser** la même cible. Deux règles
+  opposées sur la même adresse : logiquement impossible, donc détecté.
+- **Règle mal formée** — chaque règle doit respecter un **schéma strict** (action valide, adresse valide, port
+  entier…). Un champ manquant ou mal typé fait **échouer la validation**.
+- **Doublon** — deux fois la même règle : redondance détectée par comparaison.
+
+Autrement dit : **erreur = violation d'une règle de cohérence vérifiable**, contrôlée automatiquement **avant
+tout déploiement**. On ne fait jamais confiance aveuglément : on vérifie, on corrige, puis on déploie. C'est
+ce qui distingue un système *fiable* d'un simple appel à un modèle.
+
+### 3.5 Le proactif et le réactif utilisent LES MÊMES agents
+
+Point important d'architecture : **les cas ambigus escaladés à l'exécution sont traités par les mêmes agents**
+que la génération initiale. Quand le contrôleur escalade une adresse, on construit un **mini-profil** de cette
+destination et on invoque **le graphe complet** (Analyseur → Pare-feu → IDS → IPS → Déployeur) : les vrais
+agents analysent (avec tous les outils d'enquête) et génèrent la règle. C'est cohérent — *ce sont les agents
+qui savent générer une chaîne*, en amont comme en réaction. Comme les escalades sont **rares** (le contrôleur
+tranche déjà la plupart des cas), le coût d'un appel au modèle par escalade est acceptable ; un **repli rapide
+déterministe** prend le relais si le modèle est indisponible.
+
+### 3.6 Formalisation : l'algorithme de génération proactive
+
+```
+Algorithme 1 — Génération et déploiement proactif
+Entrée : traces réseau T d'une application
+Sortie : chaîne de sécurité C déployée sur le SDN
+
+ 1:  A ← construireAutomate(T)                  // profil comportemental (ip, port, protocole)
+ 2:  état ← { automate : A }                     // état partagé
+ 3:  tant que ¬ complet(état) faire              // boucle du superviseur
+ 4:      agent ← superviseur(état)               // route vers le premier volet manquant
+ 5:      si agent = Analyseur alors
+ 6:          pour chaque destination d de A :
+ 7:              si réputation(d) OU VirusTotal(d) OU ASN/org(d) = malveillant → marquer d SUSPECTE
+ 8:          état.diagnostic ← (services légitimes, transitions suspectes)
+ 9:      sinon si agent = Pare-feu alors
+10:          R ← LLM_générer(diagnostic) ; R ← corriger(vérifier(R))   // garde-fou
+11:          état.firewall ← R si valide, sinon repli(A)
+12:      sinon si agent ∈ {IDS, IPS} alors  état ← signatures / actions (idem vérif+correction)
+13:      sinon si agent = Déployeur alors  C ← assembler(état) ; déployer(C)   // s1, s2
+14:  retourner C
+```
+
+---
+
+## 4. Le plan de données SDN
+
+### 4.1 La topologie Mininet
+
+Le réseau est émulé par **Mininet** et **Open vSwitch**. Un hôte `h0` (le téléphone) est relié à un premier
+commutateur `s1` (le pare-feu), relié à un second `s2` (l'IDS), qui débouche sur un nœud de traduction
+d'adresses (NAT) donnant accès à l'extérieur. Les deux commutateurs sont pilotés par le contrôleur en
+**OpenFlow 1.3** (port 6653) ; l'API REST du contrôleur écoute sur le port 8080. Le trafic est **forcé** de
+traverser `s1` puis `s2` dans cet ordre, reproduisant une véritable chaîne de fonctions.
+
+### 4.2 s1 — le pare-feu
+
+`s1` porte les **règles de la chaîne** : des **autorisations** (ALLOW) pour les adresses légitimes, des
+**blocages** (BLOCK) pour les menaces, et des règles de plus faible priorité pour le trafic interne (ARP,
+ICMP, sous-réseau local). Une adresse **inconnue** est, en mode hybride, **escaladée** au contrôleur ; sinon
+elle est rejetée par défaut. Deux marqueurs (*cookies*) distinguent les règles de la chaîne initiale de celles
+posées à l'exécution, ces dernières survivant à un rechargement.
+
+### 4.3 Le pare-feu à états : le suivi de connexion sur DEUX tables
+
+Sans notion d'état, autoriser un flux **sortant** n'autorise pas automatiquement sa **réponse**. `s1` a donc
+été doté d'un **suivi de connexion** (*conntrack*) natif d'Open vSwitch, via l'action OpenFlow `NXActionCT`.
+Le point clé — souvent invisible dans les descriptions — est que `s1` utilise **un pipeline à deux tables**.
+
+**Table 0 (aiguillage).** C'est la table d'entrée. Quand un paquet arrive, elle l'**envoie au module de suivi
+de connexion** (`conntrack`), dans une **zone** dédiée qui l'isole du NAT. Le paquet est alors « recirculé »
+vers la table 1 avec son **état de connexion** renseigné.
+
+**Table 1 (décision d'état).** Après le passage par le conntrack, elle décide selon l'**état** du flux :
+- **flux établi** (la connexion existe déjà — cas du **trafic retour**) → **autorisé** (transmis normalement) ;
+- **nouveau flux vers une destination AUTORISÉE** → **validé** (*commit* : la connexion est mémorisée) puis
+  transmis ;
+- **nouveau flux non sollicité** (entrant, sans règle d'autorisation) → **rejeté** ;
+- **flux invalide** → rejeté.
+
+Ainsi, le trajet d'un paquet **aller** (h0 → destination autorisée) : table 0 l'aiguille vers le conntrack, la
+table 1 voit un « nouveau flux autorisé », le **mémorise** (commit) et le transmet. Le trajet **retour**
+(destination → h0) : la table 1 reconnaît un « flux établi » et l'autorise **automatiquement**, tandis qu'un
+paquet entrant **non sollicité** est jeté. Une capture Wireshark confirme ce comportement : une requête de
+`h0` vers `h1` passe, mais la même requête émise en sens inverse, non sollicitée, est **intégralement bloquée**.
+
+### 4.4 s2 — l'IDS et l'inspection profonde
+
+`s2` assure une **défense en profondeur** : il surveille ce que `s1` a laissé passer. Pour chaque adresse à
+surveiller, une règle de haute priorité **duplique** le trafic vers le contrôleur, qui l'inspecte selon deux
+critères que la couche réseau ne voit pas. L'analyse du **nom de domaine** (extrait du champ SNI du message
+TLS *ClientHello*) permet de bloquer une communication vers un domaine malveillant même lorsque le serveur est
+hébergé sur une infrastructure de confiance — donc invisible à la seule analyse de l'adresse. La détection de
+**beaconing** mesure la régularité temporelle des connexions vers une même destination : un trafic périodique,
+révélateur d'un canal de commande et contrôle, est bloqué.
+
+**Comment le domaine est-il traité ?** `s2` ne décide pas seul et le contrôleur ne fait **aucun appel en ligne
+lent** sur son chemin critique. Le contrôleur se contente d'**extraire le domaine** (opération locale et
+rapide) et de le comparer à une **petite liste locale** (blocage immédiat si déjà connu). Si le domaine est
+**inconnu**, il est **escaladé aux agents** via la même file que les adresses ambiguës ; ce sont **les agents**
+qui interrogent VirusTotal sur le domaine (hors chemin critique), décident, posent le blocage sur `s1` et
+**mémorisent** l'adresse. Le contrôleur reste ainsi **rapide**, les appels en ligne restent **chez les agents**.
+
+### 4.5 La réputation, c'est un fichier
+
+La « réputation » consultée par le contrôleur n'est pas un service mystérieux : c'est un **fichier**, une
+**liste d'adresses connues comme malveillantes**. Le contrôleur vérifie simplement si l'adresse d'un paquet
+**appartient** à cette liste. La source initiale est un ensemble de serveurs de commande et contrôle réels ;
+et — nouveauté importante — cette liste **s'enrichit à l'exécution** : voir la boucle d'apprentissage (§5).
+
+### 4.6 La décision à trois niveaux et l'algorithme réactif
+
+Lorsqu'un paquet inconnu remonte au contrôleur, celui-ci applique **trois niveaux** dans l'ordre. Il consulte
+d'abord la **réputation par adresse exacte** (le fichier) : une adresse listée est **bloquée**. Il vérifie
+ensuite l'appartenance au **préfixe /16** d'une destination légitime : si c'est le cas, l'adresse est
+**autorisée** sur `s1` et placée **sous surveillance** sur `s2`. Sinon, l'adresse est **ambiguë** et
+**escaladée aux agents**, qui décident (via le pipeline complet) et redéploient la règle.
+
+```
+Algorithme 2 — Décision réactive à l'arrivée d'un paquet
+Entrée : paquet p vers la destination d ; chaîne C déployée
+Sortie : action appliquée ; chaîne C mise à jour ; réputation éventuellement enrichie
+
+ 1:  // Niveau 1 : plan de données (s1)
+ 2:  si ∃ règle pour d dans s1 alors
+ 3:      si p appartient à un flux établi → autoriser (conntrack, table 1)
+ 4:      sinon appliquer la règle (ALLOW / BLOCK) ; si ALLOW_AND_INSPECT → s2 inspecte
+ 5:      retourner
+ 6:  // Niveau 2 : contrôleur (déterministe, rapide)
+ 7:  si réputation(d) = malveillante (fichier)  → installer BLOCK(d) ; retourner
+ 8:  si préfixe16(d) ∈ profil                    → installer ALLOW(d) ; s2 surveille(d) ; retourner
+ 9:  // Niveau 3 : escalade aux VRAIS agents (cas ambigu)
+10:  construire un mini-profil de d
+11:  décision ← invoquer le graphe complet (Analyseur[outils] → Pare-feu → … → Déployeur)
+12:  si décision = BLOCK → installer BLOCK(d) ; réputation.ajouter(d)   // APPRENTISSAGE
+13:  sinon               → installer ALLOW+inspection(d) ; s2 surveille(d)
+14:  // Inspection continue sur s2
+15:  si s2 détecte (domaine malveillant ∨ beaconing) → escalade / BLOCK(d) ; réputation.ajouter(d)
+```
+
+---
+
+## 5. La boucle autonomique : VirusTotal et l'apprentissage
+
+Deux mécanismes récents rendent le système **autonome et apprenant**, dans l'esprit d'une boucle **MAPE-K**
+(Monitor–Analyze–Plan–Execute, autour d'une **Knowledge** partagée).
+
+**VirusTotal comme outil de menace, pour les adresses ET les domaines.** whois et la résolution ASN ne
+donnent que le *propriétaire* d'une adresse, pas sa malveillance. VirusTotal, lui, agrège près de quatre-vingt-dix
+moteurs antivirus et répond **aussi bien pour une adresse que pour un domaine**. Il est utilisé par
+l'**Analyseur** (à la génération) et par les **agents en réaction** (adresse ambiguë, ou domaine escaladé
+depuis `s2`). C'est l'outil qui apporte réellement le **signal de détection** — le rôle du modèle étant de
+**mobiliser** cet outil et d'en exploiter la réponse, non de deviner la menace.
+
+**La réputation apprenante (la « Knowledge »).** Auparavant, la liste de réputation du contrôleur était
+**figée** : une menace jugée à l'exécution n'était pas mémorisée, et la même adresse était **ré-escaladée**
+inutilement. Désormais, dès qu'un agent (ou VirusTotal) déclare une adresse malveillante, celle-ci est
+**ajoutée à la liste de réputation et persistée**. La prochaine fois, le contrôleur la **bloque directement**
+au niveau 2, sans nouvelle escalade. Le système **apprend** de ses décisions — c'est le « K » d'une boucle
+autonomique.
+
+Ainsi, un domaine malveillant repéré par `s2` → escaladé → confirmé par VirusTotal → l'adresse est **bloquée
+et mémorisée** → elle sera bloquée immédiatement à l'avenir.
+
+---
+
+## 6. Les sept modèles LLM comparés
+
+Sept modèles de trois familles ont été comparés, servis par l'API **Groq** : Meta Llama (`llama-3.1-8b`,
+`llama-3.3-70b`, `llama-4-scout`), OpenAI à poids ouverts (`gpt-oss-20b`, `gpt-oss-120b`) et Alibaba Qwen
+(`qwen3-32b`, `qwen3.6-27b`).
+
+## 7. Évaluation et résultats
+
+### 7.1 Méthodologie
+
+L'évaluation mesure deux choses distinctes : le **coût de fabrication** d'une chaîne (temps, appels, tokens) et
+la **qualité de détection** une fois la chaîne en place. Le coût est mesuré par instrumentation des appels au
+modèle ; la détection par une matrice de confusion dont on dérive exactitude, précision, rappel, F-mesure, taux
+de faux positifs et de faux négatifs (la classe positive étant *malveillante*).
+
+### 7.2 Coût de génération, par LLM
+
+La fabrication d'une chaîne coûte de ~7 000 tokens (`llama-4-scout`, le plus efficace) à ~18 000 (`qwen3.6`,
+le plus coûteux), pour la **même** tâche. Les modèles **à raisonnement** (Qwen) produisent de longs
+raisonnements internes avant de conclure : leur volume de tokens de sortie explose, sans bénéfice. Le **temps**
+suit la latence de l'API et reste indicatif ; le **volume de tokens** est la métrique de coût stable.
+
+| Modèle | Temps | Tokens total |
+|---|---|---|
+| llama-4-scout | 7,0 s | 6 939 |
+| llama-3.1-8b | 18,2 s | 6 977 |
+| llama-3.3-70b | 6,8 s | 7 860 |
+| gpt-oss-20b | 6,5 s | 8 917 |
+| gpt-oss-120b | 26,8 s | 9 208 |
+| qwen3-32b | 102,5 s | 14 955 |
+| qwen3.6-27b | 85,0 s | 17 831 |
+
+### 7.3 Détection : le rôle des outils et du modèle
+
+Sur un jeu de données **réel** (70 adresses légitimes + 70 adresses malveillantes réelles, issues des listes
+publiques Emerging Threats et CINS), doté de l'outil VirusTotal, le résultat est net et doit être assumé.
+Utilisé **seul**, sans aucun modèle, VirusTotal atteint une exactitude de 0,99 et attrape la totalité des
+menaces. **La détection provient de l'outil, non du modèle.** Le rôle du modèle est d'**orchestrer** :
+mobiliser l'outil et conclure. C'est sur cette fiabilité que le choix du modèle devient déterminant. Les
+modèles décisifs (`gpt-oss`) exploitent parfaitement le signal et atteignent une F-mesure de 0,99 ; les
+modèles qui hésitent ou ne concluent jamais laissent passer les menaces, jusqu'à une F-mesure de 0,00 pour
+`qwen3.6`. **À outils identiques, le seul changement de modèle fait passer le système de 0,99 à 0,00.**
+
+Le modèle accomplit néanmoins trois tâches qu'aucun outil ne remplit : il **fabrique la chaîne** à partir des
+traces, il **combine des signaux** hétérogènes, et il **tranche les cas ambigus**. Les outils sont les
+instruments ; le modèle est le chef d'orchestre.
+
+### 7.4 Précision par application (lecture du tableau)
+
+Une évaluation par application (avec une classification fondée sur l'organisation ASN) montre des écarts
+instructifs :
+
+| Application | llama-3.3-70b | llama-3.1-8b | gpt-oss-120b | llama-4-scout |
+|---|---|---|---|---|
+| dropbox, faceswitch, ninegag, pokemongo | 1,00 | 1,00 | 1,00 | 1,00 |
+| meteo | 0,88 | 0,86 | 0,90 | 0,85 |
+| viber | 0,80 | 0,75 | 0,79 | 0,88 |
+| lequipe | 0,69 | 0,63 | 0,69 | 0,72 |
+| skype | 0,60 | 0,61 | 0,59 | 0,61 |
+
+**Comment lire ce tableau.** Une précision de **1,00** signifie **aucune fausse alerte** : tout ce que le
+système bloque est réellement malveillant. Quatre applications l'atteignent pour tous les modèles, parce que
+leurs destinations malveillantes sont hébergées sur des **organisations distinctes** de leurs services
+légitimes — donc **faciles à isoler**. À l'inverse, `skype` (~0,60) et `lequipe` (~0,67) sont **difficiles** :
+leurs services légitimes et les menaces partagent de **grands hébergeurs communs** (mêmes clouds), si bien que
+le signal de l'organisation ne suffit plus à les distinguer et le système émet des fausses alertes. Le
+tableau confirme donc une **limite structurelle** de la couche réseau : là où le légitime et le malveillant
+co-résident, seul un signal plus fin (domaine, comportement, VirusTotal) tranche.
+
+### 7.5 Synthèse
+
+La génération est peu coûteuse et prévisible. Le choix du modèle est déterminant, mais pas là où on l'attend :
+un modèle trop petit échoue à la génération, un modèle à raisonnement est inutilement coûteux, un modèle indécis
+laisse passer les menaces. La détection provient des outils ; le modèle en garantit l'exploitation fiable et
+automatise la fabrication de la chaîne. Enfin, la limite de la couche réseau est mesurée, et elle motive
+l'inspection applicative et comportementale de `s2`.
+
+## 8. Technologies utilisées
+
+Orchestration : **LangGraph**, **LangChain**, `ChatGroq`. Inférence : **API Groq**. Contrôle SDN : **os-ken**
+(fork de Ryu), **OpenFlow 1.3**. Plan de données : **Mininet**, **Open vSwitch** (`NXActionCT`, zones et
+états de connexion). Enrichissement / menaces : **MaxMind** (ASN/org), **RDAP/whois**, **VirusTotal API v3**.
+Datasets : **flowoid** (légitime), **Mischief** (C2 Android), **Emerging Threats** et **CINS** (adresses
+malveillantes réelles). Validation des données : **Pydantic**. File d'escalade : **Redis**. Figures :
+**matplotlib**.
+
+## 9. Structure du projet
+
+```
+projet_chaine/
+├── architectures/supervisor/   agents LangGraph (superviseur, analyseur, pare-feu, ids, ips, déployeur,
+│                               boucle de correction, graphe) + service réactif
+├── ryu_app/                     contrôleur SDN os-ken (sdn_executor.py)
+├── enrichment/                  résolution ASN, réputation, outil VirusTotal
+├── whitelist/                   réputation (liste + apprentissage), analyse SNI, domaines
+├── tools/                       outils de vérification, réparations, chaîne, déploiement REST
+├── benchmark/                   évaluations + datasets (eval_*, vt_enrich, dataset_realworld.json)
+├── automates/                   profils comportementaux des apps (entrée)
+├── flowoid-traces-intern/       traces réseau réelles
+├── state.py                     schémas Pydantic (SecurityChain, FirewallRule, IdsSignature, IpsAction)
+└── config.py                    modèles LLM + clés
+```
+
+## 10. Installation et utilisation
+
+Prérequis : Kali/Ubuntu, Python 3.10+, Mininet, Open vSwitch, Redis, une clé **Groq** et une clé **VirusTotal**.
+```bash
+pip3 install -r requirements.txt --break-system-packages
+cp .env.example .env        # renseigner GROQ_API_KEY et VIRUSTOTAL_API_KEY
+```
+Démonstration live complète :
+```bash
+sudo python3 ryu_app/run_manager.py ryu_app.sdn_executor --hybrid --sfc --stateful --inspect   # T1
+sudo python3 deploy_mini_demo.py --two-switch --nat                                             # T2
+python3 architectures/supervisor/run_supervisor_test.py --deploy --automate dropbox_whitelist   # T3
+python3 architectures/supervisor/supervisor_service.py --app dropbox --agentic                  # T4 (réactif)
+sudo python3 benchmark/live_eval.py --app dropbox                                                # T5
+```
+Reproduire les chiffres du rapport :
+```bash
+python3 demo_run/mesure_all_llms.py           # coût de génération, 7 LLM
+python3 benchmark/vt_enrich.py                # enrichissement VirusTotal
+python3 benchmark/eval_complete_system.py     # système complet, 7 LLM, dataset réel
+```
+
+## 11. Correspondance avec le sujet et perspectives
+
+Les trois tâches du sujet sont couvertes : **comparaison de LLM** (sept modèles, trois familles), **pipeline
+traces → chaînes** (abstrait puis déployé en OpenFlow), et **évaluation des performances** (coût, cohérence
+inter-règles, précision/rappel/F-mesure sur données réelles). **Perspectives** : ajout d'un agent DLP, lecture
+directe de PCAP/NetFlow, extension à des modèles propriétaires, calibration fine du seuil de réputation.
+
+## Auteurs
+Stage de Master, INRIA RESIST — encadré par M. Rémi Badonnel (LORIA).

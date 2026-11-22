@@ -1,0 +1,24 @@
+{
+  "deployment_id": "deploy_banking_app_v1_20260530T190855",
+  "chain_id": "chain_banking_app_v1",
+  "deployed_at": "2026-05-30T19:08:55.941887+00:00",
+  "status": "PARTIAL",
+  "target_endpoint": "http://localhost:8080/firewall",
+  "http_status_code": null,
+  "response_body": {
+    "chain_id": "chain_banking_app_v1",
+    "errors": [],
+    "flows_installed_on_hardware": 0,
+    "rules_configured": 7,
+    "source_app": "SecureBank Mobile",
+    "status": "ok",
+    "switches_connected": 0
+  },
+  "rules_attempted": 7,
+  "rules_installed": 0,
+  "connected_switches": [],
+  "deployment_errors": [
+    "Aucun switch OVS connecté au moment du déploiement. La chaîne sera appliquée automatiquement à la prochaine connexion."
+  ],
+  "deployment_summary": "Le déploiement de la chaîne de sécurité chain_banking_app_v1 pour l'application SecureBank Mobile a échoué partiellement en raison de l'absence de switches OVS connectés. Aucune règle n'a pu être installée sur les 7 règles tentées, comprenant 1 règle de blocage, 4 règles d'autorisation et 2 règles de surveillance IDS. La chaîne sera appliquée automatiquement à la prochaine connexion d'un switch, permettant ainsi de sécuriser le trafic en bloquant les accès non autorisés et en surveillant les activités suspectes."
+}

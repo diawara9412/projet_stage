@@ -1,0 +1,155 @@
+{
+  "chain_id": "chain_banking_app_v1",
+  "source_automate_id": "banking_app_v1",
+  "source_app_name": "SecureBank Mobile",
+  "generated_at": "2026-05-31T00:08:45.013133+00:00",
+  "global_risk_level": "LOW",
+  "firewall_rules": [
+    {
+      "id": "FW-001",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": "10.0.0.0/24",
+      "dst_port": null,
+      "protocol": "any",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic LAN IPv4 interne autorisé par défaut — priorité 50 écrasable par BLOCK (900) et ALLOW spécifiques (100)"
+    },
+    {
+      "id": "FW-002",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": null,
+      "dst_port": null,
+      "protocol": "ARP",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic ARP autorisé — nécessaire pour résolution MAC inter-hosts dans Mininet"
+    },
+    {
+      "id": "FW-003",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": "10.0.0.0/24",
+      "dst_port": null,
+      "protocol": "ICMP",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic ICMP interne autorisé — pour diagnostics ping et traceroute"
+    },
+    {
+      "id": "FW-004",
+      "action": "BLOCK",
+      "direction": "outbound",
+      "dst_ip": "193.34.145.78",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "priority": 900,
+      "source_transition_id": "t09_SUSPECT",
+      "comment": "Trafic suspect vers 193.34.145.78:80/HTTP — transition: t09_SUSPECT"
+    },
+    {
+      "id": "FW-005",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "104.18.14.101",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t01",
+      "comment": "Service légitime : SecureBank API (Cloudflare) (API)"
+    },
+    {
+      "id": "FW-006",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "54.208.105.16",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t02",
+      "comment": "Service légitime : Twilio Authy (2FA) (API)"
+    },
+    {
+      "id": "FW-007",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "54.160.182.95",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t04",
+      "comment": "Service légitime : Plaid (API)"
+    },
+    {
+      "id": "FW-008",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "54.187.174.169",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t05",
+      "comment": "Service légitime : Stripe (payment)"
+    }
+  ],
+  "ids_signatures": [
+    {
+      "id": "IDS-001",
+      "name": "DATA_EXFILTRATION_193_34_145_78_80",
+      "pattern_type": "data_exfiltration",
+      "match_criteria": {
+        "dst_ip": "193.34.145.78",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "byte_threshold_outbound": 50000
+      },
+      "severity": "CRITICAL",
+      "source_transition_id": "t09_SUSPECT",
+      "comment": "Détection data_exfiltration vers 193.34.145.78:80 — t09_SUSPECT"
+    },
+    {
+      "id": "IDS-002",
+      "name": "DGA_DNS_193_34_145_78_80",
+      "pattern_type": "dga_dns",
+      "match_criteria": {
+        "dst_ip": "193.34.145.78",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "pattern": "algorithmic_domain_generation"
+      },
+      "severity": "HIGH",
+      "source_transition_id": "t09_SUSPECT",
+      "comment": "Détection dga_dns vers 193.34.145.78:80 — t09_SUSPECT"
+    }
+  ],
+  "ips_actions": [
+    {
+      "id": "IPS-001",
+      "on_signature": "IDS-001",
+      "action": "DROP_SOURCE",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action DROP_SOURCE sur data_exfiltration → 193.34.145.78:80"
+    },
+    {
+      "id": "IPS-002",
+      "on_signature": "IDS-002",
+      "action": "ALERT_ONLY",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action ALERT_ONLY sur dga_dns → 193.34.145.78:80"
+    }
+  ],
+  "deployment_target": {
+    "ryu_endpoint": "http://localhost:8080",
+    "target_switches": [
+      "s0",
+      "s1",
+      "s2"
+    ],
+    "openflow_version": "1.3"
+  },
+  "generation_summary": "La chaîne de sécurité générée pour l'application SecureBank Mobile bloque l'adresse IP 193.34.145.78 sur le port 80/HTTP, qui est suspectée de data exfiltration et de DNS générative (DGA), tactiques couramment associées à des attaques de type T1071 (C2 over HTTP) dans le framework MITRE ATT&CK. Les services légitimes tels que les API de SecureBank, Twilio Authy, Plaid et Stripe sont autorisés. Le trafic interne LAN, ARP et ICMP est également autorisé pour des raisons de fonctionnalité et de diagnostic. Le niveau de protection est considéré comme suffisant pour un risque global évalué à LOW, avec un score de suspicion de 1,09/10."
+}

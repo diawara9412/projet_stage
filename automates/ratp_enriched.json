@@ -1,0 +1,90 @@
+{
+  "automate_id": "ratp",
+  "app_name": "ratp",
+  "app_version": "enrichment-v1",
+  "platform": "android",
+  "description": "Automate enrichi depuis traces flowoid (ratp)",
+  "created_at": "2026-06-17T17:36:46.691898+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "OVH",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "Amazon Technologies Inc.",
+      "type": "destination"
+    },
+    {
+      "id": "2",
+      "name": "Amazon.com. Inc.",
+      "type": "destination"
+    },
+    {
+      "id": "3",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "4",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "INITIAL",
+      "to": "OVH SAS",
+      "label": "worm → OVH SAS",
+      "network_call": {
+        "ip": "37.187.86.136",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "OVH SAS",
+        "type": "unknown",
+        "reputation": "suspicious",
+        "asn": "AS16276",
+        "asn_org": "OVH SAS"
+      },
+      "suspicion": {
+        "score": 4,
+        "flags": [],
+        "notes": "catégorie=worm; rep_asn=neutral; self_loop=0.996; bytes=105402; ports=1; flux=107; tier=BLOCK"
+      },
+      "behavior": {
+        "probability": 0.996
+      },
+      "metrics": {
+        "count_a": 107,
+        "avg_size": 9.17,
+        "ip_limit_met": true,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    }
+  ],
+  "metadata": {
+    "source": "enrichment (dot+csv+maxmind+classifier)",
+    "dot_label_type": "ORG",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "category_counts": {
+      "worm": 1
+    },
+    "thresholds": {
+      "attack_limit": 0.8,
+      "port_scan_limit": 10,
+      "tau_dos": 1000000
+    },
+    "thresholds_corroborating": {
+      "ip_limit": 50,
+      "min_size": 5
+    },
+    "thresholds_note": "PROVISOIRES — choix méthodologique, ajustables. ip_limit/min_size = signaux CORROBORANTS (Palier B), informationnels : sans effet sur la catégorie."
+  }
+}

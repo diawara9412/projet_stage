@@ -1,0 +1,891 @@
+{
+  "automate_id": "pokemongo",
+  "app_name": "pokemongo",
+  "app_version": "enrichment-v1",
+  "platform": "android",
+  "description": "Automate enrichi depuis traces flowoid (pokemongo)",
+  "created_at": "2026-06-17T17:36:46.579569+00:00",
+  "states": [
+    {
+      "id": "0",
+      "name": "Amazon Technologies Inc.",
+      "type": "destination"
+    },
+    {
+      "id": "1",
+      "name": "Google LLC",
+      "type": "destination"
+    },
+    {
+      "id": "2",
+      "name": "NL-SOFTLAYER-EU-20120116",
+      "type": "destination"
+    },
+    {
+      "id": "3",
+      "name": "IBM Cloud",
+      "type": "destination"
+    },
+    {
+      "id": "4",
+      "name": "RIPE Network Coordination Centre",
+      "type": "destination"
+    },
+    {
+      "id": "5",
+      "name": "INITIAL",
+      "type": "control"
+    },
+    {
+      "id": "6",
+      "name": "TERMINAL",
+      "type": "control"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "130.211.14.80",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS396982",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.78; bytes=167062; ports=1; flux=8; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.78
+      },
+      "metrics": {
+        "count_a": 8,
+        "avg_size": 58.62,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t02",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "130.211.188.132",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS396982",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.78; bytes=1087066; ports=1; flux=69; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.78
+      },
+      "metrics": {
+        "count_a": 69,
+        "avg_size": 23.75,
+        "ip_limit_met": true,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t03",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.45.223.14",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=2392; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 12.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t04",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.45.223.15",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=7041; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 13.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t05",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.45.223.16",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=12425; ports=1; flux=5; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 5,
+        "avg_size": 12.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t06",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.45.223.20",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=11521; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 13.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t07",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.45.223.25",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=2419; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 16.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t08",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.46.12.85",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=2497; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 11.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t09",
+      "from": "INITIAL",
+      "to": "IBM Cloud",
+      "label": "safe → IBM Cloud",
+      "network_call": {
+        "ip": "169.46.12.91",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "IBM Cloud",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS36351",
+        "asn_org": "IBM Cloud"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.722; bytes=11315; ports=1; flux=4; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.722
+      },
+      "metrics": {
+        "count_a": 4,
+        "avg_size": 12.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t10",
+      "from": "INITIAL",
+      "to": "NA",
+      "label": "monitored → NA",
+      "network_call": {
+        "ip": "173.192.233.73",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "NA",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "NA"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.703; bytes=15861; ports=1; flux=6; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.703
+      },
+      "metrics": {
+        "count_a": 6,
+        "avg_size": 13.83,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t11",
+      "from": "INITIAL",
+      "to": "NA",
+      "label": "monitored → NA",
+      "network_call": {
+        "ip": "173.192.233.91",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "NA",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "NA"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.703; bytes=4916; ports=1; flux=3; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.703
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 8.33,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t12",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.211.112",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.78; bytes=3454; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.78
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 28.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t13",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "216.58.211.97",
+        "port": 80,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.78; bytes=2406; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.78
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 52.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t14",
+      "from": "INITIAL",
+      "to": "NL-SOFTLAYER-EU-20120116",
+      "label": "monitored → NL-SOFTLAYER-EU-20120116",
+      "network_call": {
+        "ip": "37.58.73.183",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "NL-SOFTLAYER-EU-20120116",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "NL-SOFTLAYER-EU-20120116"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.192; bytes=19609; ports=1; flux=7; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.192
+      },
+      "metrics": {
+        "count_a": 7,
+        "avg_size": 15.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t15",
+      "from": "INITIAL",
+      "to": "NL-SOFTLAYER-EU-20120116",
+      "label": "monitored → NL-SOFTLAYER-EU-20120116",
+      "network_call": {
+        "ip": "37.58.73.184",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "NL-SOFTLAYER-EU-20120116",
+        "type": "unknown",
+        "reputation": "monitored",
+        "asn": null,
+        "asn_org": "NL-SOFTLAYER-EU-20120116"
+      },
+      "suspicion": {
+        "score": 2,
+        "flags": [
+          "monitored"
+        ],
+        "notes": "catégorie=monitored; rep_asn=neutral; self_loop=0.192; bytes=23584; ports=1; flux=6; tier=FW+IDS(LOW)"
+      },
+      "behavior": {
+        "probability": 0.192
+      },
+      "metrics": {
+        "count_a": 6,
+        "avg_size": 11.83,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t16",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "52.8.50.117",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=1614; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 16.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t17",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.153.13.93",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=3333; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 15.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t18",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.183.118.3",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=1502; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 14.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t19",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.241.165.61",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=1487; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 7.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t20",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.241.184.32",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=1419; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 13.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t21",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.241.32.0",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=3501; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 12.33,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t22",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.241.32.1",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=50039; ports=1; flux=2; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 2,
+        "avg_size": 28.5,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t23",
+      "from": "INITIAL",
+      "to": "Amazon.com, Inc.",
+      "label": "safe → Amazon.com, Inc.",
+      "network_call": {
+        "ip": "54.241.32.25",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Amazon.com, Inc.",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com, Inc."
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.04; bytes=1496; ports=1; flux=1; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.04
+      },
+      "metrics": {
+        "count_a": 1,
+        "avg_size": 13.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    },
+    {
+      "id": "t24",
+      "from": "INITIAL",
+      "to": "Google LLC",
+      "label": "safe → Google LLC",
+      "network_call": {
+        "ip": "74.125.195.128",
+        "port": 443,
+        "protocol": "TCP",
+        "hostname": null
+      },
+      "service": {
+        "name": "Google LLC",
+        "type": "unknown",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "catégorie=safe; rep_asn=trusted; self_loop=0.78; bytes=3181; ports=1; flux=3; tier=FW"
+      },
+      "behavior": {
+        "probability": 0.78
+      },
+      "metrics": {
+        "count_a": 3,
+        "avg_size": 11.0,
+        "ip_limit_met": false,
+        "min_size_met": false,
+        "ids_limit_n": null
+      }
+    }
+  ],
+  "metadata": {
+    "source": "enrichment (dot+csv+maxmind+classifier)",
+    "dot_label_type": "ORG",
+    "csv_source": "appFlows",
+    "asn_db_available": true,
+    "category_counts": {
+      "safe": 20,
+      "monitored": 4
+    },
+    "thresholds": {
+      "attack_limit": 0.8,
+      "port_scan_limit": 10,
+      "tau_dos": 1000000
+    },
+    "thresholds_corroborating": {
+      "ip_limit": 50,
+      "min_size": 5
+    },
+    "thresholds_note": "PROVISOIRES — choix méthodologique, ajustables. ip_limit/min_size = signaux CORROBORANTS (Palier B), informationnels : sans effet sur la catégorie."
+  }
+}

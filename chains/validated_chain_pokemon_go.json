@@ -1,0 +1,253 @@
+{
+  "chain_id": "chain_pokemon_go_v1",
+  "source_automate_id": "pokemon_go_v1",
+  "source_app_name": "Pokemon GO",
+  "generated_at": "2026-05-31T00:08:43.820999+00:00",
+  "global_risk_level": "LOW",
+  "firewall_rules": [
+    {
+      "id": "FW-001",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": "10.0.0.0/24",
+      "dst_port": null,
+      "protocol": "any",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic LAN IPv4 interne autorisé par défaut — priorité 50 écrasable par BLOCK (900) et ALLOW spécifiques (100)"
+    },
+    {
+      "id": "FW-002",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": null,
+      "dst_port": null,
+      "protocol": "ARP",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic ARP autorisé — nécessaire pour résolution MAC inter-hosts dans Mininet"
+    },
+    {
+      "id": "FW-003",
+      "action": "ALLOW",
+      "direction": "both",
+      "dst_ip": "10.0.0.0/24",
+      "dst_port": null,
+      "protocol": "ICMP",
+      "priority": 50,
+      "source_transition_id": null,
+      "comment": "Trafic ICMP interne autorisé — pour diagnostics ping et traceroute"
+    },
+    {
+      "id": "FW-004",
+      "action": "BLOCK",
+      "direction": "outbound",
+      "dst_ip": "185.220.101.47",
+      "dst_port": 9001,
+      "protocol": "TCP",
+      "priority": 900,
+      "source_transition_id": "t12_SUSPECT",
+      "comment": "Trafic suspect vers 185.220.101.47:9001/TCP — transition: t12_SUSPECT"
+    },
+    {
+      "id": "FW-005",
+      "action": "BLOCK",
+      "direction": "outbound",
+      "dst_ip": "91.108.4.201",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "priority": 900,
+      "source_transition_id": "t13_SUSPECT",
+      "comment": "Trafic suspect vers 91.108.4.201:80/HTTP — transition: t13_SUSPECT"
+    },
+    {
+      "id": "FW-006",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "35.186.224.10",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t01",
+      "comment": "Service légitime : Niantic (API) — IPs secondaires: 35.186.224.47"
+    },
+    {
+      "id": "FW-007",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "142.250.74.13",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t02",
+      "comment": "Service légitime : Google OAuth (API)"
+    },
+    {
+      "id": "FW-008",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "104.18.32.68",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t03",
+      "comment": "Service légitime : Pokemon SSO (Cloudflare) (API)"
+    },
+    {
+      "id": "FW-009",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "142.250.74.68",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t04",
+      "comment": "Service légitime : Google Maps (CDN)"
+    },
+    {
+      "id": "FW-010",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "54.187.174.169",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t09",
+      "comment": "Service légitime : Stripe (payment)"
+    },
+    {
+      "id": "FW-011",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "142.250.74.131",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 100,
+      "source_transition_id": "t11",
+      "comment": "Service légitime : Firebase Cloud Messaging (analytics)"
+    }
+  ],
+  "ids_signatures": [
+    {
+      "id": "IDS-001",
+      "name": "TOR_COMMUNICATION_185_220_101_47_9001",
+      "pattern_type": "tor_communication",
+      "match_criteria": {
+        "dst_ip": "185.220.101.47",
+        "dst_port": 9001,
+        "protocol": "TCP"
+      },
+      "severity": "CRITICAL",
+      "source_transition_id": "t12_SUSPECT",
+      "comment": "Détection tor_communication vers 185.220.101.47:9001 — t12_SUSPECT"
+    },
+    {
+      "id": "IDS-002",
+      "name": "BEACONING_185_220_101_47_9001",
+      "pattern_type": "beaconing",
+      "match_criteria": {
+        "dst_ip": "185.220.101.47",
+        "dst_port": 9001,
+        "protocol": "TCP",
+        "frequency_threshold_per_min": 6
+      },
+      "severity": "HIGH",
+      "source_transition_id": "t12_SUSPECT",
+      "comment": "Détection beaconing vers 185.220.101.47:9001 — t12_SUSPECT"
+    },
+    {
+      "id": "IDS-003",
+      "name": "DATA_EXFILTRATION_91_108_4_201_80",
+      "pattern_type": "data_exfiltration",
+      "match_criteria": {
+        "dst_ip": "91.108.4.201",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "byte_threshold_outbound": 50000
+      },
+      "severity": "CRITICAL",
+      "source_transition_id": "t13_SUSPECT",
+      "comment": "Détection data_exfiltration vers 91.108.4.201:80 — t13_SUSPECT"
+    },
+    {
+      "id": "IDS-004",
+      "name": "DGA_DNS_91_108_4_201_80",
+      "pattern_type": "dga_dns",
+      "match_criteria": {
+        "dst_ip": "91.108.4.201",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "pattern": "algorithmic_domain_generation"
+      },
+      "severity": "HIGH",
+      "source_transition_id": "t13_SUSPECT",
+      "comment": "Détection dga_dns vers 91.108.4.201:80 — t13_SUSPECT"
+    },
+    {
+      "id": "IDS-005",
+      "name": "SUSPICIOUS_URL_91_108_4_201_80",
+      "pattern_type": "suspicious_url",
+      "match_criteria": {
+        "dst_ip": "91.108.4.201",
+        "dst_port": 80,
+        "protocol": "HTTP",
+        "url_path_regex": "/(cmd|exec|shell|upload/raw|register)"
+      },
+      "severity": "MEDIUM",
+      "source_transition_id": "t13_SUSPECT",
+      "comment": "Détection suspicious_url vers 91.108.4.201:80 — t13_SUSPECT"
+    }
+  ],
+  "ips_actions": [
+    {
+      "id": "IPS-001",
+      "on_signature": "IDS-001",
+      "action": "DROP_SOURCE",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action DROP_SOURCE sur tor_communication → 185.220.101.47:9001"
+    },
+    {
+      "id": "IPS-002",
+      "on_signature": "IDS-002",
+      "action": "RATE_LIMIT",
+      "duration_seconds": 300,
+      "rate_limit_pps": 5,
+      "comment": "Action RATE_LIMIT sur beaconing → 185.220.101.47:9001"
+    },
+    {
+      "id": "IPS-003",
+      "on_signature": "IDS-003",
+      "action": "DROP_SOURCE",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action DROP_SOURCE sur data_exfiltration → 91.108.4.201:80"
+    },
+    {
+      "id": "IPS-004",
+      "on_signature": "IDS-004",
+      "action": "ALERT_ONLY",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action ALERT_ONLY sur dga_dns → 91.108.4.201:80"
+    },
+    {
+      "id": "IPS-005",
+      "on_signature": "IDS-005",
+      "action": "ALERT_ONLY",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action ALERT_ONLY sur suspicious_url → 91.108.4.201:80"
+    }
+  ],
+  "deployment_target": {
+    "ryu_endpoint": "http://localhost:8080",
+    "target_switches": [
+      "s0",
+      "s1",
+      "s2"
+    ],
+    "openflow_version": "1.3"
+  },
+  "generation_summary": "La chaîne de sécurité générée pour l'application Pokémon GO bloque les adresses IP 185.220.101.47:9001 et 91.108.4.201:80, associées à des activités suspectes telles que la communication via TOR et l'exfiltration de données. Les services légitimes tels que les API de Niantic, Google OAuth, Google Maps, Stripe et Firebase Cloud Messaging sont autorisés. Les signatures IDS détectent des menaces comme la communication via TOR, le beaconing, l'exfiltration de données et les requêtes DNS suspectes, avec des actions IPS correspondantes pour bloquer ou limiter ces menaces. Le niveau de protection est considéré comme suffisant pour une application avec un risque global faible."
+}

@@ -1,0 +1,78 @@
+{
+  "chain_id": "chain_broken_test",
+  "source_automate_id": "broken_test",
+  "source_app_name": "Broken Test App",
+  "generated_at": "2024-04-16T08:00:00Z",
+  "global_risk_level": "HIGH",
+  "firewall_rules": [
+    {
+      "id": "FW-001",
+      "action": "BLOCK",
+      "direction": "outbound",
+      "dst_ip": "192.168.1.100",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "priority": 900,
+      "source_transition_id": null,
+      "comment": "BLOCK l'IP suspecte"
+    },
+    {
+      "id": "FW-002",
+      "action": "ALLOW",
+      "direction": "outbound",
+      "dst_ip": "192.168.1.100",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "priority": 100,
+      "source_transition_id": null,
+      "comment": "CONFLIT : ALLOW sur la même IP que FW-001"
+    },
+    {
+      "id": "FW-003",
+      "action": "BLOCK",
+      "direction": "outbound",
+      "dst_ip": "10.0.0.5",
+      "dst_port": 443,
+      "protocol": "HTTPS",
+      "priority": 900,
+      "source_transition_id": null,
+      "comment": "BLOCK IP secondaire"
+    }
+  ],
+  "ids_signatures": [
+    {
+      "id": "IDS-001",
+      "name": "TEST_BEACONING_192_168_1_100_80",
+      "pattern_type": "beaconing",
+      "match_criteria": {
+        "dst_ip": "192.168.1.100",
+        "frequency_threshold_per_min": 6
+      },
+      "severity": "HIGH",
+      "source_transition_id": null,
+      "comment": "Signature de test valide"
+    }
+  ],
+  "ips_actions": [
+    {
+      "id": "IPS-001",
+      "on_signature": "IDS-001",
+      "action": "ALERT_ONLY",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "Action valide sur IDS-001"
+    },
+    {
+      "id": "IPS-002",
+      "on_signature": "IDS-999",
+      "action": "DROP_SOURCE",
+      "duration_seconds": null,
+      "rate_limit_pps": null,
+      "comment": "ORPHELIN : référence vers IDS-999 inexistant"
+    }
+  ],
+  "deployment_target": {
+    "ryu_endpoint": "http://localhost:8080"
+  },
+  "generation_summary": "Chaîne de test intentionnellement défectueuse."
+}

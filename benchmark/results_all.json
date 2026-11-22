@@ -1,0 +1,166 @@
+{
+  "aborted_on_auth_error": false,
+  "rows": [
+    {
+      "automate": "malware_app",
+      "arch": 2,
+      "agg": {
+        "nb_fw": 6,
+        "nb_ids": 5,
+        "nb_ips": 5,
+        "dup_vc": 0,
+        "orph_vc": 0,
+        "score": 100,
+        "dup_ag": 0,
+        "orph_ag": 0,
+        "llm_calls": 4.0,
+        "latency": 12.049431758666287,
+        "tokens": 6084.0,
+        "stable": true,
+        "n_distinct": 1,
+        "runs": 3
+      }
+    }
+  ],
+  "raw_runs": [
+    {
+      "arch": 2,
+      "automate": "malware_app",
+      "run": 1,
+      "nb_fw": 6,
+      "nb_ids": 5,
+      "nb_ips": 5,
+      "dup_vc": 0,
+      "orph_vc": 0,
+      "score": 100,
+      "dup_ag": 0,
+      "orph_ag": 0,
+      "attempts_max": 1,
+      "errors_before": {
+        "doublons": 5,
+        "hallucinations": 0,
+        "orphelins": 0,
+        "actions_invalides": 0,
+        "champs_manquants": 0,
+        "conflits": 0,
+        "couverture": 0,
+        "lan_manquantes": 0
+      },
+      "errors_before_total": 5,
+      "errors_before_detail": {
+        "firewall": {
+          "redundancies": [
+            "DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).",
+            "DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP)."
+          ]
+        },
+        "ids": {
+          "redundancies": [
+            "DOUBLON : IDS-005 est identique à IDS-002 (suspicious_url sur 198.98.54.218)."
+          ]
+        }
+      },
+      "llm_calls": 4,
+      "latency": 5.567988333999892,
+      "tokens": {
+        "available": true,
+        "input": 3728,
+        "output": 2420,
+        "total": 6148
+      }
+    },
+    {
+      "arch": 2,
+      "automate": "malware_app",
+      "run": 2,
+      "nb_fw": 6,
+      "nb_ids": 5,
+      "nb_ips": 5,
+      "dup_vc": 0,
+      "orph_vc": 0,
+      "score": 100,
+      "dup_ag": 0,
+      "orph_ag": 0,
+      "attempts_max": 1,
+      "errors_before": {
+        "doublons": 4,
+        "hallucinations": 0,
+        "orphelins": 0,
+        "actions_invalides": 0,
+        "champs_manquants": 0,
+        "conflits": 0,
+        "couverture": 0,
+        "lan_manquantes": 0
+      },
+      "errors_before_total": 4,
+      "errors_before_detail": {
+        "firewall": {
+          "redundancies": [
+            "DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).",
+            "DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP)."
+          ]
+        }
+      },
+      "llm_calls": 4,
+      "latency": 5.202027134999298,
+      "tokens": {
+        "available": true,
+        "input": 3728,
+        "output": 2293,
+        "total": 6021
+      }
+    },
+    {
+      "arch": 2,
+      "automate": "malware_app",
+      "run": 3,
+      "nb_fw": 6,
+      "nb_ids": 5,
+      "nb_ips": 5,
+      "dup_vc": 0,
+      "orph_vc": 0,
+      "score": 100,
+      "dup_ag": 0,
+      "orph_ag": 0,
+      "attempts_max": 1,
+      "errors_before": {
+        "doublons": 5,
+        "hallucinations": 0,
+        "orphelins": 0,
+        "actions_invalides": 0,
+        "champs_manquants": 0,
+        "conflits": 0,
+        "couverture": 0,
+        "lan_manquantes": 0
+      },
+      "errors_before_total": 5,
+      "errors_before_detail": {
+        "firewall": {
+          "redundancies": [
+            "DOUBLON : FW-003 est identique à FW-002 (BLOCK 185.220.100.252:9001/TCP).",
+            "DOUBLON : FW-004 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-005 est identique à FW-001 (BLOCK 198.98.54.218:8080/HTTP).",
+            "DOUBLON : FW-007 est identique à FW-006 (ALLOW 104.21.45.12:443/TCP)."
+          ]
+        },
+        "ids": {
+          "redundancies": [
+            "DOUBLON : IDS-005 est identique à IDS-002 (suspicious_url sur 198.98.54.218)."
+          ]
+        }
+      },
+      "llm_calls": 4,
+      "latency": 25.37827980699967,
+      "tokens": {
+        "available": true,
+        "input": 3728,
+        "output": 2355,
+        "total": 6083
+      }
+    }
+  ]
+}

@@ -1,0 +1,1120 @@
+{
+ "disneyland": {
+  "stats": {
+   "n_services": 1,
+   "n_transitions": 1,
+   "n_loops": 1,
+   "n_rare": 0
+  },
+  "services": [
+   {
+    "label": "443",
+    "kind": "exact",
+    "n_ip": 5,
+    "flows": 142,
+    "bytes": 1054150,
+    "cadence": 241.87,
+    "cv": 1.434,
+    "ips": [
+     "68.71.208.70",
+     "199.181.133.222",
+     "199.181.132.196",
+     "139.104.188.5"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "443",
+    "probability": 0.996441
+   }
+  ],
+  "rares": [],
+  "transitions": [
+   {
+    "from": "443",
+    "to": "443",
+    "probability": 0.996441,
+    "self_loop": true,
+    "rare": false
+   }
+  ],
+  "flows": 142
+ },
+ "dropbox": {
+  "stats": {
+   "n_services": 1,
+   "n_transitions": 1,
+   "n_loops": 1,
+   "n_rare": 0
+  },
+  "services": [
+   {
+    "label": "443",
+    "kind": "exact",
+    "n_ip": 16,
+    "flows": 491,
+    "bytes": 5404124,
+    "cadence": 3.15,
+    "cv": 1.906,
+    "ips": [
+     "108.160.172.237",
+     "108.160.172.205",
+     "108.160.172.225",
+     "108.160.172.193"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "443",
+    "probability": 0.998999
+   }
+  ],
+  "rares": [],
+  "transitions": [
+   {
+    "from": "443",
+    "to": "443",
+    "probability": 0.998999,
+    "self_loop": true,
+    "rare": false
+   }
+  ],
+  "flows": 491
+ },
+ "faceswitch": {
+  "stats": {
+   "n_services": 3,
+   "n_transitions": 8,
+   "n_loops": 2,
+   "n_rare": 0
+  },
+  "services": [
+   {
+    "label": "AKAMAI-PA",
+    "kind": "org",
+    "n_ip": 19,
+    "flows": 46,
+    "bytes": 45722,
+    "cadence": 262.62,
+    "cv": 1.42,
+    "ips": [
+     "2.16.117.160",
+     "2.16.117.123",
+     "2.16.117.32",
+     "2.16.117.146"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "NAZWAPL-WEBHOSTING",
+    "kind": "org",
+    "n_ip": 0,
+    "flows": 0,
+    "bytes": 0,
+    "cadence": null,
+    "cv": null,
+    "ips": [],
+    "rare": false,
+    "protos": []
+   },
+   {
+    "label": "Google LLC",
+    "kind": "org",
+    "n_ip": 9,
+    "flows": 26,
+    "bytes": 520295,
+    "cadence": 3.0,
+    "cv": 2.395,
+    "ips": [
+     "216.58.211.66",
+     "172.217.16.66",
+     "216.58.208.225",
+     "216.58.211.98"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "AKAMAI-PA",
+    "probability": 0.879121
+   },
+   {
+    "service": "Google LLC",
+    "probability": 0.8
+   }
+  ],
+  "rares": [],
+  "transitions": [
+   {
+    "from": "AKAMAI-PA",
+    "to": "AKAMAI-PA",
+    "probability": 0.879121,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "AKAMAI-PA",
+    "to": "NAZWAPL-WEBHOSTING",
+    "probability": 0.010989,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "AKAMAI-PA",
+    "to": "Google LLC",
+    "probability": 0.098901,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "NAZWAPL-WEBHOSTING",
+    "to": "AKAMAI-PA",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "NAZWAPL-WEBHOSTING",
+    "to": "Google LLC",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "NAZWAPL-WEBHOSTING",
+    "probability": 0.054545,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "Google LLC",
+    "probability": 0.8,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "AKAMAI-PA",
+    "probability": 0.145455,
+    "self_loop": false,
+    "rare": false
+   }
+  ],
+  "flows": 74
+ },
+ "lequipe": {
+  "stats": {
+   "n_services": 3,
+   "n_transitions": 6,
+   "n_loops": 2,
+   "n_rare": 1
+  },
+  "services": [
+   {
+    "label": "80",
+    "kind": "exact",
+    "n_ip": 137,
+    "flows": 453,
+    "bytes": 4406333,
+    "cadence": 0.18,
+    "cv": 2.936,
+    "ips": [
+     "195.154.179.170",
+     "62.210.149.48",
+     "5.135.143.111",
+     "50.16.134.144"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "443",
+    "kind": "exact",
+    "n_ip": 13,
+    "flows": 21,
+    "bytes": 453946,
+    "cadence": 1.08,
+    "cv": 1.513,
+    "ips": [
+     "199.96.57.7",
+     "74.125.133.91",
+     "173.194.45.39",
+     "50.19.228.192"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "8080/4",
+    "kind": "prefix",
+    "n_ip": 1,
+    "flows": 3,
+    "bytes": 1188,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "160.92.123.193"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "80",
+    "probability": 0.95037
+   },
+   {
+    "service": "443",
+    "probability": 0.12766
+   }
+  ],
+  "rares": [
+   {
+    "from": "80",
+    "to": "8080/4",
+    "probability": 0.00528,
+    "self_loop": false,
+    "rare": true
+   }
+  ],
+  "transitions": [
+   {
+    "from": "80",
+    "to": "80",
+    "probability": 0.95037,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "80",
+    "to": "443",
+    "probability": 0.043295,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "80",
+    "to": "8080/4",
+    "probability": 0.00528,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "443",
+    "to": "80",
+    "probability": 0.87234,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "443",
+    "to": "443",
+    "probability": 0.12766,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "8080/4",
+    "to": "80",
+    "probability": 1.0,
+    "self_loop": false,
+    "rare": false
+   }
+  ],
+  "flows": 477
+ },
+ "ratp": {
+  "stats": {
+   "n_services": 3,
+   "n_transitions": 7,
+   "n_loops": 3,
+   "n_rare": 2
+  },
+  "services": [
+   {
+    "label": "OVH",
+    "kind": "org",
+    "n_ip": 1,
+    "flows": 389,
+    "bytes": 2669818,
+    "cadence": 3.0,
+    "cv": 1.606,
+    "ips": [
+     "37.187.86.136"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "Amazon Technologies Inc.",
+    "kind": "org",
+    "n_ip": 2,
+    "flows": 2,
+    "bytes": 15826,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "54.235.101.104",
+     "23.23.171.1"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "Amazon.com. Inc.",
+    "kind": "org",
+    "n_ip": 2,
+    "flows": 2,
+    "bytes": 15826,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "54.235.101.104",
+     "23.23.171.1"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "OVH",
+    "probability": 0.996124
+   },
+   {
+    "service": "Amazon Technologies Inc.",
+    "probability": 0.5
+   },
+   {
+    "service": "Amazon.com. Inc.",
+    "probability": 0.5
+   }
+  ],
+  "rares": [
+   {
+    "from": "OVH",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.001292,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "OVH",
+    "to": "Amazon.com. Inc.",
+    "probability": 0.001292,
+    "self_loop": false,
+    "rare": true
+   }
+  ],
+  "transitions": [
+   {
+    "from": "OVH",
+    "to": "OVH",
+    "probability": 0.996124,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "OVH",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.001292,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "OVH",
+    "to": "Amazon.com. Inc.",
+    "probability": 0.001292,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.5,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "OVH",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Amazon.com. Inc.",
+    "to": "Amazon.com. Inc.",
+    "probability": 0.5,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "Amazon.com. Inc.",
+    "to": "OVH",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   }
+  ],
+  "flows": 391
+ },
+ "pokemongo": {
+  "stats": {
+   "n_services": 5,
+   "n_transitions": 20,
+   "n_loops": 5,
+   "n_rare": 0
+  },
+  "services": [
+   {
+    "label": "Amazon Technologies Inc.",
+    "kind": "org",
+    "n_ip": 8,
+    "flows": 12,
+    "bytes": 44715,
+    "cadence": 135.09,
+    "cv": 1.548,
+    "ips": [
+     "54.153.13.93",
+     "54.241.32.0",
+     "54.241.32.1",
+     "54.241.165.61"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "Google LLC",
+    "kind": "org",
+    "n_ip": 5,
+    "flows": 85,
+    "bytes": 714288,
+    "cadence": 3.0,
+    "cv": 2.552,
+    "ips": [
+     "130.211.188.132",
+     "130.211.14.80",
+     "74.125.195.128",
+     "216.58.211.112"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "NL-SOFTLAYER-EU-20120116",
+    "kind": "org",
+    "n_ip": 7,
+    "flows": 19,
+    "bytes": 89994,
+    "cadence": 868.95,
+    "cv": 0.909,
+    "ips": [
+     "169.45.223.16",
+     "169.46.12.91",
+     "169.45.223.20",
+     "169.45.223.15"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "IBM Cloud",
+    "kind": "org",
+    "n_ip": 7,
+    "flows": 19,
+    "bytes": 89994,
+    "cadence": 868.95,
+    "cv": 0.909,
+    "ips": [
+     "169.45.223.16",
+     "169.46.12.91",
+     "169.45.223.20",
+     "169.45.223.15"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "RIPE Network Coordination Centre",
+    "kind": "org",
+    "n_ip": 0,
+    "flows": 0,
+    "bytes": 0,
+    "cadence": null,
+    "cv": null,
+    "ips": [],
+    "rare": false,
+    "protos": []
+   }
+  ],
+  "loops": [
+   {
+    "service": "Google LLC",
+    "probability": 0.779762
+   },
+   {
+    "service": "IBM Cloud",
+    "probability": 0.722222
+   },
+   {
+    "service": "RIPE Network Coordination Centre",
+    "probability": 0.702703
+   },
+   {
+    "service": "NL-SOFTLAYER-EU-20120116",
+    "probability": 0.192308
+   },
+   {
+    "service": "Amazon Technologies Inc.",
+    "probability": 0.04
+   }
+  ],
+  "rares": [],
+  "transitions": [
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "Google LLC",
+    "probability": 0.64,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "NL-SOFTLAYER-EU-20120116",
+    "probability": 0.12,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.04,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "IBM Cloud",
+    "probability": 0.04,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Amazon Technologies Inc.",
+    "to": "RIPE Network Coordination Centre",
+    "probability": 0.16,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "NL-SOFTLAYER-EU-20120116",
+    "probability": 0.107143,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "Google LLC",
+    "probability": 0.779762,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.077381,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "IBM Cloud",
+    "probability": 0.017857,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "Google LLC",
+    "to": "RIPE Network Coordination Centre",
+    "probability": 0.017857,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "NL-SOFTLAYER-EU-20120116",
+    "to": "Google LLC",
+    "probability": 0.615385,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "NL-SOFTLAYER-EU-20120116",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.192308,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "NL-SOFTLAYER-EU-20120116",
+    "to": "NL-SOFTLAYER-EU-20120116",
+    "probability": 0.192308,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "IBM Cloud",
+    "to": "IBM Cloud",
+    "probability": 0.722222,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "IBM Cloud",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.055556,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "IBM Cloud",
+    "to": "RIPE Network Coordination Centre",
+    "probability": 0.222222,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "RIPE Network Coordination Centre",
+    "to": "RIPE Network Coordination Centre",
+    "probability": 0.702703,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "RIPE Network Coordination Centre",
+    "to": "IBM Cloud",
+    "probability": 0.027027,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "RIPE Network Coordination Centre",
+    "to": "Amazon Technologies Inc.",
+    "probability": 0.108108,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "RIPE Network Coordination Centre",
+    "to": "Google LLC",
+    "probability": 0.135135,
+    "self_loop": false,
+    "rare": false
+   }
+  ],
+  "flows": 138
+ },
+ "viber": {
+  "stats": {
+   "n_services": 7,
+   "n_transitions": 26,
+   "n_loops": 4,
+   "n_rare": 3
+  },
+  "services": [
+   {
+    "label": "80",
+    "kind": "exact",
+    "n_ip": 11,
+    "flows": 16,
+    "bytes": 15422,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "23.201.153.116",
+     "2.16.117.153",
+     "2.16.117.163",
+     "2.16.117.176"
+    ],
+    "rare": false,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "443",
+    "kind": "exact",
+    "n_ip": 48,
+    "flows": 203,
+    "bytes": 277235,
+    "cadence": 1240.06,
+    "cv": 0.661,
+    "ips": [
+     "54.225.250.131",
+     "54.225.248.235",
+     "184.73.196.243",
+     "54.225.250.217"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "33101",
+    "kind": "exact",
+    "n_ip": 1,
+    "flows": 1,
+    "bytes": 34813,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "197.29.14.112"
+    ],
+    "rare": true,
+    "protos": [
+     "UDP"
+    ]
+   },
+   {
+    "label": "4244/4",
+    "kind": "prefix",
+    "n_ip": 18,
+    "flows": 265,
+    "bytes": 275592,
+    "cadence": 1260.27,
+    "cv": 0.585,
+    "ips": [
+     "54.225.250.131",
+     "54.225.250.217",
+     "54.225.248.97",
+     "54.225.250.238"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP"
+    ]
+   },
+   {
+    "label": "798/3",
+    "kind": "prefix",
+    "n_ip": 9,
+    "flows": 15,
+    "bytes": 674949,
+    "cadence": 0.11,
+    "cv": 1.892,
+    "ips": [
+     "54.171.62.57",
+     "54.171.62.111",
+     "54.171.62.148",
+     "54.171.62.180"
+    ],
+    "rare": true,
+    "protos": [
+     "UDP"
+    ]
+   },
+   {
+    "label": "799/3",
+    "kind": "prefix",
+    "n_ip": 1,
+    "flows": 2,
+    "bytes": 288,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "54.171.62.57"
+    ],
+    "rare": false,
+    "protos": [
+     "UDP"
+    ]
+   },
+   {
+    "label": "*",
+    "kind": "any",
+    "n_ip": 2,
+    "flows": 2,
+    "bytes": 61854,
+    "cadence": null,
+    "cv": null,
+    "ips": [
+     "23.23.120.214",
+     "197.31.249.244"
+    ],
+    "rare": true,
+    "protos": [
+     "TCP",
+     "UDP"
+    ]
+   }
+  ],
+  "loops": [
+   {
+    "service": "4244/4",
+    "probability": 0.867052
+   },
+   {
+    "service": "443",
+    "probability": 0.816425
+   },
+   {
+    "service": "798/3",
+    "probability": 0.4
+   },
+   {
+    "service": "80",
+    "probability": 0.1875
+   }
+  ],
+  "rares": [
+   {
+    "from": "443",
+    "to": "*",
+    "probability": 0.002415,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "4244/4",
+    "to": "798/3",
+    "probability": 0.001927,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "4244/4",
+    "to": "33101",
+    "probability": 0.001927,
+    "self_loop": false,
+    "rare": true
+   }
+  ],
+  "transitions": [
+   {
+    "from": "443",
+    "to": "443",
+    "probability": 0.816425,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "443",
+    "to": "80",
+    "probability": 0.031401,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "443",
+    "to": "4244/4",
+    "probability": 0.125604,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "443",
+    "to": "798/3",
+    "probability": 0.024155,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "443",
+    "to": "*",
+    "probability": 0.002415,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "80",
+    "to": "80",
+    "probability": 0.1875,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "80",
+    "to": "443",
+    "probability": 0.375,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "80",
+    "to": "4244/4",
+    "probability": 0.4375,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "4244/4",
+    "to": "4244/4",
+    "probability": 0.867052,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "4244/4",
+    "to": "443",
+    "probability": 0.102119,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "4244/4",
+    "to": "80",
+    "probability": 0.025048,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "4244/4",
+    "to": "798/3",
+    "probability": 0.001927,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "4244/4",
+    "to": "33101",
+    "probability": 0.001927,
+    "self_loop": false,
+    "rare": true
+   },
+   {
+    "from": "798/3",
+    "to": "798/3",
+    "probability": 0.4,
+    "self_loop": true,
+    "rare": false
+   },
+   {
+    "from": "798/3",
+    "to": "443",
+    "probability": 0.32,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "798/3",
+    "to": "4244/4",
+    "probability": 0.08,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "798/3",
+    "to": "*",
+    "probability": 0.08,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "798/3",
+    "to": "799/3",
+    "probability": 0.08,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "798/3",
+    "to": "33101",
+    "probability": 0.04,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "*",
+    "to": "443",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "*",
+    "to": "798/3",
+    "probability": 0.25,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "*",
+    "to": "799/3",
+    "probability": 0.25,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "799/3",
+    "to": "798/3",
+    "probability": 0.666667,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "799/3",
+    "to": "*",
+    "probability": 0.333333,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "33101",
+    "to": "4244/4",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   },
+   {
+    "from": "33101",
+    "to": "798/3",
+    "probability": 0.5,
+    "self_loop": false,
+    "rare": false
+   }
+  ],
+  "flows": 504
+ }
+}

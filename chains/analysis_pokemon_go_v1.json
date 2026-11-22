@@ -1,0 +1,151 @@
+{
+  "automate_id": "pokemon_go_v1",
+  "app_name": "Pokemon GO",
+  "analyzed_at": "2026-05-30T00:31:21.278022+00:00",
+  "global_suspicion_score": 1.72,
+  "risk_level": "low",
+  "nb_states": 8,
+  "nb_transitions": 13,
+  "nb_suspicious": 2,
+  "suspicious_transitions": [
+    {
+      "transition_id": "t12_SUSPECT",
+      "from_state": "idle",
+      "to_state": "idle",
+      "label": "SUSPECT — Beacon vers nœud Tor",
+      "dst_ip": "185.220.101.47",
+      "dst_port": 9001,
+      "protocol": "TCP",
+      "suspicion_score": 9,
+      "flags": [
+        "tor_exit_node",
+        "beaconing"
+      ],
+      "risk_category": "tor_communication",
+      "explanation": "IP 185.220.101.47 est un nœud de sortie Tor référencé dans le projet TorDNSEL. Connexion non chiffrée sur port 9001 (port Tor par défaut). Fréquence de 180 connexions/session avec payload fixe de 64 octets = heartbeat C2 classique."
+    },
+    {
+      "transition_id": "t13_SUSPECT",
+      "from_state": "battle",
+      "to_state": "idle",
+      "label": "SUSPECT — Exfiltration post-combat",
+      "dst_ip": "91.108.4.201",
+      "dst_port": 80,
+      "protocol": "HTTP",
+      "suspicion_score": 10,
+      "flags": [
+        "data_exfiltration",
+        "bulletproof_hosting",
+        "dga_domain",
+        "suspicious_path"
+      ],
+      "risk_category": "data_exfiltration",
+      "explanation": "Domaine enregistré il y a 3 jours. Hébergeur Petersburg Internet Network connu comme bulletproof. Trafic HTTP non chiffré de 85KB (contenu probablement : contacts, position GPS, tokens de session). Path /upload sur un pseudo-domaine analytics = exfiltration masquée."
+    }
+  ],
+  "legitimate_services": [
+    {
+      "name": "Niantic",
+      "service_type": "API",
+      "ips": [
+        "35.186.224.10",
+        "35.186.224.47"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t01",
+        "t05",
+        "t06",
+        "t07",
+        "t08",
+        "t10"
+      ]
+    },
+    {
+      "name": "Google OAuth",
+      "service_type": "API",
+      "ips": [
+        "142.250.74.13"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t02"
+      ]
+    },
+    {
+      "name": "Pokemon SSO (Cloudflare)",
+      "service_type": "API",
+      "ips": [
+        "104.18.32.68"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t03"
+      ]
+    },
+    {
+      "name": "Google Maps",
+      "service_type": "CDN",
+      "ips": [
+        "142.250.74.68"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t04"
+      ]
+    },
+    {
+      "name": "Stripe",
+      "service_type": "payment",
+      "ips": [
+        "54.187.174.169"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t09"
+      ]
+    },
+    {
+      "name": "Firebase Cloud Messaging",
+      "service_type": "analytics",
+      "ips": [
+        "142.250.74.131"
+      ],
+      "ports": [
+        443
+      ],
+      "transition_ids": [
+        "t11"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    "FIREWALL BLOCK priorité=900 — 185.220.101.47:9001/TCP (C2/Tor détecté, transition t12_SUSPECT)",
+    "IDS SIGNATURE beaconing — 185.220.101.47:9001/TCP seuil=['tor_exit_node', 'beaconing'] (transition t12_SUSPECT)",
+    "FIREWALL BLOCK priorité=800 — 91.108.4.201:80/HTTP (exfiltration de données, transition t13_SUSPECT)",
+    "IDS SIGNATURE data_exfiltration — sortant vers 91.108.4.201 seuil=50000B (transition t13_SUSPECT)",
+    "FIREWALL ALLOW priorité=100 — Niantic IPs=[35.186.224.10, 35.186.224.47] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Google OAuth IPs=[142.250.74.13] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Pokemon SSO (Cloudflare) IPs=[104.18.32.68] ports=[443] (API)",
+    "FIREWALL ALLOW priorité=100 — Google Maps IPs=[142.250.74.68] ports=[443] (CDN)",
+    "FIREWALL ALLOW priorité=100 — Stripe IPs=[54.187.174.169] ports=[443] (payment)",
+    "FIREWALL ALLOW priorité=100 — Firebase Cloud Messaging IPs=[142.250.74.131] ports=[443] (analytics)",
+    "FIREWALL BLOCK — 185.220.101.47:9001/TCP — Communication suspecte avec un nœud Tor, potentiellement utilisé pour le contrôle et la commande (C2)",
+    "IDS SIGNATURE — 185.220.101.47:9001/TCP — Détection de beaconing, indicatif d'une communication régulière avec un serveur de commandement",
+    "FIREWALL BLOCK — 91.108.4.201:80/HTTP — Exfiltration de données suspecte, potentiellement liée à une attaque de type data exfiltration",
+    "IDS SIGNATURE — sortant vers 91.108.4.201 — Détection d'exfiltration de données, avec un seuil de 50 000 octets pour déclencher l'alerte",
+    "FIREWALL ALLOW — 35.186.224.10:443/TCP et 35.186.224.47:443/TCP — Autorisation de trafic légitime vers les API de Niantic",
+    "MONITORING — Trafic sortant vers les IPs de Google OAuth, Pokémon SSO, Google Maps, Stripe et Firebase Cloud Messaging — Surveillance du trafic pour détecter toute activité anormale"
+  ],
+  "llm_summary": "L'application Pokémon GO présente un niveau de risque global faible, avec un score de 1,72/10. Cependant, deux transitions suspectes ont été détectées, notamment une communication avec un nœud Tor et une exfiltration de données vers un hôte de confiance. Les services légitimes identifiés incluent les API de Niantic, Google OAuth, Pokémon SSO, Google Maps, Stripe et Firebase Cloud Messaging."
+}

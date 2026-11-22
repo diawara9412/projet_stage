@@ -1,0 +1,544 @@
+{
+  "automate_id": "pokemon_go_v1",
+  "app_name": "Pokemon GO",
+  "app_version": "1.245.0",
+  "platform": "android",
+  "description": "Automate comportemental réseau de Pokemon GO capturé via mitmproxy sur session de jeu de 60 minutes. Inclut des phases de login, exploration, combat, et achat. Deux comportements suspects ont été identifiés.",
+  "created_at": "2024-04-15T14:30:00Z",
+  "states": [
+    {
+      "id": "launch",
+      "label": "Démarrage",
+      "is_initial": true,
+      "is_final": false,
+      "description": "Lancement de l'application, chargement des assets statiques"
+    },
+    {
+      "id": "login",
+      "label": "Authentification",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Authentification OAuth via Google ou compte Niantic"
+    },
+    {
+      "id": "menu",
+      "label": "Menu principal",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Carte du monde, pokémons à proximité, état du joueur"
+    },
+    {
+      "id": "exploration",
+      "label": "Exploration",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Déplacement sur la carte, chargement des tiles et POIs"
+    },
+    {
+      "id": "battle",
+      "label": "Combat",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Combat en Arène ou Raid, synchronisation temps réel"
+    },
+    {
+      "id": "purchase",
+      "label": "Achat en jeu",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Achat de PokéCoins ou d'objets dans la boutique"
+    },
+    {
+      "id": "social",
+      "label": "Fonctions sociales",
+      "is_initial": false,
+      "is_final": false,
+      "description": "Envoi de cadeaux, ajout d'amis, échange de pokémons"
+    },
+    {
+      "id": "idle",
+      "label": "Application en arrière-plan",
+      "is_initial": false,
+      "is_final": true,
+      "description": "Application suspendue, œufs en incubation, notifications push"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t01",
+      "from": "launch",
+      "to": "login",
+      "label": "Chargement configuration",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/version",
+        "ip": "35.186.224.10",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "GET",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 1.0,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 128,
+        "is_encrypted": true,
+        "is_authenticated": false,
+        "triggers": "Démarrage automatique de l'application"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Version check standard, comportement attendu au lancement"
+      }
+    },
+    {
+      "id": "t02",
+      "from": "login",
+      "to": "menu",
+      "label": "OAuth Google",
+      "network_call": {
+        "url": "https://accounts.google.com/o/oauth2/token",
+        "ip": "142.250.74.13",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "accounts.google.com"
+      },
+      "service": {
+        "name": "Google OAuth",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.75,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 512,
+        "is_encrypted": true,
+        "is_authenticated": false,
+        "triggers": "Bouton 'Se connecter avec Google'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "OAuth 2.0 standard"
+      }
+    },
+    {
+      "id": "t03",
+      "from": "login",
+      "to": "menu",
+      "label": "Authentification Niantic",
+      "network_call": {
+        "url": "https://sso.pokemon.com/sso/oauth2.0/accessToken",
+        "ip": "104.18.32.68",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "sso.pokemon.com"
+      },
+      "service": {
+        "name": "Pokemon SSO (Cloudflare)",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS13335",
+        "asn_org": "Cloudflare Inc.",
+        "country": "US",
+        "city": "San Francisco"
+      },
+      "behavior": {
+        "probability": 0.25,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 768,
+        "is_encrypted": true,
+        "is_authenticated": false,
+        "triggers": "Bouton 'Se connecter avec Pokémon Trainer Club'"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "SSO Pokémon Trainer Club via Cloudflare"
+      }
+    },
+    {
+      "id": "t04",
+      "from": "menu",
+      "to": "exploration",
+      "label": "Chargement des tiles de carte",
+      "network_call": {
+        "url": "https://maps.googleapis.com/maps/api/tile",
+        "ip": "142.250.74.68",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "GET",
+        "hostname": "maps.googleapis.com"
+      },
+      "service": {
+        "name": "Google Maps",
+        "type": "CDN",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.98,
+        "frequency_per_session": 45,
+        "payload_size_bytes": 8192,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Déplacement du joueur sur la carte"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Tiles Google Maps, fréquence proportionnelle au déplacement"
+      }
+    },
+    {
+      "id": "t05",
+      "from": "exploration",
+      "to": "exploration",
+      "label": "Synchronisation état du jeu (gRPC)",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/rpc",
+        "ip": "35.186.224.47",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "gRPC",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 1.0,
+        "frequency_per_session": 120,
+        "payload_size_bytes": 2048,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Mise à jour périodique de la position GPS (toutes les 30s)"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Heartbeat légitime du jeu, fréquence élevée mais cohérente avec gameplay"
+      }
+    },
+    {
+      "id": "t06",
+      "from": "exploration",
+      "to": "battle",
+      "label": "Démarrage d'un Raid",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/rpc",
+        "ip": "35.186.224.47",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "gRPC",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.3,
+        "frequency_per_session": 2,
+        "payload_size_bytes": 4096,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Tap sur un Arène ou Œuf de Raid"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Initialisation de session de combat en temps réel"
+      }
+    },
+    {
+      "id": "t07",
+      "from": "battle",
+      "to": "menu",
+      "label": "Fin de combat",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/rpc",
+        "ip": "35.186.224.47",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "gRPC",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 1.0,
+        "frequency_per_session": 2,
+        "payload_size_bytes": 1024,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Fin automatique du timer de combat"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Envoi du résultat de combat au serveur"
+      }
+    },
+    {
+      "id": "t08",
+      "from": "menu",
+      "to": "purchase",
+      "label": "Ouverture boutique",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/rpc",
+        "ip": "35.186.224.47",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "gRPC",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.2,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 512,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton boutique dans l'interface"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Chargement catalogue boutique"
+      }
+    },
+    {
+      "id": "t09",
+      "from": "purchase",
+      "to": "menu",
+      "label": "Paiement via Stripe",
+      "network_call": {
+        "url": "https://api.stripe.com/v1/payment_intents",
+        "ip": "54.187.174.169",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "api.stripe.com"
+      },
+      "service": {
+        "name": "Stripe",
+        "type": "payment",
+        "reputation": "trusted",
+        "asn": "AS16509",
+        "asn_org": "Amazon.com Inc. (hébergement Stripe)",
+        "country": "US",
+        "city": "Seattle"
+      },
+      "behavior": {
+        "probability": 0.6,
+        "frequency_per_session": 1,
+        "payload_size_bytes": 1024,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton 'Acheter' dans la boutique"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Paiement Stripe standard, données PCI-DSS protégées"
+      }
+    },
+    {
+      "id": "t10",
+      "from": "menu",
+      "to": "social",
+      "label": "Envoi de cadeaux",
+      "network_call": {
+        "url": "https://pgorelease.nianticlabs.com/plfe/rpc",
+        "ip": "35.186.224.47",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "gRPC",
+        "hostname": "pgorelease.nianticlabs.com"
+      },
+      "service": {
+        "name": "Niantic",
+        "type": "API",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC (hébergement Niantic)",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.5,
+        "frequency_per_session": 20,
+        "payload_size_bytes": 256,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Bouton 'Envoyer cadeau' sur la fiche ami"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Interaction sociale standard"
+      }
+    },
+    {
+      "id": "t11",
+      "from": "exploration",
+      "to": "idle",
+      "label": "Application mise en arrière-plan",
+      "network_call": {
+        "url": "https://fcm.googleapis.com/fcm/send",
+        "ip": "142.250.74.131",
+        "port": 443,
+        "protocol": "HTTPS",
+        "method": "POST",
+        "hostname": "fcm.googleapis.com"
+      },
+      "service": {
+        "name": "Firebase Cloud Messaging",
+        "type": "analytics",
+        "reputation": "trusted",
+        "asn": "AS15169",
+        "asn_org": "Google LLC",
+        "country": "US",
+        "city": "Mountain View"
+      },
+      "behavior": {
+        "probability": 0.4,
+        "frequency_per_session": 3,
+        "payload_size_bytes": 128,
+        "is_encrypted": true,
+        "is_authenticated": true,
+        "triggers": "Touche Home ou changement d'application"
+      },
+      "suspicion": {
+        "score": 0,
+        "flags": [],
+        "notes": "Enregistrement pour notifications push FCM"
+      }
+    },
+    {
+      "id": "t12_SUSPECT",
+      "from": "idle",
+      "to": "idle",
+      "label": "SUSPECT — Beacon vers nœud Tor",
+      "network_call": {
+        "url": null,
+        "ip": "185.220.101.47",
+        "port": 9001,
+        "protocol": "TCP",
+        "method": null,
+        "hostname": null
+      },
+      "service": {
+        "name": "Inconnu",
+        "type": "unknown",
+        "reputation": "suspicious",
+        "asn": "AS200052",
+        "asn_org": "Zwiebeltoralf e.K. (opérateur nœud Tor)",
+        "country": "DE",
+        "city": "Francfort"
+      },
+      "behavior": {
+        "probability": 0.85,
+        "frequency_per_session": 180,
+        "payload_size_bytes": 64,
+        "is_encrypted": false,
+        "is_authenticated": false,
+        "triggers": "Déclenchement automatique toutes les 20 secondes en arrière-plan"
+      },
+      "suspicion": {
+        "score": 9,
+        "flags": ["tor_exit_node", "beaconing"],
+        "notes": "IP 185.220.101.47 est un nœud de sortie Tor référencé dans le projet TorDNSEL. Connexion non chiffrée sur port 9001 (port Tor par défaut). Fréquence de 180 connexions/session avec payload fixe de 64 octets = heartbeat C2 classique."
+      }
+    },
+    {
+      "id": "t13_SUSPECT",
+      "from": "battle",
+      "to": "idle",
+      "label": "SUSPECT — Exfiltration post-combat",
+      "network_call": {
+        "url": "http://analytics-update.pokego-stats.xyz/upload",
+        "ip": "91.108.4.201",
+        "port": 80,
+        "protocol": "HTTP",
+        "method": "POST",
+        "hostname": "analytics-update.pokego-stats.xyz"
+      },
+      "service": {
+        "name": "Inconnu",
+        "type": "unknown",
+        "reputation": "suspicious",
+        "asn": "AS62217",
+        "asn_org": "Petersburg Internet Network LLC (bulletproof hosting RU)",
+        "country": "RU",
+        "city": "Saint-Pétersbourg"
+      },
+      "behavior": {
+        "probability": 0.7,
+        "frequency_per_session": 2,
+        "payload_size_bytes": 85000,
+        "is_encrypted": false,
+        "is_authenticated": false,
+        "triggers": "Déclenchement automatique à la fin de chaque combat"
+      },
+      "suspicion": {
+        "score": 10,
+        "flags": ["data_exfiltration", "bulletproof_hosting", "dga_domain", "suspicious_path"],
+        "notes": "Domaine enregistré il y a 3 jours. Hébergeur Petersburg Internet Network connu comme bulletproof. Trafic HTTP non chiffré de 85KB (contenu probablement : contacts, position GPS, tokens de session). Path /upload sur un pseudo-domaine analytics = exfiltration masquée."
+      }
+    }
+  ],
+  "metadata": {
+    "capture_tool": "mitmproxy 10.1.5",
+    "capture_duration_seconds": 3600,
+    "sessions_analyzed": 5,
+    "device_type": "smartphone",
+    "network_type": "WiFi",
+    "analyst": "RESIST-Lab / INRIA"
+  }
+}

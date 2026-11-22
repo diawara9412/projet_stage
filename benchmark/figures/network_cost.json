@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Baseline (NORMAL, sans sécurité)",
+    "secure": false,
+    "n_dummy": 0,
+    "rtt_ms": 0.053,
+    "jitter_ms": 0.023,
+    "bw_mbps": 77.6,
+    "flows_s1": 1
+  },
+  {
+    "label": "Chaîne active (default-deny + ALLOW)",
+    "secure": true,
+    "n_dummy": 0,
+    "rtt_ms": 0.115,
+    "jitter_ms": 0.079,
+    "bw_mbps": 82.0,
+    "flows_s1": 4
+  },
+  {
+    "label": "Chaîne + 0 règles",
+    "secure": true,
+    "n_dummy": 0,
+    "rtt_ms": 0.099,
+    "jitter_ms": 0.03,
+    "bw_mbps": 78.8,
+    "flows_s1": 4
+  },
+  {
+    "label": "Chaîne + 250 règles",
+    "secure": true,
+    "n_dummy": 250,
+    "rtt_ms": 0.067,
+    "jitter_ms": 0.02,
+    "bw_mbps": 82.0,
+    "flows_s1": 254
+  },
+  {
+    "label": "Chaîne + 500 règles",
+    "secure": true,
+    "n_dummy": 500,
+    "rtt_ms": 0.097,
+    "jitter_ms": 0.029,
+    "bw_mbps": 84.2,
+    "flows_s1": 504
+  },
+  {
+    "label": "Chaîne + 1000 règles",
+    "secure": true,
+    "n_dummy": 1000,
+    "rtt_ms": 0.08,
+    "jitter_ms": 0.02,
+    "bw_mbps": 80.6,
+    "flows_s1": 1004
+  },
+  {
+    "label": "Chaîne + 2000 règles",
+    "secure": true,
+    "n_dummy": 2000,
+    "rtt_ms": 0.094,
+    "jitter_ms": 0.039,
+    "bw_mbps": 80.4,
+    "flows_s1": 2004
+  },
+  {
+    "label": "Chaîne + 4000 règles",
+    "secure": true,
+    "n_dummy": 4000,
+    "rtt_ms": 0.095,
+    "jitter_ms": 0.032,
+    "bw_mbps": 83.7,
+    "flows_s1": 4004
+  }
+]

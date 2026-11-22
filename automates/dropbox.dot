@@ -1,0 +1,8 @@
+digraph G {
+0 [label="443"];
+1 [label="INITIAL" shape=box];
+2 [label="TERMINAL" shape=diamond];
+0->0[label="P:0.998998998998999"];
+0->2[label="P:0.001001001001001001"];
+1->0[label="P:1.0"];
+}
