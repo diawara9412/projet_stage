@@ -27,3 +27,8 @@ Thumbs.db
 
 # Mininet
 *.log
+
+# Grosses données expérimentales Flowoid
+flowoid-traces-intern/traces_reseau/flowoid/traceFlowoid.zip
+flowoid-traces-intern/traces_reseau/flowoid/traceFlowoid/androidflows.csv
+flowoid-traces-intern/traces_reseau/flowoid/traceFlowoid/appFlows/apks/pokemongo.apk
